@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(19.0),
+            padding: const EdgeInsets.all(59.0),
             child: LinearPercentage(
               currentPercentage: 10,
               maxPercentage: 100,

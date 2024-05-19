@@ -24,31 +24,29 @@ class LinearPercentage extends StatelessWidget {
   Widget build(BuildContext context) {
     double x = MediaQuery.of(context).size.width;
     double percent = (40 / 100) * x;
-    return Center(
-      child: Stack(
-        children: [
-          Container(
-            width: x,
-            height: height,
-            color: Colors.black26,
-            decoration: decoration,
+    return Stack(
+      children: [
+        Container(
+          width: x,
+          height: height,
+          color: Colors.black26,
+          decoration: decoration,
+        ),
+        TweenAnimationBuilder(
+          duration: Duration(milliseconds: duration ?? 1000),
+          curve: Curves.easeInOut,
+          tween: Tween<double>(
+            begin: 0,
+            end: percent,
           ),
-          TweenAnimationBuilder(
-            duration: Duration(milliseconds: duration ?? 1000),
-            curve: Curves.easeInOut,
-            tween: Tween<double>(
-              begin: 0,
-              end: percent,
-            ),
-            builder: (context, value, _) => Container(
-              width: value,
-              height: heightPercentage,
-              color: Colors.black,
-              decoration: percentageDecoration,
-            ),
+          builder: (context, value, _) => Container(
+            width: value,
+            height: heightPercentage,
+            color: Colors.black,
+            decoration: percentageDecoration,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
