@@ -33,12 +33,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(19.0),
+            padding: const EdgeInsets.all(19.0),
             child: LinearPercentage(
               currentPercentage: 10,
               maxPercentage: 100,
