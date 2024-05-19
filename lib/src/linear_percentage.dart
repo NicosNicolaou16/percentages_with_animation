@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
 
-class LinearPercentage extends StatelessWidget {
-  final int percentage;
+class LinearPercentage extends StatefulWidget {
+  final double currentPercentage;
+  final double maxPercentage;
+  final double height;
+  final double heightPercentage;
 
-  const LinearPercentage({super.key, required this.percentage});
+  const LinearPercentage({
+    super.key,
+    required this.currentPercentage,
+    required this.maxPercentage,
+    required this.height,
+    required this.heightPercentage,
+  }) : assert(currentPercentage <= maxPercentage);
 
+  @override
+  State<LinearPercentage> createState() => _LinearPercentageState();
+}
+
+class _LinearPercentageState extends State<LinearPercentage> {
   @override
   Widget build(BuildContext context) {
     double x = MediaQuery.of(context).size.width;
@@ -14,14 +28,21 @@ class LinearPercentage extends StatelessWidget {
         children: [
           Container(
             width: x,
-            height: 10,
+            height: widget.height,
             color: Colors.black26,
           ),
-          AnimatedContainer(
-            duration: const Duration(milliseconds: 5000),
-            width: percent,
-            height: 10,
-            color: Colors.black,
+          TweenAnimationBuilder(
+            duration: const Duration(milliseconds: 1000),
+            curve: Curves.easeInOut,
+            tween: Tween<double>(
+              begin: 0,
+              end: percent,
+            ),
+            builder: (context, value, _) => Container(
+              width: value,
+              height: widget.heightPercentage,
+              color: Colors.black,
+            ),
           ),
         ],
       ),

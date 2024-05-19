@@ -37,8 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          LinearPercentage(
-            percentage: 10,
+          Padding(
+            padding: EdgeInsets.all(19.0),
+            child: LinearPercentage(
+              currentPercentage: 10,
+              maxPercentage: 100,
+              height: 20,
+              heightPercentage: 20,
+            ),
           ),
         ],
       ),
