@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Padding(
             padding: const EdgeInsets.all(59.0),
             child: LinearPercentage(
-              currentPercentage: 30,
+              currentPercentage: 70,
               maxPercentage: 100,
               height: 20,
               heightPercentage: 20,
