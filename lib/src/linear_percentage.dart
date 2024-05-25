@@ -6,24 +6,25 @@ class LinearPercentage extends StatefulWidget {
   final double height;
   final double heightPercentage;
   final int? duration;
-  final Decoration? decoration;
+  final Decoration? backgroundDecoration;
   final Decoration? percentageDecoration;
-  final Color backgroundPercentage;
-  final Color percentage;
+  final Color backgroundPercentageColor;
+  final Color percentageColor;
 
-  LinearPercentage({
+  const LinearPercentage({
     super.key,
     required this.currentPercentage,
     required this.maxPercentage,
     required this.height,
     required this.heightPercentage,
     this.duration,
-    this.decoration,
+    this.backgroundDecoration,
     this.percentageDecoration,
-    this.backgroundPercentage = Colors.black26,
-    this.percentage = Colors.black,
+    this.backgroundPercentageColor = Colors.black26,
+    this.percentageColor = Colors.black,
   })  : assert(currentPercentage <= maxPercentage),
-        assert(currentPercentage >= 0);
+        assert(currentPercentage >= 0),
+        assert(duration == null || duration >= 0);
 
   @override
   State<LinearPercentage> createState() => _LinearPercentageState();
@@ -44,8 +45,10 @@ class _LinearPercentageState extends State<LinearPercentage> {
         Container(
           width: _maxWidget,
           height: widget.height,
-          color: widget.backgroundPercentage,
-          decoration: widget.decoration,
+          color: widget.backgroundDecoration == null
+              ? widget.backgroundPercentageColor
+              : null,
+          decoration: widget.backgroundDecoration,
         ),
         TweenAnimationBuilder(
           duration: Duration(milliseconds: widget.duration ?? _delay),
@@ -57,7 +60,9 @@ class _LinearPercentageState extends State<LinearPercentage> {
           builder: (context, value, _) => Container(
             width: value,
             height: widget.heightPercentage,
-            color: widget.percentage,
+            color: widget.percentageDecoration == null
+                ? widget.percentageColor
+                : null,
             decoration: widget.percentageDecoration,
           ),
         ),

@@ -44,6 +44,14 @@ class _MyHomePageState extends State<MyHomePage> {
               maxPercentage: 100,
               height: 20,
               heightPercentage: 20,
+              backgroundDecoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.black38,
+              ),
+              percentageDecoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.black,
+              ),
             ),
           ),
         ],
