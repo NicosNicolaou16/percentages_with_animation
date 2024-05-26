@@ -47,6 +47,12 @@ class _CircularPercentageState extends State<CircularPercentage> {
           ),
           child: CustomPaint(
             painter: BorderPainter(currentState: value),
+            child: Center(
+              child: Text(
+                (value * widget.maxPercentage).toInt().toString(),
+                style: const TextStyle(color: Colors.black),
+              ),
+            ),
           ),
         );
       },
