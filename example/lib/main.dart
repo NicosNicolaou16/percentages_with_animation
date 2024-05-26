@@ -54,6 +54,16 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
+          const SizedBox(
+            height: 15,
+          ),
+          const CircularPercentage(
+            currentPercentage: 50,
+            maxPercentage: 100,
+            height: 50,
+            heightPercentage: 50,
+            duration: 2000,
+          )
         ],
       ),
     );

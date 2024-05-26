@@ -48,72 +48,72 @@ class _LinearPercentageState extends State<LinearPercentage> {
   @override
   Widget build(BuildContext context) {
     return PercentageBuilder(
-        currentPercentage: widget.currentPercentage,
-        maxPercentage: widget.maxPercentage,
-        myLayoutBuilder: (context, percentage, maxWidth) {
-          return Row(
-            children: [
-              if (widget.leftRightText == LeftRightText.leftOnly ||
-                  widget.leftRightText == LeftRightText.both) ...[
-                TweenAnimationBuilder(
-                  duration: Duration(milliseconds: widget.duration ?? _delay),
-                  curve: Curves.easeInOut,
-                  tween: Tween<double>(
-                    begin: 0,
-                    end: widget.currentPercentage,
-                  ),
-                  builder: (context, value, _) => Text(
-                    value.toInt().toString(),
-                    style: widget.leftTextStyle,
-                  ),
+      currentPercentage: widget.currentPercentage,
+      maxPercentage: widget.maxPercentage,
+      myLayoutBuilder: (context, percentage, maxWidth) {
+        return Row(
+          children: [
+            if (widget.leftRightText == LeftRightText.leftOnly ||
+                widget.leftRightText == LeftRightText.both) ...[
+              TweenAnimationBuilder(
+                duration: Duration(milliseconds: widget.duration ?? _delay),
+                curve: Curves.easeInOut,
+                tween: Tween<double>(
+                  begin: 0,
+                  end: widget.currentPercentage,
                 ),
-                SizedBox(
-                  width: widget.leftTextRightPadding,
-                ),
-              ],
-              Expanded(
-                child: Stack(
-                  children: [
-                    Container(
-                      width: maxWidth,
-                      height: widget.height,
-                      color: widget.backgroundDecoration == null
-                          ? widget.backgroundPercentageColor
-                          : null,
-                      decoration: widget.backgroundDecoration,
-                    ),
-                    TweenAnimationBuilder(
-                      duration:
-                          Duration(milliseconds: widget.duration ?? _delay),
-                      curve: Curves.easeInOut,
-                      tween: Tween<double>(
-                        begin: 0,
-                        end: percentage,
-                      ),
-                      builder: (context, value, _) => Container(
-                        width: value,
-                        height: widget.heightPercentage,
-                        color: widget.percentageDecoration == null
-                            ? widget.percentageColor
-                            : null,
-                        decoration: widget.percentageDecoration,
-                      ),
-                    ),
-                  ],
+                builder: (context, value, _) => Text(
+                  value.toInt().toString(),
+                  style: widget.leftTextStyle,
                 ),
               ),
-              if (widget.leftRightText == LeftRightText.rightOnly ||
-                  widget.leftRightText == LeftRightText.both) ...[
-                SizedBox(
-                  width: widget.rightTextRightPadding,
-                ),
-                Text(
-                  widget.maxPercentage.toInt().toString(),
-                  style: widget.rightTextStyle,
-                ),
-              ],
+              SizedBox(
+                width: widget.leftTextRightPadding,
+              ),
             ],
-          );
-        });
+            Expanded(
+              child: Stack(
+                children: [
+                  Container(
+                    width: maxWidth,
+                    height: widget.height,
+                    color: widget.backgroundDecoration == null
+                        ? widget.backgroundPercentageColor
+                        : null,
+                    decoration: widget.backgroundDecoration,
+                  ),
+                  TweenAnimationBuilder(
+                    duration: Duration(milliseconds: widget.duration ?? _delay),
+                    curve: Curves.easeInOut,
+                    tween: Tween<double>(
+                      begin: 0,
+                      end: percentage,
+                    ),
+                    builder: (context, value, _) => Container(
+                      width: value,
+                      height: widget.heightPercentage,
+                      color: widget.percentageDecoration == null
+                          ? widget.percentageColor
+                          : null,
+                      decoration: widget.percentageDecoration,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            if (widget.leftRightText == LeftRightText.rightOnly ||
+                widget.leftRightText == LeftRightText.both) ...[
+              SizedBox(
+                width: widget.rightTextRightPadding,
+              ),
+              Text(
+                widget.maxPercentage.toInt().toString(),
+                style: widget.rightTextStyle,
+              ),
+            ],
+          ],
+        );
+      },
+    );
   }
 }
