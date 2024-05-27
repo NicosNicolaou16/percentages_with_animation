@@ -10,7 +10,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-This package provide you percentages custom widget with animations such as linear and circular percentage.
+This package provide you percentages custom widgets with animations such as linear and circular percentage.
 
 ## Features
 
