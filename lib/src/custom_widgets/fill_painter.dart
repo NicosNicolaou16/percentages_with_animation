@@ -2,14 +2,12 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class BorderPainter extends CustomPainter {
+class FillPainter extends CustomPainter {
   final double currentState;
-  final double strokeWidth;
   final Color color;
 
-  BorderPainter({
+  FillPainter({
     required this.currentState,
-    required this.strokeWidth,
     required this.color,
   });
 
@@ -19,14 +17,12 @@ class BorderPainter extends CustomPainter {
 
     var paint = Paint()
       ..color = color
-      ..strokeWidth = strokeWidth
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
+      ..style = PaintingStyle.fill;
 
-    double startAngle = -pi / 2;
+    double startAngle = -pi * 100;
     double sweepAmount = currentState * 2 * pi;
 
-    canvas.drawArc(rect, startAngle, sweepAmount, false, paint);
+    canvas.drawArc(rect, startAngle, sweepAmount, true, paint);
   }
 
   @override

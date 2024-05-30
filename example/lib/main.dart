@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.all(59.0),
@@ -57,6 +57,21 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 15,
           ),
           const CircularPercentage(
+            currentPercentage: 50,
+            maxPercentage: 100,
+            size: 150,
+            duration: 2000,
+            strokeWidth: 10,
+            backgroundStrokeWidth: 2,
+            textStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const CirclePercentage(
             currentPercentage: 50,
             maxPercentage: 100,
             size: 150,
