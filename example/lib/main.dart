@@ -59,11 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
           const CircularPercentage(
             currentPercentage: 50,
             maxPercentage: 100,
-            height: 50,
-            heightPercentage: 50,
+            size: 150,
             duration: 2000,
-            strokeWidth: 20,
-            backgroundStrokeWidth: 5,
+            strokeWidth: 10,
+            backgroundStrokeWidth: 2,
+            textStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
+            ),
           )
         ],
       ),

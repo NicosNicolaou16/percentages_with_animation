@@ -5,24 +5,26 @@ import 'package:percentages_with_animation/src/custom_widgets/border_painter.dar
 class CircularPercentage extends StatefulWidget {
   final double currentPercentage;
   final double maxPercentage;
-  final double height;
-  final double heightPercentage;
+  final double size;
   final double strokeWidth;
   final double backgroundStrokeWidth;
   final Color color;
+  final Color backgroundColor;
+  final TextStyle textStyle;
   final int? duration;
 
   const CircularPercentage({
     super.key,
     required this.currentPercentage,
     required this.maxPercentage,
-    required this.height,
-    required this.heightPercentage,
+    this.size = 100,
     required this.strokeWidth,
     required this.backgroundStrokeWidth,
     this.color = Colors.black,
+    this.backgroundColor = Colors.black12,
+    this.textStyle = const TextStyle(color: Colors.black),
     this.duration,
-  });
+  }) : assert(currentPercentage >= 0);
 
   @override
   State<CircularPercentage> createState() => _CircularPercentageState();
@@ -42,13 +44,14 @@ class _CircularPercentageState extends State<CircularPercentage> {
       ),
       builder: (context, value, _) {
         return Container(
-          width: 100,
-          height: 100,
+          width: widget.size,
+          height: widget.size,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.transparent,
             border: Border.all(
               width: widget.backgroundStrokeWidth,
+              color: widget.backgroundColor,
             ),
           ),
           child: CustomPaint(
@@ -60,7 +63,7 @@ class _CircularPercentageState extends State<CircularPercentage> {
             child: Center(
               child: Text(
                 (value * widget.maxPercentage).toInt().toString(),
-                style: const TextStyle(color: Colors.black),
+                style: widget.textStyle,
               ),
             ),
           ),
