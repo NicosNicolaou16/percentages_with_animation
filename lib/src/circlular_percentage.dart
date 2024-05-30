@@ -24,7 +24,9 @@ class CircularPercentage extends StatefulWidget {
     this.backgroundColor = Colors.black12,
     this.textStyle = const TextStyle(color: Colors.black),
     this.duration,
-  }) : assert(currentPercentage >= 0);
+  }) : assert(currentPercentage <= maxPercentage),
+        assert(currentPercentage >= 0),
+        assert(duration == null || duration >= 0);
 
   @override
   State<CircularPercentage> createState() => _CircularPercentageState();
