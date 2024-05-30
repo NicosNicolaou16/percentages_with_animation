@@ -62,6 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 50,
             heightPercentage: 50,
             duration: 2000,
+            strokeWidth: 20,
+            backgroundStrokeWidth: 5,
           )
         ],
       ),

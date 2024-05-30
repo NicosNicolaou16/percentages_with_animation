@@ -4,16 +4,22 @@ import 'package:flutter/material.dart';
 
 class BorderPainter extends CustomPainter {
   final double currentState;
+  final double strokeWidth;
+  final Color color;
 
-  BorderPainter({required this.currentState});
+  BorderPainter({
+    required this.currentState,
+    required this.strokeWidth,
+    required this.color,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
-    double strokeWidth = 5;
+    double strokeWidth = this.strokeWidth;
     Rect rect = const Offset(0, 0) & Size(size.width, size.height);
 
     var paint = Paint()
-      ..color = Colors.red
+      ..color = color
       ..strokeWidth = strokeWidth
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;

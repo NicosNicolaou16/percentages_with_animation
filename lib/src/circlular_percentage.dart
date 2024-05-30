@@ -7,6 +7,9 @@ class CircularPercentage extends StatefulWidget {
   final double maxPercentage;
   final double height;
   final double heightPercentage;
+  final double strokeWidth;
+  final double backgroundStrokeWidth;
+  final Color color;
   final int? duration;
 
   const CircularPercentage({
@@ -15,6 +18,9 @@ class CircularPercentage extends StatefulWidget {
     required this.maxPercentage,
     required this.height,
     required this.heightPercentage,
+    required this.strokeWidth,
+    required this.backgroundStrokeWidth,
+    this.color = Colors.black,
     this.duration,
   });
 
@@ -42,11 +48,15 @@ class _CircularPercentageState extends State<CircularPercentage> {
             shape: BoxShape.circle,
             color: Colors.transparent,
             border: Border.all(
-              width: 1,
+              width: widget.backgroundStrokeWidth,
             ),
           ),
           child: CustomPaint(
-            painter: BorderPainter(currentState: value),
+            painter: BorderPainter(
+              currentState: value,
+              strokeWidth: widget.strokeWidth,
+              color: widget.color,
+            ),
             child: Center(
               child: Text(
                 (value * widget.maxPercentage).toInt().toString(),
