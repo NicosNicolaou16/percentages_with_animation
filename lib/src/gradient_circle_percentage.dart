@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:percentages_with_animation/src/custom_painter/border_painter.dart';
+import 'package:percentages_with_animation/src/custom_painter/gradient_circle_painter.dart';
 import 'package:percentages_with_animation/src/utitils/constants.dart';
 
-class CircularPercentage extends StatefulWidget {
+class GradientCirclePercentage extends StatefulWidget {
   final double currentPercentage;
   final double maxPercentage;
   final double size;
   final int? duration;
   final double strokeWidth;
   final double backgroundStrokeWidth;
-  final Color color;
+  final Color bottomColor;
+  final Color topColor;
   final Color backgroundColor;
   final TextStyle textStyle;
 
-  const CircularPercentage({
+  const GradientCirclePercentage({
     super.key,
     required this.currentPercentage,
     required this.maxPercentage,
@@ -21,18 +22,20 @@ class CircularPercentage extends StatefulWidget {
     this.duration,
     required this.strokeWidth,
     required this.backgroundStrokeWidth,
-    this.color = Colors.black,
-    this.backgroundColor = Colors.black12,
+    this.bottomColor = Colors.black,
+    this.topColor = Colors.white,
+    this.backgroundColor = Colors.white,
     this.textStyle = const TextStyle(color: Colors.black),
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration == null || duration >= 0);
 
   @override
-  State<CircularPercentage> createState() => _CircularPercentageState();
+  State<GradientCirclePercentage> createState() =>
+      _GradientCirclePercentageState();
 }
 
-class _CircularPercentageState extends State<CircularPercentage> {
+class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
@@ -55,10 +58,10 @@ class _CircularPercentageState extends State<CircularPercentage> {
             ),
           ),
           child: CustomPaint(
-            painter: BorderPainter(
-              currentState: value,
-              strokeWidth: widget.strokeWidth,
-              color: widget.color,
+            painter: GradientCirclePainter(
+              currentPercentage: value,
+              topColor: widget.topColor,
+              bottomColor: widget.bottomColor,
             ),
             child: Center(
               child: Text(

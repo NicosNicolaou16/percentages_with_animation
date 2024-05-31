@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/percentages_with_animation.dart';
 import 'package:percentages_with_animation/src/builder/percentage_builder.dart';
+import 'package:percentages_with_animation/src/utitils/constants.dart';
 
 class LinearPercentage extends StatefulWidget {
   final double currentPercentage;
@@ -43,8 +44,6 @@ class LinearPercentage extends StatefulWidget {
 }
 
 class _LinearPercentageState extends State<LinearPercentage> {
-  final int _delay = 1000;
-
   @override
   Widget build(BuildContext context) {
     return PercentageBuilder(
@@ -56,7 +55,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
             if (widget.leftRightText == LeftRightText.leftOnly ||
                 widget.leftRightText == LeftRightText.both) ...[
               TweenAnimationBuilder(
-                duration: Duration(milliseconds: widget.duration ?? _delay),
+                duration: Duration(milliseconds: widget.duration ?? delay),
                 curve: Curves.easeInOut,
                 tween: Tween<double>(
                   begin: 0,
@@ -83,7 +82,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
                     decoration: widget.backgroundDecoration,
                   ),
                   TweenAnimationBuilder(
-                    duration: Duration(milliseconds: widget.duration ?? _delay),
+                    duration: Duration(milliseconds: widget.duration ?? delay),
                     curve: Curves.easeInOut,
                     tween: Tween<double>(
                       begin: 0,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/src/custom_painter/fill_painter.dart';
+import 'package:percentages_with_animation/src/utitils/constants.dart';
 
 class CirclePercentage extends StatefulWidget {
   final double currentPercentage;
@@ -32,12 +33,10 @@ class CirclePercentage extends StatefulWidget {
 }
 
 class _CirclePercentageState extends State<CirclePercentage> {
-  final int _delay = 1000;
-
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-      duration: Duration(milliseconds: widget.duration ?? _delay),
+      duration: Duration(milliseconds: widget.duration ?? delay),
       curve: Curves.easeIn,
       tween: Tween<double>(
         begin: 0,

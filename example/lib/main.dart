@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
               maxPercentage: 100,
               height: 20,
               heightPercentage: 20,
+              leftRightText: LeftRightText.both,
               backgroundDecoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.black38,
@@ -62,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             size: 150,
             duration: 2000,
             strokeWidth: 10,
+            color: Colors.blue,
             backgroundStrokeWidth: 2,
             textStyle: TextStyle(
               color: Colors.red,
@@ -77,6 +79,23 @@ class _MyHomePageState extends State<MyHomePage> {
             size: 150,
             duration: 2000,
             strokeWidth: 10,
+            color: Colors.green,
+            backgroundStrokeWidth: 2,
+            textStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const GradientCirclePercentage(
+            currentPercentage: 70,
+            maxPercentage: 100,
+            size: 150,
+            duration: 2000,
+            strokeWidth: 10,
+            bottomColor: Colors.green,
             backgroundStrokeWidth: 2,
             textStyle: TextStyle(
               color: Colors.red,
