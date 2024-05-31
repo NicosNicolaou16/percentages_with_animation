@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'package:percentages_with_animation/src/custom_widgets/border_painter.dart';
+import 'package:percentages_with_animation/src/custom_painter/border_painter.dart';
 
 class CircularPercentage extends StatefulWidget {
   final double currentPercentage;

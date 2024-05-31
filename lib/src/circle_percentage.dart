@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:percentages_with_animation/src/custom_widgets/fill_painter.dart';
+import 'package:percentages_with_animation/src/custom_painter/fill_painter.dart';
 
 class CirclePercentage extends StatefulWidget {
   final double currentPercentage;
