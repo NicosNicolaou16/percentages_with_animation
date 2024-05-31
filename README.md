@@ -27,7 +27,7 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
 
 <p align="left">
-  <a title="simulator_image"><img src="screenshots/Screenshot_20240601_011241.png" height="500" width="200"></a>
+  <a title="simulator_image"><img src="screenshots/Screenshot_20240601_011241.png" height="500" width="250"></a>
 </p>
 
 ```dart
