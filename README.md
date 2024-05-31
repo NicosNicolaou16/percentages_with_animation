@@ -1,20 +1,7 @@
-<!--
--This README describes the package. If you pu blish this package to pub.dev, 3-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-This package provide you percentages custom widgets with animations such as linear and circular percentage.
-
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+This package provide you percentages custom widgets with animations such as linear, circular, circle
+and gradient circle percentages .
 
 ## Getting started
 
@@ -22,9 +9,6 @@ TODO: List prerequisites and provide or point to information on how to
 start using the package.
 
 ## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
 
 <p align="left">
   <a title="simulator_image"><img src="screenshots/Screenshot_20240601_011241.png" height="530" width="250"></a>
