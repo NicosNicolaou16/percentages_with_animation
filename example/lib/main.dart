@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 15,
           ),
           const CirclePercentage(
-            currentPercentage: 50,
+            currentPercentage: 70,
             maxPercentage: 100,
             size: 150,
             duration: 2000,
