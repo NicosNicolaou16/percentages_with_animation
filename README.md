@@ -5,8 +5,7 @@ and gradient circle percentages .
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+There is not any prerequisites.
 
 ## Usage
 
