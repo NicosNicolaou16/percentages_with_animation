@@ -1,7 +1,7 @@
 ## Features
 
 This package provide you percentages custom widgets with animations such as linear, circular, circle
-and gradient circle percentages .
+and gradient circle percentages.
 
 ## Getting started
 
