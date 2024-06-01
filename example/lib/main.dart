@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
               maxPercentage: 100,
               size: 150,
               duration: 2000,
-              strokeWidth: 10,
+              percentageStrokeWidth: 10,
               percentageColor: Colors.blue,
               backgroundColor: Colors.black,
               backgroundStrokeWidth: 2,
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
               size: 150,
               duration: 2000,
               strokeWidth: 10,
-              color: Colors.green,
+              percentageColor: Colors.green,
               backgroundStrokeWidth: 2,
               textStyle: TextStyle(
                 color: Colors.red,
@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               maxPercentage: 100,
               size: 150,
               duration: 2000,
-              strokeWidth: 10,
+              percentageStrokeWidth: 10,
               bottomColor: Colors.green,
               backgroundStrokeWidth: 2,
               textStyle: TextStyle(

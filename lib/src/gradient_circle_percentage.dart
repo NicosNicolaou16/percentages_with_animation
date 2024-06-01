@@ -7,7 +7,7 @@ class GradientCirclePercentage extends StatefulWidget {
   final double maxPercentage;
   final double size;
   final int? duration;
-  final double strokeWidth;
+  final double percentageStrokeWidth;
   final double backgroundStrokeWidth;
   final Color bottomColor;
   final Color topColor;
@@ -20,7 +20,7 @@ class GradientCirclePercentage extends StatefulWidget {
     required this.maxPercentage,
     this.size = 100,
     this.duration,
-    required this.strokeWidth,
+    required this.percentageStrokeWidth,
     required this.backgroundStrokeWidth,
     this.bottomColor = Colors.black,
     this.topColor = Colors.white,

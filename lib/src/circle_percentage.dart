@@ -9,7 +9,7 @@ class CirclePercentage extends StatefulWidget {
   final int? duration;
   final double strokeWidth;
   final double backgroundStrokeWidth;
-  final Color color;
+  final Color percentageColor;
   final Color backgroundColor;
   final TextStyle textStyle;
 
@@ -21,7 +21,7 @@ class CirclePercentage extends StatefulWidget {
     this.duration,
     required this.strokeWidth,
     required this.backgroundStrokeWidth,
-    this.color = Colors.black,
+    this.percentageColor = Colors.black,
     this.backgroundColor = Colors.black12,
     this.textStyle = const TextStyle(color: Colors.black),
   })  : assert(currentPercentage <= maxPercentage),
@@ -57,7 +57,7 @@ class _CirclePercentageState extends State<CirclePercentage> {
           child: CustomPaint(
             painter: FillPainter(
               currentState: value,
-              color: widget.color,
+              color: widget.percentageColor,
             ),
             child: Center(
               child: Text(

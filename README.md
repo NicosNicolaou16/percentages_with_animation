@@ -21,7 +21,7 @@ Version Minimum Flutter SDK: 2.12.0
 | `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                                                             |
 | `backgroundHeight`      | background height                                                                                                                   |
 | `percentageHeight`      | percentage height                                                                                                                   |
-| `duration`              | duration for the animation                                                                                                          |
+| `duration`              | duration for the animation (duration == null or duration >= 0)                                                                      |
 | `backgroundDecoration`  | decoration for background                                                                                                           |
 | `percentageDecoration`  | decoration for percentage                                                                                                           |
 | `backgroundColor`       | background color                                                                                                                    |
@@ -34,17 +34,46 @@ Version Minimum Flutter SDK: 2.12.0
 
 ### Circular Percentage
 
-| Parameters              | Description                                             |
-|-------------------------|---------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                 |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage) |
-| `size`                  | circular percentage size                                |
-| `duration`              | duration for the animation                              |
-| `strokeWidth`           | stroke width                                            |
-| `backgroundStrokeWidth` | background stroke width                                 |
-| `percentageColor`       | percentage color                                        |
-| `backgroundColor`       | background color                                        |
-| `textStyle`             | text style for the center text                          |
+| Parameters              | Description                                                    |
+|-------------------------|----------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                        |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
+| `size`                  | circular percentage size                                       |
+| `duration`              | duration for the animation (duration == null or duration >= 0) |
+| `strokeWidth`           | stroke width                                                   |
+| `backgroundStrokeWidth` | background stroke width                                        |
+| `percentageColor`       | percentage color                                               |
+| `backgroundColor`       | background color                                               |
+| `textStyle`             | text style for the center text                                 |
+
+### Circle Percentage
+
+| Parameters              | Description                                                    |
+|-------------------------|----------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                        |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
+| `size`                  | circular percentage size                                       |
+| `duration`              | duration for the animation (duration == null or duration >= 0) |
+| `percentageStrokeWidth` | stroke width                                                   |
+| `backgroundStrokeWidth` | background stroke width                                        |
+| `percentageColor`       | percentage color                                               |
+| `backgroundColor`       | background color                                               |
+| `textStyle`             | text style for the center text                                 |
+
+### Gradient Circle Percentage
+
+| Parameters              | Description                                                    |
+|-------------------------|----------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                        |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
+| `size`                  | circular percentage size                                       |
+| `duration`              | duration for the animation (duration == null or duration >= 0) |
+| `percentageStrokeWidth` | percentage stroke width                                        |
+| `backgroundStrokeWidth` | background stroke width                                        |
+| `bottomColor`           | bottom color                                                   |
+| `topColor`              | top color                                                      |
+| `backgroundColor`       | background circle color                                        |
+| `textStyle`             | text style for the center text                                 |
 
 ```dart
 import 'package:flutter/material.dart';
