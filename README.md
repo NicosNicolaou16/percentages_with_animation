@@ -5,7 +5,7 @@ and gradient circle percentages.
 
 ## Getting started
 
-Version Minimum Flutter SDK: 2.12.0
+Version Minimum Flutter SDK: 3.0.0
 
 Tested Versioning: <br />
 Flutter SDK version: 3.22.1 <br />
