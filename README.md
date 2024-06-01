@@ -14,27 +14,27 @@ Dart Version: 3.4.1 <br />
 ## Usage
 
 <p align="left">
-  <a title="simulator_image"><img src="screenshots/Screenshot_20240601_011241.png" height="530" width="250"></a>
+  <a title="simulator_image"><img src="screenshots/Screenshot_20240601_175618.png" height="530" width="250"></a>
 </p>
 
 ### Linear Percentage
 
-| Parameters              | Description                                                                                                                         |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                                                             |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                                                             |
-| `backgroundHeight`      | background height                                                                                                                   |
-| `percentageHeight`      | percentage height                                                                                                                   |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                                                                      |
-| `backgroundDecoration`  | decoration for background                                                                                                           |
-| `percentageDecoration`  | decoration for percentage                                                                                                           |
-| `backgroundColor`       | background color                                                                                                                    |
-| `percentageColor`       | percentage color                                                                                                                    |
-| `leftRightText`         | Enum value for the left and right text (min and max value) - accepted value `leftOnly`, `rightOnly`, `both`, `none` (default value) |
-| `leftTextStyle`         | text style for left text                                                                                                            |
-| `rightTextStyle`        | text style for right text                                                                                                           |
-| `leftTextRightPadding`  | text left padding from the percentage                                                                                               |
-| `rightTextRightPadding` | text right padding from the percentage                                                                                              |
+| Parameters              | Description                                                                                                                                |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                                                                                    |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                                                                    |
+| `backgroundHeight`      | background height                                                                                                                          |
+| `percentageHeight`      | percentage height                                                                                                                          |
+| `duration`              | duration for the animation (duration == null or duration >= 0)                                                                             |
+| `backgroundDecoration`  | decoration for background                                                                                                                  |
+| `percentageDecoration`  | decoration for percentage                                                                                                                  |
+| `backgroundColor`       | background color, default value: black26                                                                                                   |
+| `percentageColor`       | percentage color, default value: black                                                                                                     |
+| `leftRightText`         | Enum value for the left and right text (min and max value) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
+| `leftTextStyle`         | text style for left text                                                                                                                   |
+| `rightTextStyle`        | text style for right text                                                                                                                  |
+| `leftTextRightPadding`  | text left padding from the percentage, default value: 5                                                                                    |
+| `rightTextRightPadding` | text right padding from the percentage, default value: 5                                                                                   |
 
 ### Circular Percentage
 
@@ -42,12 +42,12 @@ Dart Version: 3.4.1 <br />
 |-------------------------|----------------------------------------------------------------|
 | `currentPercentage`     | current percentage - start value (>= 0)                        |
 | `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
-| `size`                  | circular percentage size                                       |
+| `size`                  | circular percentage size, default value: 100                   |
 | `duration`              | duration for the animation (duration == null or duration >= 0) |
 | `strokeWidth`           | stroke width                                                   |
 | `backgroundStrokeWidth` | background stroke width                                        |
-| `percentageColor`       | percentage color                                               |
-| `backgroundColor`       | background color                                               |
+| `percentageColor`       | percentage color, default value: black                         |
+| `backgroundColor`       | background color, default value: black26                       |
 | `textStyle`             | text style for the center text                                 |
 
 ### Circle Percentage
@@ -56,12 +56,12 @@ Dart Version: 3.4.1 <br />
 |-------------------------|----------------------------------------------------------------|
 | `currentPercentage`     | current percentage - start value (>= 0)                        |
 | `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
-| `size`                  | circular percentage size                                       |
+| `size`                  | circular percentage size, default value: 100                   |
 | `duration`              | duration for the animation (duration == null or duration >= 0) |
 | `percentageStrokeWidth` | stroke width                                                   |
 | `backgroundStrokeWidth` | background stroke width                                        |
-| `percentageColor`       | percentage color                                               |
-| `backgroundColor`       | background color                                               |
+| `percentageColor`       | percentage color, default value: black                         |
+| `backgroundColor`       | background color, default value: black26                       |
 | `textStyle`             | text style for the center text                                 |
 
 ### Gradient Circle Percentage
@@ -70,13 +70,13 @@ Dart Version: 3.4.1 <br />
 |-------------------------|----------------------------------------------------------------|
 | `currentPercentage`     | current percentage - start value (>= 0)                        |
 | `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
-| `size`                  | circular percentage size                                       |
+| `size`                  | circular percentage size, default value: 100                   |
 | `duration`              | duration for the animation (duration == null or duration >= 0) |
 | `percentageStrokeWidth` | percentage stroke width                                        |
 | `backgroundStrokeWidth` | background stroke width                                        |
-| `bottomColor`           | bottom color                                                   |
-| `topColor`              | top color                                                      |
-| `backgroundColor`       | background circle color                                        |
+| `bottomColor`           | bottom color, default value: black                             |
+| `topColor`              | top color, default value: white                                |
+| `backgroundColor`       | background circle color, default value: white                  |
 | `textStyle`             | text style for the center text                                 |
 
 ```dart
@@ -115,83 +115,113 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(59.0),
-              child: LinearPercentage(
-                currentPercentage: 70,
-                maxPercentage: 100,
-                height: 20,
-                heightPercentage: 20,
-                leftRightText: LeftRightText.both,
-                backgroundDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.black38,
-                ),
-                percentageDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.black,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CircularPercentage(
-              currentPercentage: 50,
-              maxPercentage: 100,
-              size: 150,
-              duration: 2000,
-              strokeWidth: 10,
-              color: Colors.blue,
-              backgroundColor: Colors.black,
-              backgroundStrokeWidth: 2,
-              textStyle: TextStyle(
-                color: Colors.red,
-                fontSize: 21,
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CirclePercentage(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          const SizedBox(
+            height: 55,
+          ),
+          const Text(
+            "Linear Percentage",
+            style: TextStyle(color: Colors.black, fontSize: 21),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 59.0, left: 59),
+            child: LinearPercentage(
               currentPercentage: 70,
               maxPercentage: 100,
-              size: 150,
-              duration: 2000,
-              strokeWidth: 10,
-              color: Colors.green,
-              backgroundStrokeWidth: 2,
-              textStyle: TextStyle(
-                color: Colors.red,
-                fontSize: 21,
+              backgroundHeight: 20,
+              percentageHeight: 20,
+              leftRightText: LeftRightText.both,
+              backgroundDecoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.black38,
+              ),
+              percentageDecoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.black,
               ),
             ),
-            const SizedBox(
-              height: 15,
+          ),
+          const SizedBox(
+            height: 35,
+          ),
+          const Text(
+            "Circular Percentage",
+            style: TextStyle(color: Colors.black, fontSize: 21),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const CircularPercentage(
+            currentPercentage: 50,
+            maxPercentage: 100,
+            size: 150,
+            duration: 2000,
+            percentageStrokeWidth: 10,
+            percentageColor: Colors.blue,
+            backgroundColor: Colors.black,
+            backgroundStrokeWidth: 2,
+            textStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
             ),
-            const GradientCirclePercentage(
-              currentPercentage: 70,
-              maxPercentage: 100,
-              size: 150,
-              duration: 2000,
-              strokeWidth: 10,
-              bottomColor: Colors.green,
-              backgroundStrokeWidth: 2,
-              textStyle: TextStyle(
-                color: Colors.red,
-                fontSize: 21,
-              ),
+          ),
+          const SizedBox(
+            height: 35,
+          ),
+          const Text(
+            "Circle Percentage",
+            style: TextStyle(color: Colors.black, fontSize: 21),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const CirclePercentage(
+            currentPercentage: 70,
+            maxPercentage: 100,
+            size: 150,
+            duration: 2000,
+            strokeWidth: 10,
+            percentageColor: Colors.green,
+            backgroundStrokeWidth: 2,
+            textStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
             ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 35,
+          ),
+          const Text(
+            "Gradient Circle Percentage",
+            style: TextStyle(color: Colors.black, fontSize: 21),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const GradientCirclePercentage(
+            currentPercentage: 70,
+            maxPercentage: 100,
+            size: 150,
+            duration: 2000,
+            percentageStrokeWidth: 10,
+            bottomColor: Colors.green,
+            backgroundStrokeWidth: 2,
+            textStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
 ```
 
 ## Additional information

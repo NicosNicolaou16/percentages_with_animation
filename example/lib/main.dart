@@ -33,79 +33,108 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(59.0),
-              child: LinearPercentage(
-                currentPercentage: 70,
-                maxPercentage: 100,
-                backgroundHeight: 20,
-                percentageHeight: 20,
-                leftRightText: LeftRightText.both,
-                backgroundDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.black38,
-                ),
-                percentageDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.black,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CircularPercentage(
-              currentPercentage: 50,
-              maxPercentage: 100,
-              size: 150,
-              duration: 2000,
-              percentageStrokeWidth: 10,
-              percentageColor: Colors.blue,
-              backgroundColor: Colors.black,
-              backgroundStrokeWidth: 2,
-              textStyle: TextStyle(
-                color: Colors.red,
-                fontSize: 21,
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const CirclePercentage(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          const SizedBox(
+            height: 55,
+          ),
+          const Text(
+            "Linear Percentage",
+            style: TextStyle(color: Colors.black, fontSize: 21),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 59.0, left: 59),
+            child: LinearPercentage(
               currentPercentage: 70,
               maxPercentage: 100,
-              size: 150,
-              duration: 2000,
-              strokeWidth: 10,
-              percentageColor: Colors.green,
-              backgroundStrokeWidth: 2,
-              textStyle: TextStyle(
-                color: Colors.red,
-                fontSize: 21,
+              backgroundHeight: 20,
+              percentageHeight: 20,
+              leftRightText: LeftRightText.both,
+              backgroundDecoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.black38,
+              ),
+              percentageDecoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.black,
               ),
             ),
-            const SizedBox(
-              height: 15,
+          ),
+          const SizedBox(
+            height: 35,
+          ),
+          const Text(
+            "Circular Percentage",
+            style: TextStyle(color: Colors.black, fontSize: 21),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const CircularPercentage(
+            currentPercentage: 50,
+            maxPercentage: 100,
+            size: 150,
+            duration: 2000,
+            percentageStrokeWidth: 10,
+            percentageColor: Colors.blue,
+            backgroundColor: Colors.black,
+            backgroundStrokeWidth: 2,
+            textStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
             ),
-            const GradientCirclePercentage(
-              currentPercentage: 70,
-              maxPercentage: 100,
-              size: 150,
-              duration: 2000,
-              percentageStrokeWidth: 10,
-              bottomColor: Colors.green,
-              backgroundStrokeWidth: 2,
-              textStyle: TextStyle(
-                color: Colors.red,
-                fontSize: 21,
-              ),
+          ),
+          const SizedBox(
+            height: 35,
+          ),
+          const Text(
+            "Circle Percentage",
+            style: TextStyle(color: Colors.black, fontSize: 21),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const CirclePercentage(
+            currentPercentage: 70,
+            maxPercentage: 100,
+            size: 150,
+            duration: 2000,
+            strokeWidth: 10,
+            percentageColor: Colors.green,
+            backgroundStrokeWidth: 2,
+            textStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
             ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 35,
+          ),
+          const Text(
+            "Gradient Circle Percentage",
+            style: TextStyle(color: Colors.black, fontSize: 21),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const GradientCirclePercentage(
+            currentPercentage: 70,
+            maxPercentage: 100,
+            size: 150,
+            duration: 2000,
+            percentageStrokeWidth: 10,
+            bottomColor: Colors.green,
+            backgroundStrokeWidth: 2,
+            textStyle: TextStyle(
+              color: Colors.red,
+              fontSize: 21,
+            ),
+          ),
+        ],
       ),
     );
   }
