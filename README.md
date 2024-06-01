@@ -227,5 +227,5 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ## Additional information
 
-Thank you for using my package, any feedback is welcome. You can report any issue, ask a question on package GitHub repository.
+Thank you for using my package, any feedback is welcome. You can report any bug, ask a question on package GitHub repository.
 https://github.com/NicosNicolaou16/percentages_with_animation/issues
