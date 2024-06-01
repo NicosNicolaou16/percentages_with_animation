@@ -45,7 +45,7 @@ Dart Version: 3.4.1 <br />
 | `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
 | `size`                  | circular percentage size, default value: 100                   |
 | `duration`              | duration for the animation (duration == null or duration >= 0) |
-| `strokeWidth`           | stroke width                                                   |
+| `percentageStrokeWidth` | stroke width                                                   |
 | `backgroundStrokeWidth` | background stroke width                                        |
 | `percentageColor`       | percentage color, default value: black                         |
 | `backgroundColor`       | background color, default value: black26                       |
