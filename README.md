@@ -11,7 +11,7 @@ Tested Versioning: <br />
 Flutter SDK version: 3.22.1 <br />
 Dart Version: 3.4.1 <br /> <br />
 
-Important Note: The recommended version is percentages_with_animation 0.0.5+1 <br />
+Important Note: The recommended version is percentages_with_animation 0.0.5+2 <br />
 
 ## Usage
 
