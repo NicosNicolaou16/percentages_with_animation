@@ -14,8 +14,8 @@ Dart Version: 3.4.1 <br />
 ## Usage
 
 <p align="left">
-  <a title="simulator_image"><img src="screenshots/Screenshot_20240601_175618.png" height="530" width="250"></a>
-  <a title="simulator_image"><img src="screenshots/example_gif.gif" height="530" width="250"></a>
+  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/blob/main/screenshots/Screenshot_20240601_175618.png" height="530" width="250"></a>
+  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/blob/main/screenshots/example_gif.gif" height="530" width="250"></a>
 </p>
 
 ### Linear Percentage
