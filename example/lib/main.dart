@@ -42,8 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: LinearPercentage(
                 currentPercentage: 70,
                 maxPercentage: 100,
-                height: 20,
-                heightPercentage: 20,
+                backgroundHeight: 20,
+                percentageHeight: 20,
                 leftRightText: LeftRightText.both,
                 backgroundDecoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),

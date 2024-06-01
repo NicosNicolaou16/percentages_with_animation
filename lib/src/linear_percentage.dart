@@ -6,12 +6,12 @@ import 'package:percentages_with_animation/src/utitils/constants.dart';
 class LinearPercentage extends StatefulWidget {
   final double currentPercentage;
   final double maxPercentage;
-  final double height;
-  final double heightPercentage;
+  final double backgroundHeight;
+  final double percentageHeight;
   final int? duration;
   final Decoration? backgroundDecoration;
   final Decoration? percentageDecoration;
-  final Color backgroundPercentageColor;
+  final Color backgroundColor;
   final Color percentageColor;
   final LeftRightText leftRightText;
   final TextStyle? leftTextStyle;
@@ -23,12 +23,12 @@ class LinearPercentage extends StatefulWidget {
     super.key,
     required this.currentPercentage,
     required this.maxPercentage,
-    required this.height,
-    required this.heightPercentage,
+    required this.backgroundHeight,
+    required this.percentageHeight,
     this.duration,
     this.backgroundDecoration,
     this.percentageDecoration,
-    this.backgroundPercentageColor = Colors.black26,
+    this.backgroundColor = Colors.black26,
     this.percentageColor = Colors.black,
     this.leftRightText = LeftRightText.none,
     this.leftTextStyle,
@@ -75,9 +75,9 @@ class _LinearPercentageState extends State<LinearPercentage> {
                 children: [
                   Container(
                     width: maxWidth,
-                    height: widget.height,
+                    height: widget.backgroundHeight,
                     color: widget.backgroundDecoration == null
-                        ? widget.backgroundPercentageColor
+                        ? widget.backgroundColor
                         : null,
                     decoration: widget.backgroundDecoration,
                   ),
@@ -90,7 +90,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
                     ),
                     builder: (context, value, _) => Container(
                       width: value,
-                      height: widget.heightPercentage,
+                      height: widget.percentageHeight,
                       color: widget.percentageDecoration == null
                           ? widget.percentageColor
                           : null,
