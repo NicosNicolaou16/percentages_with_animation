@@ -15,6 +15,7 @@ Dart Version: 3.4.1 <br />
 
 <p align="left">
   <a title="simulator_image"><img src="screenshots/Screenshot_20240601_175618.png" height="530" width="250"></a>
+  <a title="simulator_image"><img src="screenshots/example_gif.gif" height="530" width="250"></a>
 </p>
 
 ### Linear Percentage
