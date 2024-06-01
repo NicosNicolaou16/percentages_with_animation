@@ -17,22 +17,22 @@ Minimum Flutter SDK: 2.12.0
 
 ### Linear Percentage
 
-| Parameters              | Description                                                                                                                 |
-|-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                                                     |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                                                     |
-| `backgroundHeight`      | background height                                                                                                           |
-| `percentageHeight`      | percentage height                                                                                                           |
-| `duration`              | duration for the animation                                                                                                  |
-| `backgroundDecoration`  | decoration for background                                                                                                   |
-| `percentageDecoration`  | decoration for percentage                                                                                                   |
-| `backgroundColor`       | background color                                                                                                            |
-| `percentageColor`       | percentage color                                                                                                            |
-| `leftRightText`         | Enum value for the left and right text (min and max value) - accepted value leftOnly, rightOnly, both, none (default value) |
-| `leftTextStyle`         | text style for left text                                                                                                    |
-| `rightTextStyle`        | text style for right text                                                                                                   |
-| `leftTextRightPadding`  | text left padding from the percentage                                                                                       |
-| `rightTextRightPadding` | text right padding from the percentage                                                                                      |
+| Parameters              | Description                                                                                                                         |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                                                                             |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                                                             |
+| `backgroundHeight`      | background height                                                                                                                   |
+| `percentageHeight`      | percentage height                                                                                                                   |
+| `duration`              | duration for the animation                                                                                                          |
+| `backgroundDecoration`  | decoration for background                                                                                                           |
+| `percentageDecoration`  | decoration for percentage                                                                                                           |
+| `backgroundColor`       | background color                                                                                                                    |
+| `percentageColor`       | percentage color                                                                                                                    |
+| `leftRightText`         | Enum value for the left and right text (min and max value) - accepted value `leftOnly`, `rightOnly`, `both`, `none` (default value) |
+| `leftTextStyle`         | text style for left text                                                                                                            |
+| `rightTextStyle`        | text style for right text                                                                                                           |
+| `leftTextRightPadding`  | text left padding from the percentage                                                                                               |
+| `rightTextRightPadding` | text right padding from the percentage                                                                                              |
 
 ```dart
 import 'package:flutter/material.dart';
