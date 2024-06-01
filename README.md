@@ -5,7 +5,8 @@ and gradient circle percentages.
 
 ## Getting started
 
-There is not any prerequisites.
+### Versioning
+Minimum Flutter SDK: 2.12.0
 
 ## Usage
 
