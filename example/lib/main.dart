@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
               size: 150,
               duration: 2000,
               strokeWidth: 10,
-              color: Colors.blue,
+              percentageColor: Colors.blue,
               backgroundColor: Colors.black,
               backgroundStrokeWidth: 2,
               textStyle: TextStyle(

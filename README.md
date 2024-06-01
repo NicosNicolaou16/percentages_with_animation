@@ -5,9 +5,7 @@ and gradient circle percentages.
 
 ## Getting started
 
-### Versioning
-
-Minimum Flutter SDK: 2.12.0
+Version Minimum Flutter SDK: 2.12.0
 
 ## Usage
 
@@ -33,6 +31,20 @@ Minimum Flutter SDK: 2.12.0
 | `rightTextStyle`        | text style for right text                                                                                                           |
 | `leftTextRightPadding`  | text left padding from the percentage                                                                                               |
 | `rightTextRightPadding` | text right padding from the percentage                                                                                              |
+
+### Circular Percentage
+
+| Parameters              | Description                                             |
+|-------------------------|---------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                 |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage) |
+| `size`                  | circular percentage size                                |
+| `duration`              | duration for the animation                              |
+| `strokeWidth`           | stroke width                                            |
+| `backgroundStrokeWidth` | background stroke width                                 |
+| `percentageColor`       | percentage color                                        |
+| `backgroundColor`       | background color                                        |
+| `textStyle`             | text style for the center text                          |
 
 ```dart
 import 'package:flutter/material.dart';
