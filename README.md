@@ -9,13 +9,15 @@ Version Minimum Flutter SDK: 3.0.0
 
 Tested Versioning: <br />
 Flutter SDK version: 3.22.1 <br />
-Dart Version: 3.4.1 <br />
+Dart Version: 3.4.1 <br /> <br />
+
+Important Note: The recommended version is 0.0.5+1 <br />
 
 ## Usage
 
 <p align="left">
-  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/blob/main/screenshots/Screenshot_20240601_175618.png" height="530" width="250"></a>
-  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/blob/main/screenshots/example_gif.gif" height="530" width="250"></a>
+  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/Screenshot_20240601_175618.png" height="530" width="250"></a>
+  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/example_gif.gif" height="530" width="250"></a>
 </p>
 
 ### Linear Percentage
