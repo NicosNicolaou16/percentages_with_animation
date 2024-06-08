@@ -55,6 +55,7 @@ class GradientCirclePercentage extends StatefulWidget {
 }
 
 class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
+  ///default value for the animation duration time in milli second
   final int _delay = 1000;
 
   @override
