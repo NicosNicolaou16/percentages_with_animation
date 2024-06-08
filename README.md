@@ -1,6 +1,6 @@
 ## Features
 
-This package provide you percentages custom widgets with animations such as linear, circular, circle
+This package provide you percentages with custom widgets and animation such as linear, circular, circle
 and gradient circle percentages.
 
 ## Getting started
@@ -8,10 +8,8 @@ and gradient circle percentages.
 Version Minimum Flutter SDK: 3.0.0
 
 Tested Versioning: <br />
-Flutter SDK version: 3.22.1 <br />
-Dart Version: 3.4.1 <br /> <br />
-
-Important Note: The recommended version is percentages_with_animation 0.0.5+2 <br />
+Flutter SDK version: 3.22.2 <br />
+Dart Version: 3.4.3 <br /> <br />
 
 ## Usage
 
@@ -22,65 +20,65 @@ Important Note: The recommended version is percentages_with_animation 0.0.5+2 <b
 
 ### Linear Percentage
 
-| Parameters              | Description                                                                                                                                |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                                                                    |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                                                                    |
-| `backgroundHeight`      | background height                                                                                                                          |
-| `percentageHeight`      | percentage height                                                                                                                          |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                                                                             |
-| `backgroundDecoration`  | decoration for background                                                                                                                  |
-| `percentageDecoration`  | decoration for percentage                                                                                                                  |
-| `backgroundColor`       | background color, default value: black26                                                                                                   |
-| `percentageColor`       | percentage color, default value: black                                                                                                     |
-| `leftRightText`         | Enum value for the left and right text (min and max value) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
-| `leftTextStyle`         | text style for left text                                                                                                                   |
-| `rightTextStyle`        | text style for right text                                                                                                                  |
-| `leftTextRightPadding`  | text left padding from the percentage, default value: 5                                                                                    |
-| `rightTextRightPadding` | text right padding from the percentage, default value: 5                                                                                   |
+| Parameters              | Description                                                                                                                                        |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                                                                                            |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                                                                            |
+| `backgroundHeight`      | background height behind of the percentage view                                                                                                    |
+| `percentageHeight`      | percentage height                                                                                                                                  |
+| `duration`              | duration for the animation (duration == null or duration >= 0)                                                                                     |
+| `backgroundDecoration`  | decoration for background behind of the percentage view                                                                                            |
+| `percentageDecoration`  | decoration for percentage                                                                                                                          |
+| `backgroundColor`       | background color behind of the percentage view, default value: black26                                                                             |
+| `percentageColor`       | percentage color, default value: black                                                                                                             |
+| `leftRightText`         | Enum value for the left and right text (min and max value - label) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
+| `leftTextStyle`         | text style for left text                                                                                                                           |
+| `rightTextStyle`        | text style for right text                                                                                                                          |
+| `leftTextRightPadding`  | text left padding from the percentage, default value: 5                                                                                            |
+| `rightTextRightPadding` | text right padding from the percentage, default value: 5                                                                                           |
 
 ### Circular Percentage
 
-| Parameters              | Description                                                    |
-|-------------------------|----------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                        |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
-| `size`                  | circular percentage size, default value: 100                   |
-| `duration`              | duration for the animation (duration == null or duration >= 0) |
-| `percentageStrokeWidth` | stroke width                                                   |
-| `backgroundStrokeWidth` | background stroke width                                        |
-| `percentageColor`       | percentage color, default value: black                         |
-| `backgroundColor`       | background color, default value: black26                       |
-| `textStyle`             | text style for the center text                                 |
+| Parameters              | Description                                                            |
+|-------------------------|------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                |
+| `size`                  | circular percentage size, default value: 100                           |
+| `duration`              | duration for the animation (duration == null or duration >= 0)         |
+| `percentageStrokeWidth` | stroke width                                                           |
+| `backgroundStrokeWidth` | background stroke width behind of the percentage view                  |
+| `percentageColor`       | percentage color, default value: black                                 |
+| `backgroundColor`       | background color behind of the percentage view, default value: black26 |
+| `textStyle`             | text style for the center text                                         |
 
 ### Circle Percentage
 
-| Parameters              | Description                                                    |
-|-------------------------|----------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                        |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
-| `size`                  | circular percentage size, default value: 100                   |
-| `duration`              | duration for the animation (duration == null or duration >= 0) |
-| `percentageStrokeWidth` | stroke width                                                   |
-| `backgroundStrokeWidth` | background stroke width                                        |
-| `percentageColor`       | percentage color, default value: black                         |
-| `backgroundColor`       | background color, default value: black26                       |
-| `textStyle`             | text style for the center text                                 |
+| Parameters              | Description                                                            |
+|-------------------------|------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                |
+| `size`                  | circular percentage size, default value: 100                           |
+| `duration`              | duration for the animation (duration == null or duration >= 0)         |
+| `percentageStrokeWidth` | stroke width                                                           |
+| `backgroundStrokeWidth` | background stroke width behind of the percentage view                  |
+| `percentageColor`       | percentage color, default value: black                                 |
+| `backgroundColor`       | background color behind of the percentage view, default value: black26 |
+| `textStyle`             | text style for the center text                                         |
 
 ### Gradient Circle Percentage
 
-| Parameters              | Description                                                    |
-|-------------------------|----------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                        |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)        |
-| `size`                  | circular percentage size, default value: 100                   |
-| `duration`              | duration for the animation (duration == null or duration >= 0) |
-| `percentageStrokeWidth` | percentage stroke width                                        |
-| `backgroundStrokeWidth` | background stroke width                                        |
-| `bottomColor`           | bottom color, default value: black                             |
-| `topColor`              | top color, default value: white                                |
-| `backgroundColor`       | background circle color, default value: white                  |
-| `textStyle`             | text style for the center text                                 |
+| Parameters              | Description                                                                 |
+|-------------------------|-----------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                     |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                     |
+| `size`                  | circular percentage size, default value: 100                                |
+| `duration`              | duration for the animation (duration == null or duration >= 0)              |
+| `percentageStrokeWidth` | percentage stroke width                                                     |
+| `backgroundStrokeWidth` | background stroke width behind of the percentage view                       |
+| `bottomColor`           | bottom color, default value: black                                          |
+| `topColor`              | top color, default value: white                                             |
+| `backgroundColor`       | background circle color behind of the percentage view, default value: white |
+| `textStyle`             | text style for the center text                                              |
 
 ```dart
 import 'package:flutter/material.dart';
@@ -188,7 +186,6 @@ class _MyHomePageState extends State<MyHomePage> {
             maxPercentage: 100,
             size: 150,
             duration: 2000,
-            strokeWidth: 10,
             percentageColor: Colors.green,
             backgroundStrokeWidth: 2,
             textStyle: TextStyle(
@@ -229,5 +226,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ## Additional information
 
-Thank you for using my package, any feedback is welcome. You can report any bug, ask a question on package GitHub repository.
+Thank you for using my package, any feedback is welcome. You can report any bug, ask a question on
+package GitHub repository.
 https://github.com/NicosNicolaou16/percentages_with_animation/issues
