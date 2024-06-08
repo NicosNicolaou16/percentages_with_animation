@@ -11,8 +11,6 @@ Tested Versioning: <br />
 Flutter SDK version: 3.22.2 <br />
 Dart Version: 3.4.3 <br /> <br />
 
-Important Note: The recommended version is percentages_with_animation 0.0.5+2 <br />
-
 ## Usage
 
 <p align="left">
