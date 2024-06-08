@@ -1,6 +1,6 @@
 ## 0.0.5+3
 
-* - What's new:
+What's new:
 - improved the documentation and add comments.
 - Removed unused `strokeWidth` parameter from `CirclePercentage` widget.
 
