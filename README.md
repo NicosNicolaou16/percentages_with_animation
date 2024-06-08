@@ -188,7 +188,6 @@ class _MyHomePageState extends State<MyHomePage> {
             maxPercentage: 100,
             size: 150,
             duration: 2000,
-            strokeWidth: 10,
             percentageColor: Colors.green,
             backgroundStrokeWidth: 2,
             textStyle: TextStyle(

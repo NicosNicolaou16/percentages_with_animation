@@ -1,15 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/src/custom_painter/fill_painter.dart';
 
+/// The circle percentage class provide you a to draw a circle percentage with different customization
 class CirclePercentage extends StatefulWidget {
+  /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage)
   final double currentPercentage;
+
+  /// This parameter is required and it's the maximum percentage value, (currentPercentage <= maxPercentage)
   final double maxPercentage;
+
+  /// This parameter is the circle size for the percentage with default size 100
   final double size;
+
+  /// This parameter is the duration for the animation with default value 1000 ms
   final int? duration;
-  final double strokeWidth;
+
+  /// This parameter is the stroke width for the background gradient circle
   final double backgroundStrokeWidth;
+
+  /// This parameter is the bottom color for the percentage
   final Color percentageColor;
+
+  /// This parameter is the circle color behind of the percentage
   final Color backgroundColor;
+
+  /// This parameter is the text style of the label for the percentage text
   final TextStyle textStyle;
 
   const CirclePercentage({
@@ -18,7 +33,6 @@ class CirclePercentage extends StatefulWidget {
     required this.maxPercentage,
     this.size = 100,
     this.duration,
-    required this.strokeWidth,
     required this.backgroundStrokeWidth,
     this.percentageColor = Colors.black,
     this.backgroundColor = Colors.black12,
