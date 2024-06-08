@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/percentages_with_animation.dart';
 import 'package:percentages_with_animation/src/builder/percentage_builder.dart';
 
-/// The Linear percentage Class provide you a to draw a linear percentage with different customization
+/// The Linear percentage class provide you a to draw a linear percentage with different customization
 class LinearPercentage extends StatefulWidget {
   /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage)
   final double currentPercentage;
@@ -16,7 +16,7 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is required and it's the percentage height
   final double percentageHeight;
 
-  /// This parameter is the animation duration with default value 1000 ms
+  /// This parameter is the duration for the animation with default value 1000 ms
   final int? duration;
 
   /// This parameter is the background decoration behind of the percentage view
@@ -28,7 +28,7 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the background color behind of the percentage view with default value black26
   final Color backgroundColor;
 
-  /// This parameter is the percentage color
+  /// This parameter is the percentage color with default value black
   final Color percentageColor;
 
   ///This parameter is the enum value for the left and right text (min and max value - label) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none`
