@@ -2,20 +2,48 @@ import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/percentages_with_animation.dart';
 import 'package:percentages_with_animation/src/builder/percentage_builder.dart';
 
+/// The Linear percentage Class provide you a to draw a linear percentage with different customization
 class LinearPercentage extends StatefulWidget {
+  /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage)
   final double currentPercentage;
+
+  /// This parameter is required and it's the maximum percentage value, (currentPercentage <= maxPercentage)
   final double maxPercentage;
+
+  /// This parameter is required and it's the background height behind of the percentage view
   final double backgroundHeight;
+
+  /// This parameter is required and it's the percentage height
   final double percentageHeight;
+
+  /// This parameter is the animation duration with default value 1000 ms
   final int? duration;
+
+  /// This parameter is the background decoration behind of the percentage view
   final Decoration? backgroundDecoration;
+
+  /// This parameter is the percentage decoration
   final Decoration? percentageDecoration;
+
+  /// This parameter is the background color behind of the percentage view with default value black26
   final Color backgroundColor;
+
+  /// This parameter is the percentage color
   final Color percentageColor;
+
+  ///This parameter is the enum value for the left and right text (min and max value - label) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none`
   final LeftRightText leftRightText;
+
+  /// This parameter is the text style for the left text
   final TextStyle? leftTextStyle;
+
+  /// This parameter is the text style for the right text
   final TextStyle? rightTextStyle;
+
+  /// This parameter is the right text padding from percentage view
   final double leftTextRightPadding;
+
+  /// This parameter is the left text padding from percentage view
   final double rightTextRightPadding;
 
   const LinearPercentage({
@@ -43,6 +71,7 @@ class LinearPercentage extends StatefulWidget {
 }
 
 class _LinearPercentageState extends State<LinearPercentage> {
+  ///default value for the animation duration time in milli second
   final int _delay = 1000;
 
   @override

@@ -22,22 +22,22 @@ Important Note: The recommended version is percentages_with_animation 0.0.5+2 <b
 
 ### Linear Percentage
 
-| Parameters              | Description                                                                                                                                |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                                                                    |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                                                                    |
-| `backgroundHeight`      | background height                                                                                                                          |
-| `percentageHeight`      | percentage height                                                                                                                          |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                                                                             |
-| `backgroundDecoration`  | decoration for background                                                                                                                  |
-| `percentageDecoration`  | decoration for percentage                                                                                                                  |
-| `backgroundColor`       | background color, default value: black26                                                                                                   |
-| `percentageColor`       | percentage color, default value: black                                                                                                     |
-| `leftRightText`         | Enum value for the left and right text (min and max value) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
-| `leftTextStyle`         | text style for left text                                                                                                                   |
-| `rightTextStyle`        | text style for right text                                                                                                                  |
-| `leftTextRightPadding`  | text left padding from the percentage, default value: 5                                                                                    |
-| `rightTextRightPadding` | text right padding from the percentage, default value: 5                                                                                   |
+| Parameters              | Description                                                                                                                                        |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                                                                                            |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                                                                            |
+| `backgroundHeight`      | background height                                                                                                                                  |
+| `percentageHeight`      | percentage height                                                                                                                                  |
+| `duration`              | duration for the animation (duration == null or duration >= 0)                                                                                     |
+| `backgroundDecoration`  | decoration for background behind of the percentage view                                                                                            |
+| `percentageDecoration`  | decoration for percentage                                                                                                                          |
+| `backgroundColor`       | background color, default value: black26                                                                                                           |
+| `percentageColor`       | percentage color, default value: black                                                                                                             |
+| `leftRightText`         | Enum value for the left and right text (min and max value - label) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
+| `leftTextStyle`         | text style for left text                                                                                                                           |
+| `rightTextStyle`        | text style for right text                                                                                                                          |
+| `leftTextRightPadding`  | text left padding from the percentage, default value: 5                                                                                            |
+| `rightTextRightPadding` | text right padding from the percentage, default value: 5                                                                                           |
 
 ### Circular Percentage
 
@@ -229,5 +229,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ## Additional information
 
-Thank you for using my package, any feedback is welcome. You can report any bug, ask a question on package GitHub repository.
+Thank you for using my package, any feedback is welcome. You can report any bug, ask a question on
+package GitHub repository.
 https://github.com/NicosNicolaou16/percentages_with_animation/issues
