@@ -46,6 +46,10 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the left text padding from percentage view with default value: 5
   final double rightTextRightPadding;
 
+  final bool showLabelOnPercentage;
+
+  final TextStyle? labelOnPercentageStyle;
+
   const LinearPercentage({
     super.key,
     required this.currentPercentage,
@@ -62,6 +66,8 @@ class LinearPercentage extends StatefulWidget {
     this.rightTextStyle,
     this.leftTextRightPadding = 5,
     this.rightTextRightPadding = 5,
+    this.showLabelOnPercentage = false,
+    this.labelOnPercentageStyle,
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration == null || duration >= 0);
@@ -84,21 +90,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
           children: [
             if (widget.leftRightText == LeftRightText.leftOnly ||
                 widget.leftRightText == LeftRightText.both) ...[
-              TweenAnimationBuilder(
-                duration: Duration(milliseconds: widget.duration ?? _delay),
-                curve: Curves.easeInOut,
-                tween: Tween<double>(
-                  begin: 0,
-                  end: widget.currentPercentage,
-                ),
-                builder: (context, value, _) => Text(
-                  value.toInt().toString(),
-                  style: widget.leftTextStyle,
-                ),
-              ),
-              SizedBox(
-                width: widget.leftTextRightPadding,
-              ),
+              _leftText(),
             ],
             Expanded(
               child: Stack(
@@ -125,6 +117,18 @@ class _LinearPercentageState extends State<LinearPercentage> {
                           ? widget.percentageColor
                           : null,
                       decoration: widget.percentageDecoration,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: widget.showLabelOnPercentage == true
+                            ? Align(
+                                alignment: Alignment.centerRight,
+                                child: Text(
+                                  "$percentage/${widget.maxPercentage.toInt().toString()}",
+                                  style: widget.labelOnPercentageStyle,
+                                ),
+                              )
+                            : null,
+                      ),
                     ),
                   ),
                 ],
@@ -132,17 +136,39 @@ class _LinearPercentageState extends State<LinearPercentage> {
             ),
             if (widget.leftRightText == LeftRightText.rightOnly ||
                 widget.leftRightText == LeftRightText.both) ...[
-              SizedBox(
-                width: widget.rightTextRightPadding,
-              ),
-              Text(
-                widget.maxPercentage.toInt().toString(),
-                style: widget.rightTextStyle,
-              ),
+              _rightText(),
             ],
           ],
         );
       },
+    );
+  }
+
+  Widget _leftText() {
+    return Padding(
+      padding: EdgeInsets.only(right: widget.leftTextRightPadding),
+      child: TweenAnimationBuilder(
+        duration: Duration(milliseconds: widget.duration ?? _delay),
+        curve: Curves.easeInOut,
+        tween: Tween<double>(
+          begin: 0,
+          end: widget.currentPercentage,
+        ),
+        builder: (context, value, _) => Text(
+          value.toInt().toString(),
+          style: widget.leftTextStyle,
+        ),
+      ),
+    );
+  }
+
+  Widget _rightText() {
+    return Padding(
+      padding: EdgeInsets.only(left: widget.rightTextRightPadding),
+      child: Text(
+        widget.maxPercentage.toInt().toString(),
+        style: widget.rightTextStyle,
+      ),
     );
   }
 }

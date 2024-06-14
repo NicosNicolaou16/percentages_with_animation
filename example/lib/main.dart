@@ -54,6 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundHeight: 20,
               percentageHeight: 20,
               leftRightText: LeftRightText.both,
+              showLabelOnPercentage: true,
+              labelOnPercentageStyle: const TextStyle(color: Colors.white),
               backgroundDecoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.black38,
