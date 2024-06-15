@@ -46,8 +46,10 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the left text padding from percentage view with default value: 5
   final double rightTextRightPadding;
 
+  /// This parameter is the option to show the label on percentage with default value: false
   final bool showLabelOnPercentage;
 
+  /// This parameter is the text style for label on percentage
   final TextStyle? labelOnPercentageStyle;
 
   const LinearPercentage({
@@ -120,13 +122,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
                       child: Padding(
                         padding: const EdgeInsets.only(right: 8.0),
                         child: widget.showLabelOnPercentage == true
-                            ? Align(
-                                alignment: Alignment.centerRight,
-                                child: Text(
-                                  "$percentage/${widget.maxPercentage.toInt().toString()}",
-                                  style: widget.labelOnPercentageStyle,
-                                ),
-                              )
+                            ? _labelOnPercentage(percentage)
                             : null,
                       ),
                     ),
@@ -168,6 +164,16 @@ class _LinearPercentageState extends State<LinearPercentage> {
       child: Text(
         widget.maxPercentage.toInt().toString(),
         style: widget.rightTextStyle,
+      ),
+    );
+  }
+
+  Widget _labelOnPercentage(double percentage) {
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Text(
+        "$percentage/${widget.maxPercentage.toInt().toString()}",
+        style: widget.labelOnPercentageStyle,
       ),
     );
   }
