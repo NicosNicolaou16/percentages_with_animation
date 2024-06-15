@@ -1,4 +1,12 @@
-## 0.0.6+1
+## 0.0.6+3
+
+What's new:
+- Added the option to show text label on the linear percentage.
+- Added text style for the text label on the linear percentage.
+- Updated the documentation.
+- Fixed README file.
+
+## 0.0.6+2
 
 What's new:
 - Added the option to show text label on the linear percentage.
