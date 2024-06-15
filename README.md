@@ -15,7 +15,7 @@ Dart Version: 3.4.3 <br /> <br />
 ## Usage
 
 <p align="left">
-  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/Screenshot_20240601_175618.png" height="530" width="250"></a>
+  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/Screenshot_20240615_105532.png" height="530" width="250"></a>
   <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/example_gif.gif" height="530" width="250"></a>
 </p>
 
