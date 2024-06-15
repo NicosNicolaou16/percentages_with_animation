@@ -3,6 +3,7 @@
 What's new:
 - Important change from the previous version - Breaking Changes:
   - Changed the name of the parameter for Linear Percentage from `showLabelOnPercentage` and `labelOnPercentageStyle` to `showPercentageOnPercentageView` and `percentageOnPercentageViewTextStyle`
+- Minor fixes.
 - Previous Version changes:
   - Added the option to show text label on the linear percentage.
   - Added text style for the text label on the linear percentage.

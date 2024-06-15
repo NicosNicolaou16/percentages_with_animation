@@ -13,7 +13,7 @@ class GradientCirclePercentage extends StatefulWidget {
   final double size;
 
   /// This parameter is the duration for the animation with default value 1000 ms
-  final int? duration;
+  final int duration;
 
   /// This parameter is the stroke width for the percentage gradient circle
   final double percentageStrokeWidth;
@@ -38,7 +38,7 @@ class GradientCirclePercentage extends StatefulWidget {
     required this.currentPercentage,
     required this.maxPercentage,
     this.size = 100,
-    this.duration,
+    this.duration = 1000,
     required this.percentageStrokeWidth,
     required this.backgroundStrokeWidth,
     this.bottomColor = Colors.black,
@@ -47,7 +47,7 @@ class GradientCirclePercentage extends StatefulWidget {
     this.textStyle = const TextStyle(color: Colors.black),
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
-        assert(duration == null || duration >= 0);
+        assert(duration >= 0);
 
   @override
   State<GradientCirclePercentage> createState() =>
@@ -55,13 +55,10 @@ class GradientCirclePercentage extends StatefulWidget {
 }
 
 class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
-  ///default value for the animation duration time in milli second
-  final int _delay = 1000;
-
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-      duration: Duration(milliseconds: widget.duration ?? _delay),
+      duration: Duration(milliseconds: widget.duration),
       curve: Curves.easeIn,
       tween: Tween<double>(
         begin: 0,

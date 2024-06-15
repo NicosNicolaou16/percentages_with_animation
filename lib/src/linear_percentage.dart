@@ -17,7 +17,7 @@ class LinearPercentage extends StatefulWidget {
   final double percentageHeight;
 
   /// This parameter is the duration for the animation with default value 1000 ms
-  final int? duration;
+  final int duration;
 
   /// This parameter is the background decoration behind of the percentage view
   final Decoration? backgroundDecoration;
@@ -58,7 +58,7 @@ class LinearPercentage extends StatefulWidget {
     required this.maxPercentage,
     required this.backgroundHeight,
     required this.percentageHeight,
-    this.duration,
+    this.duration = 1000,
     this.backgroundDecoration,
     this.percentageDecoration,
     this.backgroundColor = Colors.black26,
@@ -72,16 +72,13 @@ class LinearPercentage extends StatefulWidget {
     this.percentageOnPercentageViewTextStyle,
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
-        assert(duration == null || duration >= 0);
+        assert(duration >= 0);
 
   @override
   State<LinearPercentage> createState() => _LinearPercentageState();
 }
 
 class _LinearPercentageState extends State<LinearPercentage> {
-  ///default value for the animation duration time in milli second
-  final int _delay = 1000;
-
   @override
   Widget build(BuildContext context) {
     return PercentageBuilder(
@@ -106,7 +103,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
                     decoration: widget.backgroundDecoration,
                   ),
                   TweenAnimationBuilder(
-                    duration: Duration(milliseconds: widget.duration ?? _delay),
+                    duration: Duration(milliseconds: widget.duration),
                     curve: Curves.easeInOut,
                     tween: Tween<double>(
                       begin: 0,
@@ -144,7 +141,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Padding(
       padding: EdgeInsets.only(right: widget.leftTextRightPadding),
       child: TweenAnimationBuilder(
-        duration: Duration(milliseconds: widget.duration ?? _delay),
+        duration: Duration(milliseconds: widget.duration),
         curve: Curves.easeInOut,
         tween: Tween<double>(
           begin: 0,
