@@ -46,11 +46,11 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the left text padding from percentage view with default value: 5
   final double rightTextRightPadding;
 
-  /// This parameter is the option to show the label on percentage with default value: false
-  final bool showLabelOnPercentage;
+  /// This parameter is the option to show the percentage value on percentage view with default value: false
+  final bool showPercentageOnPercentageView;
 
-  /// This parameter is the text style for label on percentage
-  final TextStyle? labelOnPercentageStyle;
+  /// This parameter is the text style for percentage on percentage view
+  final TextStyle? percentageOnPercentageViewTextStyle;
 
   const LinearPercentage({
     super.key,
@@ -68,8 +68,8 @@ class LinearPercentage extends StatefulWidget {
     this.rightTextStyle,
     this.leftTextRightPadding = 5,
     this.rightTextRightPadding = 5,
-    this.showLabelOnPercentage = false,
-    this.labelOnPercentageStyle,
+    this.showPercentageOnPercentageView = false,
+    this.percentageOnPercentageViewTextStyle,
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration == null || duration >= 0);
@@ -121,7 +121,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
                       decoration: widget.percentageDecoration,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 8.0),
-                        child: widget.showLabelOnPercentage == true
+                        child: widget.showPercentageOnPercentageView == true
                             ? _labelOnPercentage()
                             : null,
                       ),
@@ -173,7 +173,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
       alignment: Alignment.centerRight,
       child: Text(
         "${widget.currentPercentage.toInt().toString()}/${widget.maxPercentage.toInt().toString()}",
-        style: widget.labelOnPercentageStyle,
+        style: widget.percentageOnPercentageViewTextStyle,
       ),
     );
   }

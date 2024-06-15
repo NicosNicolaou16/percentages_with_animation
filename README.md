@@ -21,24 +21,24 @@ Dart Version: 3.4.3 <br /> <br />
 
 ### Linear Percentage
 
-| Parameters               | Description                                                                                                                                        |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `currentPercentage`      | current percentage - start value (>= 0)                                                                                                            |
-| `maxPercentage`          | maximum percentage (currentPercentage <= maxPercentage)                                                                                            |
-| `backgroundHeight`       | background height behind of the percentage view                                                                                                    |
-| `percentageHeight`       | percentage height                                                                                                                                  |
-| `duration`               | duration for the animation (duration == null or duration >= 0)                                                                                     |
-| `backgroundDecoration`   | decoration for background behind of the percentage view                                                                                            |
-| `percentageDecoration`   | decoration for percentage                                                                                                                          |
-| `backgroundColor`        | background color behind of the percentage view, default value: black26                                                                             |
-| `percentageColor`        | percentage color, default value: black                                                                                                             |
-| `leftRightText`          | Enum value for the left and right text (min and max value - label) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
-| `leftTextStyle`          | text style for left text                                                                                                                           |
-| `rightTextStyle`         | text style for right text                                                                                                                          |
-| `leftTextRightPadding`   | text left padding from the percentage, default value: 5                                                                                            |
-| `rightTextRightPadding`  | text right padding from the percentage, default value: 5                                                                                           |
-| `showLabelOnPercentage`  | option to show the text label on the percentage, default value: false                                                                              |
-| `labelOnPercentageStyle` | text style for the label text on the percentage                                                                                                    |
+| Parameters                            | Description                                                                                                                                        |
+|---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`                   | current percentage - start value (>= 0)                                                                                                            |
+| `maxPercentage`                       | maximum percentage (currentPercentage <= maxPercentage)                                                                                            |
+| `backgroundHeight`                    | background height behind of the percentage view                                                                                                    |
+| `percentageHeight`                    | percentage height                                                                                                                                  |
+| `duration`                            | duration for the animation (duration == null or duration >= 0)                                                                                     |
+| `backgroundDecoration`                | decoration for background behind of the percentage view                                                                                            |
+| `percentageDecoration`                | decoration for percentage                                                                                                                          |
+| `backgroundColor`                     | background color behind of the percentage view, default value: black26                                                                             |
+| `percentageColor`                     | percentage color, default value: black                                                                                                             |
+| `leftRightText`                       | Enum value for the left and right text (min and max value - label) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
+| `leftTextStyle`                       | text style for left text                                                                                                                           |
+| `rightTextStyle`                      | text style for right text                                                                                                                          |
+| `leftTextRightPadding`                | text left padding from the percentage, default value: 5                                                                                            |
+| `rightTextRightPadding`               | text right padding from the percentage, default value: 5                                                                                           |
+| `showPercentageOnPercentageView`      | option to show the percentage on the percentage view, default value: false                                                                         |
+| `percentageOnPercentageViewTextStyle` | text style for the percentage on the percentage view                                                                                               |
 
 ### Circular Percentage
 
