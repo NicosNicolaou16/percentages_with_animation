@@ -122,7 +122,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
                       child: Padding(
                         padding: const EdgeInsets.only(right: 8.0),
                         child: widget.showLabelOnPercentage == true
-                            ? _labelOnPercentage(percentage)
+                            ? _labelOnPercentage()
                             : null,
                       ),
                     ),
@@ -168,11 +168,11 @@ class _LinearPercentageState extends State<LinearPercentage> {
     );
   }
 
-  Widget _labelOnPercentage(double percentage) {
+  Widget _labelOnPercentage() {
     return Align(
       alignment: Alignment.centerRight,
       child: Text(
-        "$percentage/${widget.maxPercentage.toInt().toString()}",
+        "${widget.currentPercentage.toInt().toString()}/${widget.maxPercentage.toInt().toString()}",
         style: widget.labelOnPercentageStyle,
       ),
     );
