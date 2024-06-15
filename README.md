@@ -1,6 +1,7 @@
 ## Features
 
-This package provide you percentages with custom widgets and animation such as linear, circular, circle
+This package provide you percentages with custom widgets and animation such as linear, circular,
+circle
 and gradient circle percentages.
 
 ## Getting started
@@ -36,6 +37,8 @@ Dart Version: 3.4.3 <br /> <br />
 | `rightTextStyle`        | text style for right text                                                                                                                          |
 | `leftTextRightPadding`  | text left padding from the percentage, default value: 5                                                                                            |
 | `rightTextRightPadding` | text right padding from the percentage, default value: 5                                                                                           |
+| `showLabelOnPercentage` | option to show the text label on the percentage, default value: false                                                                              |
+| `rightTextRightPadding` | text style for the label text on the percentage                                                                                                    |
 
 ### Circular Percentage
 

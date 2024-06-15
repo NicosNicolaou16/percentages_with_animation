@@ -1,6 +1,13 @@
 ## 0.0.5+3
 
 What's new:
+- Added the option to show text label on the linear percentage.
+- Added text style for the text label on the linear percentage.
+- Updated the documentation.
+
+## 0.0.5+3
+
+What's new:
 - Improved the documentation and add comments.
 - Removed unused `strokeWidth` parameter from `CirclePercentage` widget.
 
