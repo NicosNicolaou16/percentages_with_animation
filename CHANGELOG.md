@@ -1,4 +1,4 @@
-## 0.0.5+3
+## 0.0.6
 
 What's new:
 - Added the option to show text label on the linear percentage.
