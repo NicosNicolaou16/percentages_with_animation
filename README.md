@@ -1,6 +1,7 @@
 ## Features
 
-This package provide you percentages with custom widgets and animation such as linear, circular, circle
+This package provide you percentages with custom widgets and animation such as linear, circular,
+circle
 and gradient circle percentages.
 
 ## Getting started
@@ -14,7 +15,7 @@ Dart Version: 3.4.3 <br /> <br />
 ## Usage
 
 <p align="left">
-  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/Screenshot_20240601_175618.png" height="530" width="250"></a>
+  <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/Screenshot_20240615_105532.png" height="530" width="250"></a>
   <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/example_gif.gif" height="530" width="250"></a>
 </p>
 
@@ -36,6 +37,8 @@ Dart Version: 3.4.3 <br /> <br />
 | `rightTextStyle`        | text style for right text                                                                                                                          |
 | `leftTextRightPadding`  | text left padding from the percentage, default value: 5                                                                                            |
 | `rightTextRightPadding` | text right padding from the percentage, default value: 5                                                                                           |
+| `showLabelOnPercentage` | option to show the text label on the percentage, default value: false                                                                              |
+| `rightTextRightPadding` | text style for the label text on the percentage                                                                                                    |
 
 ### Circular Percentage
 
@@ -137,6 +140,8 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundHeight: 20,
               percentageHeight: 20,
               leftRightText: LeftRightText.both,
+              showLabelOnPercentage: true,
+              labelOnPercentageStyle: const TextStyle(color: Colors.white),
               backgroundDecoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.black38,
