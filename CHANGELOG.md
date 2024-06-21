@@ -2,6 +2,7 @@
 
 What's new:
 - Added new option for Circle, Circular and Gradient Circle Percentages for custom center text instead only the percentage -> `centerText`
+- 
 
 ## 0.0.7
 
