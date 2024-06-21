@@ -53,7 +53,7 @@ Dart Version: 3.4.3 <br /> <br />
 | `percentageColor`       | percentage color, default value: black                                           |
 | `backgroundColor`       | background color behind of the percentage view, default value: black26           |
 | `centerText`            | custom center text with default value null (if it null then show the percentage) |
-| `textStyle`             | text style for the center text                                                   |
+| `centerTextStyle`       | text style for the center text                                                   |
 
 ### Circle Percentage
 
@@ -68,7 +68,7 @@ Dart Version: 3.4.3 <br /> <br />
 | `percentageColor`       | percentage color, default value: black                                           |
 | `backgroundColor`       | background color behind of the percentage view, default value: black26           |
 | `centerText`            | custom center text with default value null (if it null then show the percentage) |
-| `textStyle`             | text style for the center text                                                   |
+| `centerTextStyle`       | text style for the center text                                                   |
 
 ### Gradient Circle Percentage
 
@@ -84,7 +84,7 @@ Dart Version: 3.4.3 <br /> <br />
 | `topColor`              | top color, default value: white                                                  |
 | `backgroundColor`       | background circle color behind of the percentage view, default value: white      |
 | `centerText`            | custom center text with default value null (if it null then show the percentage) |
-| `textStyle`             | text style for the center text                                                   |
+| `centerTextStyle`       | text style for the center text                                                   |
 
 ```dart
 import 'package:flutter/material.dart';
