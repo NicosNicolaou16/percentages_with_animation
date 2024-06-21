@@ -30,6 +30,9 @@ class GradientCirclePercentage extends StatefulWidget {
   /// This parameter is the circle color behind of the percentage
   final Color backgroundColor;
 
+  /// This parameter is a custom center text with default value null (if it null then show the percentage)
+  final String? centerText;
+
   /// This parameter is the text style of the label for the percentage text
   final TextStyle textStyle;
 
@@ -44,6 +47,7 @@ class GradientCirclePercentage extends StatefulWidget {
     this.bottomColor = Colors.black,
     this.topColor = Colors.white,
     this.backgroundColor = Colors.white,
+    this.centerText,
     this.textStyle = const TextStyle(color: Colors.black),
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
@@ -84,7 +88,8 @@ class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
             ),
             child: Center(
               child: Text(
-                (value * widget.maxPercentage).toInt().toString(),
+                widget.centerText ??
+                    (value * widget.maxPercentage).toInt().toString(),
                 style: widget.textStyle,
               ),
             ),
