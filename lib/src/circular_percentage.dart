@@ -27,8 +27,11 @@ class CircularPercentage extends StatefulWidget {
   /// This parameter is the circle color behind of the percentage
   final Color backgroundColor;
 
+  /// This parameter is a custom center text with default value null (if it null then show the percentage value)
+  final String? centerText;
+
   /// This parameter is the text style of the label for the percentage text
-  final TextStyle textStyle;
+  final TextStyle centerTextStyle;
 
   const CircularPercentage({
     super.key,
@@ -40,7 +43,8 @@ class CircularPercentage extends StatefulWidget {
     required this.backgroundStrokeWidth,
     this.percentageColor = Colors.black,
     this.backgroundColor = Colors.black12,
-    this.textStyle = const TextStyle(color: Colors.black),
+    this.centerText,
+    this.centerTextStyle = const TextStyle(color: Colors.black),
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0);
@@ -79,8 +83,9 @@ class _CircularPercentageState extends State<CircularPercentage> {
             ),
             child: Center(
               child: Text(
-                (value * widget.maxPercentage).toInt().toString(),
-                style: widget.textStyle,
+                widget.centerText ??
+                    (value * widget.maxPercentage).toInt().toString(),
+                style: widget.centerTextStyle,
               ),
             ),
           ),
