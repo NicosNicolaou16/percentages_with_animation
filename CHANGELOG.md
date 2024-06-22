@@ -1,6 +1,7 @@
 ## 0.0.8
 
 What's new:
+- Updated the documentation.
 - Added new option for Circle, Circular and Gradient Circle Percentages for custom center text instead only the percentage -> `centerText`.
 - Breaking Changes:
   - Changed the parameter for Circle, Circular and Gradient Circle Percentages from `textStyle` to `centerTextStyle` for the center text.

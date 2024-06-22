@@ -24,7 +24,7 @@ class CirclePercentage extends StatefulWidget {
   /// This parameter is the circle color behind of the percentage
   final Color backgroundColor;
 
-  /// This parameter is a custom center text with default value null (if it null then show the percentage)
+  /// This parameter is a custom center text with default value null (if it null then show the percentage value)
   final String? centerText;
 
   /// This parameter is the text style of the label for the percentage text
