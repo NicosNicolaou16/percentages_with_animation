@@ -1,3 +1,8 @@
+## 0.0.9
+
+What's new:
+- Only for the linear percentage accepts decimal values for the `currentPercentage`.
+
 ## 0.0.8
 
 What's new:

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/percentages_with_animation.dart';
 import 'package:percentages_with_animation/src/builder/percentage_builder.dart';
+import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
 /// The Linear percentage class provide you a to draw a linear percentage with different customization
 class LinearPercentage extends StatefulWidget {
@@ -148,7 +149,9 @@ class _LinearPercentageState extends State<LinearPercentage> {
           end: widget.currentPercentage,
         ),
         builder: (context, value, _) => Text(
-          value.toInt().toString(),
+          widget.currentPercentage.isInt
+              ? value.toInt().toString()
+              : value.toStringAsFixed(2).toString(),
           style: widget.leftTextStyle,
         ),
       ),
@@ -169,7 +172,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Align(
       alignment: Alignment.centerRight,
       child: Text(
-        "${widget.currentPercentage.toInt().toString()}/${widget.maxPercentage.toInt().toString()}",
+        "${widget.currentPercentage.isInt ? widget.currentPercentage.toInt().toString() : widget.currentPercentage.toStringAsFixed(2).toString()}/${widget.maxPercentage.toInt().toString()}",
         style: widget.percentageOnPercentageViewTextStyle,
       ),
     );
