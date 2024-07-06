@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/src/custom_painter/fill_painter.dart';
+import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
 /// The circle percentage class provide you a to draw a circle percentage with different customization
 class CirclePercentage extends StatefulWidget {
@@ -60,6 +61,7 @@ class _CirclePercentageState extends State<CirclePercentage> {
         end: widget.currentPercentage / widget.maxPercentage,
       ),
       builder: (context, value, _) {
+        double valueToShowOnText = value * widget.maxPercentage;
         return Container(
           width: widget.size,
           height: widget.size,
@@ -79,7 +81,9 @@ class _CirclePercentageState extends State<CirclePercentage> {
             child: Center(
               child: Text(
                 widget.centerText ??
-                    (value * widget.maxPercentage).toInt().toString(),
+                    (widget.currentPercentage.isInt == true
+                        ? valueToShowOnText.toInt().toString()
+                        : valueToShowOnText.toStringAsFixed(2)),
                 textAlign: TextAlign.center,
                 style: widget.centerTextStyle,
               ),
