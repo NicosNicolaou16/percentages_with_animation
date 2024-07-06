@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/src/custom_painter/gradient_circle_painter.dart';
+import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
 /// The Gradient percentage class provide you a to draw a circle gradient percentage with different customization
 class GradientCirclePercentage extends StatefulWidget {
@@ -69,6 +70,7 @@ class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
         end: widget.currentPercentage / widget.maxPercentage,
       ),
       builder: (context, value, _) {
+        double valueToShowOnText = value * widget.maxPercentage;
         return Container(
           width: widget.size,
           height: widget.size,
@@ -89,7 +91,9 @@ class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
             child: Center(
               child: Text(
                 widget.centerText ??
-                    (value * widget.maxPercentage).toInt().toString(),
+                    (widget.currentPercentage.isInt == true
+                        ? valueToShowOnText.toInt().toString()
+                        : valueToShowOnText.toStringAsFixed(2)),
                 style: widget.centerTextStyle,
               ),
             ),

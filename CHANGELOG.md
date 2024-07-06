@@ -1,3 +1,8 @@
+## 0.0.9
+
+What's new:
+- All the percentages show the decimal/double values on the percentage text.
+
 ## 0.0.8
 
 What's new:

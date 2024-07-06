@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/src/custom_painter/border_painter.dart';
+import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
 /// The circular percentage class provide you a to draw a circular percentage with different customization
 class CircularPercentage extends StatefulWidget {
@@ -64,6 +65,7 @@ class _CircularPercentageState extends State<CircularPercentage> {
         end: widget.currentPercentage / widget.maxPercentage,
       ),
       builder: (context, value, _) {
+        double valueToShowOnText = value * widget.maxPercentage;
         return Container(
           width: widget.size,
           height: widget.size,
@@ -84,7 +86,9 @@ class _CircularPercentageState extends State<CircularPercentage> {
             child: Center(
               child: Text(
                 widget.centerText ??
-                    (value * widget.maxPercentage).toInt().toString(),
+                    (widget.currentPercentage.isInt == true
+                        ? valueToShowOnText.toInt().toString()
+                        : valueToShowOnText.toStringAsFixed(2)),
                 style: widget.centerTextStyle,
               ),
             ),
