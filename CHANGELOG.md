@@ -1,7 +1,7 @@
 ## 0.0.9
 
 What's new:
-- Only for the linear percentage accepts decimal values for the `currentPercentage`.
+- All the percentages show the decimal/double values on the text.
 
 ## 0.0.8
 

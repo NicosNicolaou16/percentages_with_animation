@@ -151,7 +151,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
         builder: (context, value, _) => Text(
           widget.currentPercentage.isInt
               ? value.toInt().toString()
-              : value.toStringAsFixed(2).toString(),
+              : value.toStringAsFixed(2),
           style: widget.leftTextStyle,
         ),
       ),
@@ -172,7 +172,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Align(
       alignment: Alignment.centerRight,
       child: Text(
-        "${widget.currentPercentage.isInt ? widget.currentPercentage.toInt().toString() : widget.currentPercentage.toStringAsFixed(2).toString()}/${widget.maxPercentage.toInt().toString()}",
+        "${widget.currentPercentage.isInt ? widget.currentPercentage.toInt().toString() : widget.currentPercentage.toStringAsFixed(2)}/${widget.maxPercentage.toInt().toString()}",
         style: widget.percentageOnPercentageViewTextStyle,
       ),
     );
