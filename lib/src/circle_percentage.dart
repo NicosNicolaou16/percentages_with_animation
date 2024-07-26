@@ -31,6 +31,9 @@ class CirclePercentage extends StatefulWidget {
   /// This parameter is the text style of the label for the percentage text
   final TextStyle centerTextStyle;
 
+  /// This parameter is the call back to get the current percentage value during the animation
+  final Function(double)? onCurrentValue;
+
   const CirclePercentage({
     super.key,
     required this.currentPercentage,
@@ -42,6 +45,7 @@ class CirclePercentage extends StatefulWidget {
     this.backgroundColor = Colors.black12,
     this.centerText,
     this.centerTextStyle = const TextStyle(color: Colors.black),
+    this.onCurrentValue,
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0);
@@ -62,6 +66,10 @@ class _CirclePercentageState extends State<CirclePercentage> {
       ),
       builder: (context, value, _) {
         double valueToShowOnText = value * widget.maxPercentage;
+        if (widget.onCurrentValue != null) {
+          widget.onCurrentValue!(
+              double.parse(valueToShowOnText.toStringAsFixed(2)));
+        }
         return Container(
           width: widget.size,
           height: widget.size,

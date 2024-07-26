@@ -112,17 +112,22 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-          const CirclePercentage(
+          CirclePercentage(
             currentPercentage: 70,
             maxPercentage: 100,
             size: 150,
             duration: 2000,
             percentageColor: Colors.green,
             backgroundStrokeWidth: 2,
-            centerTextStyle: TextStyle(
+            centerTextStyle: const TextStyle(
               color: Colors.red,
               fontSize: 21,
             ),
+            onCurrentValue: (currentValue) {
+              if (kDebugMode) {
+                print("CirclePercentage currentValue: $currentValue");
+              }
+            },
           ),
           const SizedBox(
             height: 35,
