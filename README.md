@@ -43,18 +43,19 @@ Dart Version: 3.4.4 <br /> <br />
 
 ### Circular Percentage
 
-| Parameters              | Description                                                                            |
-|-------------------------|----------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                |
-| `size`                  | circular percentage size, default value: 100                                           |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                         |
-| `percentageStrokeWidth` | stroke width                                                                           |
-| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                  |
-| `percentageColor`       | percentage color, default value: black                                                 |
-| `backgroundColor`       | background color behind of the percentage view, default value: black26                 |
-| `centerText`            | custom center text with default value null (if it null then show the percentage value) |
-| `centerTextStyle`       | text style for the center text                                                         |
+| Parameters              | Description                                                                              |
+|-------------------------|------------------------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                                  |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                  |
+| `size`                  | circular percentage size, default value: 100                                             |
+| `duration`              | duration for the animation (duration == null or duration >= 0)                           |
+| `percentageStrokeWidth` | stroke width                                                                             |
+| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                    |
+| `percentageColor`       | percentage color, default value: black                                                   |
+| `backgroundColor`       | background color behind of the percentage view, default value: black26                   |
+| `centerText`            | custom center text with default value null (if it null then show the percentage value)   |
+| `centerTextStyle`       | text style for the center text                                                           |
+| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation |
 
 ### Circle Percentage
 

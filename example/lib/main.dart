@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               onCurrentValue: (currentValue) {
                 if (kDebugMode) {
-                  print("currentValue: $currentValue");
+                  print("LinearPercentage currentValue: $currentValue");
                 }
               },
             ),
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-          const CircularPercentage(
+          CircularPercentage(
             currentPercentage: 50,
             maxPercentage: 100,
             size: 150,
@@ -92,10 +92,15 @@ class _MyHomePageState extends State<MyHomePage> {
             percentageColor: Colors.blue,
             backgroundColor: Colors.black,
             backgroundStrokeWidth: 2,
-            centerTextStyle: TextStyle(
+            centerTextStyle: const TextStyle(
               color: Colors.red,
               fontSize: 21,
             ),
+            onCurrentValue: (currentValue) {
+              if (kDebugMode) {
+                print("CircularPercentage currentValue: $currentValue");
+              }
+            },
           ),
           const SizedBox(
             height: 35,
