@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-          const GradientCirclePercentage(
+          GradientCirclePercentage(
             currentPercentage: 70,
             maxPercentage: 100,
             size: 150,
@@ -147,10 +147,15 @@ class _MyHomePageState extends State<MyHomePage> {
             percentageStrokeWidth: 10,
             bottomColor: Colors.green,
             backgroundStrokeWidth: 2,
-            centerTextStyle: TextStyle(
+            centerTextStyle: const TextStyle(
               color: Colors.red,
               fontSize: 21,
             ),
+            onCurrentValue: (currentValue) {
+              if (kDebugMode) {
+                print("GradientCirclePercentage currentValue: $currentValue");
+              }
+            },
           ),
         ],
       ),

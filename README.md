@@ -75,19 +75,20 @@ Dart Version: 3.4.4 <br /> <br />
 
 ### Gradient Circle Percentage
 
-| Parameters              | Description                                                                            |
-|-------------------------|----------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                |
-| `size`                  | circular percentage size, default value: 100                                           |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                         |
-| `percentageStrokeWidth` | percentage stroke width                                                                |
-| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                  |
-| `bottomColor`           | bottom color, default value: black                                                     |
-| `topColor`              | top color, default value: white                                                        |
-| `backgroundColor`       | background circle color behind of the percentage view, default value: white            |
-| `centerText`            | custom center text with default value null (if it null then show the percentage value) |
-| `centerTextStyle`       | text style for the center text                                                         |
+| Parameters              | Description                                                                              |
+|-------------------------|------------------------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                                  |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                  |
+| `size`                  | circular percentage size, default value: 100                                             |
+| `duration`              | duration for the animation (duration == null or duration >= 0)                           |
+| `percentageStrokeWidth` | percentage stroke width                                                                  |
+| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                    |
+| `bottomColor`           | bottom color, default value: black                                                       |
+| `topColor`              | top color, default value: white                                                          |
+| `backgroundColor`       | background circle color behind of the percentage view, default value: white              |
+| `centerText`            | custom center text with default value null (if it null then show the percentage value)   |
+| `centerTextStyle`       | text style for the center text                                                           |
+| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation |
 
 ```dart
 import 'package:flutter/material.dart';
