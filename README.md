@@ -21,74 +21,74 @@ Dart Version: 3.4.4 <br /> <br />
 
 ### Linear Percentage
 
-| Parameters                            | Description                                                                                                                                        |
-|---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `currentPercentage`                   | current percentage - start value (>= 0)                                                                                                            |
-| `maxPercentage`                       | maximum percentage (currentPercentage <= maxPercentage)                                                                                            |
-| `backgroundHeight`                    | background height behind of the percentage view                                                                                                    |
-| `percentageHeight`                    | percentage height                                                                                                                                  |
-| `duration`                            | duration for the animation (duration == null or duration >= 0)                                                                                     |
-| `backgroundDecoration`                | decoration for background behind of the percentage view                                                                                            |
-| `percentageDecoration`                | decoration for percentage                                                                                                                          |
-| `backgroundColor`                     | background color behind of the percentage view, default value: black26                                                                             |
-| `percentageColor`                     | percentage color, default value: black                                                                                                             |
-| `leftRightText`                       | Enum value for the left and right text (min and max value - label) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
-| `leftTextStyle`                       | text style for left text                                                                                                                           |
-| `rightTextStyle`                      | text style for right text                                                                                                                          |
-| `leftTextRightPadding`                | text left padding from the percentage, default value: 5                                                                                            |
-| `rightTextRightPadding`               | text right padding from the percentage, default value: 5                                                                                           |
-| `showPercentageOnPercentageView`      | option to show the percentage on the percentage view, default value: false                                                                         |
-| `percentageOnPercentageViewTextStyle` | text style for the percentage on the percentage view                                                                                               |
-| `onCurrentValue`                      | this parameter is the call back to get the current percentage value during the animation (optional)                                                |
+| Parameters                            | Description                                                                                                                                                              |
+|---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`                   | This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0)                                        |
+| `maxPercentage`                       | This parameter is required and it's the maximum percentage value, (maxPercentage >= currentPercentage)                                                                   |
+| `backgroundHeight`                    | This parameter is required and it's the background height behind of the percentage view                                                                                  |
+| `percentageHeight`                    | This parameter is required and it's the percentage height                                                                                                                |
+| `duration`                            | This parameter is the duration for the animation with default value 1000 ms                                                                                              |
+| `backgroundDecoration`                | This parameter is the background decoration behind of the percentage view                                                                                                |
+| `percentageDecoration`                | This parameter is the percentage decoration                                                                                                                              |
+| `backgroundColor`                     | This parameter is the background color behind of the percentage view with default value black26                                                                          |
+| `percentageColor`                     | This parameter is the percentage color with default value black                                                                                                          |
+| `leftRightText`                       | This parameter is the enum value for the left and right text (min and max value - label) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
+| `leftTextStyle`                       | This parameter is the text style for the left text                                                                                                                       |
+| `rightTextStyle`                      | This parameter is the text style for the right text                                                                                                                      |
+| `leftTextRightPadding`                | This parameter is the right text padding from percentage view with default value: 5                                                                                      |
+| `rightTextRightPadding`               | This parameter is the left text padding from percentage view with default value: 5                                                                                       |
+| `showPercentageOnPercentageView`      | This parameter is the option to show the percentage value on percentage view with default value: false                                                                   |
+| `percentageOnPercentageViewTextStyle` | This parameter is the text style for percentage on percentage view                                                                                                       |
+| `onCurrentValue`                      | This parameter is the call back to get the current percentage value during the animation (optional)                                                                      |
 
 ### Circular Percentage
 
-| Parameters              | Description                                                                                         |
-|-------------------------|-----------------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                             |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                             |
-| `size`                  | circular percentage size, default value: 100                                                        |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                                      |
-| `percentageStrokeWidth` | stroke width                                                                                        |
-| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                               |
-| `percentageColor`       | percentage color, default value: black                                                              |
-| `backgroundColor`       | background color behind of the percentage view, default value: black26                              |
-| `centerText`            | custom center text with default value null (if it null then show the percentage value)              |
-| `centerTextStyle`       | text style for the center text                                                                      |
-| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation (optional) |
+| Parameters              | Description                                                                                                                       |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0) |
+| `maxPercentage`         | This parameter is required and it's the maximum percentage value, (maxPercentage >= currentPercentage)                            |
+| `size`                  | This parameter is the circle size for the percentage with default size 100                                                        |
+| `duration`              | This parameter is the duration for the animation with default value 1000 ms                                                       |
+| `percentageStrokeWidth` | This parameter is the stroke width for the percentage gradient circle                                                             |
+| `backgroundStrokeWidth` | This parameter is the stroke width for the background gradient circle                                                             |
+| `percentageColor`       | This parameter is the bottom color for the percentage                                                                             |
+| `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
+| `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
+| `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
+| `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
 ### Circle Percentage
 
-| Parameters              | Description                                                                                         |
-|-------------------------|-----------------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                             |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                             |
-| `size`                  | circular percentage size, default value: 100                                                        |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                                      |
-| `percentageStrokeWidth` | stroke width                                                                                        |
-| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                               |
-| `percentageColor`       | percentage color, default value: black                                                              |
-| `backgroundColor`       | background color behind of the percentage view, default value: black26                              |
-| `centerText`            | custom center text with default value null (if it null then show the percentage value)              |
-| `centerTextStyle`       | text style for the center text                                                                      |
-| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation (optional) |
+| Parameters              | Description                                                                                                                       |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0) |
+| `maxPercentage`         | This parameter is required and it's the maximum percentage value, (maxPercentage >= currentPercentage)                            |
+| `size`                  | This parameter is the circle size for the percentage with default size 100                                                        |
+| `duration`              | This parameter is the duration for the animation with default value 1000 ms                                                       |
+| `percentageStrokeWidth` | This parameter is the stroke width for the background gradient circle                                                             |
+| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                                                             |
+| `percentageColor`       | This parameter is the bottom color for the percentage                                                                             |
+| `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
+| `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
+| `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
+| `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
 ### Gradient Circle Percentage
 
-| Parameters              | Description                                                                                         |
-|-------------------------|-----------------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                             |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                             |
-| `size`                  | circular percentage size, default value: 100                                                        |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                                      |
-| `percentageStrokeWidth` | percentage stroke width                                                                             |
-| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                               |
-| `bottomColor`           | bottom color, default value: black                                                                  |
-| `topColor`              | top color, default value: white                                                                     |
-| `backgroundColor`       | background circle color behind of the percentage view, default value: white                         |
-| `centerText`            | custom center text with default value null (if it null then show the percentage value)              |
-| `centerTextStyle`       | text style for the center text                                                                      |
-| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation (optional) |
+| Parameters              | Description                                                                                                                       |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0) |
+| `maxPercentage`         | This parameter is required and it's the maximum percentage value, (maxPercentage >= currentPercentage)                            |
+| `size`                  | This parameter is the circle size for the percentage with default size 100                                                        |
+| `duration`              | This parameter is the duration for the animation with default value 1000 ms                                                       |
+| `percentageStrokeWidth` | This parameter is the stroke width for the percentage gradient circle                                                             |
+| `backgroundStrokeWidth` | This parameter is the stroke width for the background gradient circle                                                             |
+| `bottomColor`           | This parameter is the bottom color for the percentage                                                                             |
+| `topColor`              | This parameter is the remaining color for the percentage circle                                                                   |
+| `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
+| `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
+| `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
+| `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
 ```dart
 import 'package:flutter/foundation.dart';

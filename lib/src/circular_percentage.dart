@@ -4,10 +4,10 @@ import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
 /// The circular percentage class provide you a to draw a circular percentage with different customization
 class CircularPercentage extends StatefulWidget {
-  /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage)
+  /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0)
   final double currentPercentage;
 
-  /// This parameter is required and it's the maximum percentage value, (currentPercentage <= maxPercentage)
+  /// This parameter is required and it's the maximum percentage value, (maxPercentage >= currentPercentage)
   final double maxPercentage;
 
   /// This parameter is the circle size for the percentage with default size 100
