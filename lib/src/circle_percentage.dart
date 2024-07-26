@@ -31,7 +31,7 @@ class CirclePercentage extends StatefulWidget {
   /// This parameter is the text style of the label for the percentage text
   final TextStyle centerTextStyle;
 
-  /// This parameter is the call back to get the current percentage value during the animation
+  /// This parameter is the call back to get the current percentage value during the animation (optional)
   final Function(double)? onCurrentValue;
 
   const CirclePercentage({

@@ -39,58 +39,59 @@ Dart Version: 3.4.4 <br /> <br />
 | `rightTextRightPadding`               | text right padding from the percentage, default value: 5                                                                                           |
 | `showPercentageOnPercentageView`      | option to show the percentage on the percentage view, default value: false                                                                         |
 | `percentageOnPercentageViewTextStyle` | text style for the percentage on the percentage view                                                                                               |
-| `onCurrentValue`                      | this parameter is the call back to get the current percentage value during the animation                                                           |
+| `onCurrentValue`                      | this parameter is the call back to get the current percentage value during the animation (optional)                                                |
 
 ### Circular Percentage
 
-| Parameters              | Description                                                                              |
-|-------------------------|------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                  |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                  |
-| `size`                  | circular percentage size, default value: 100                                             |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                           |
-| `percentageStrokeWidth` | stroke width                                                                             |
-| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                    |
-| `percentageColor`       | percentage color, default value: black                                                   |
-| `backgroundColor`       | background color behind of the percentage view, default value: black26                   |
-| `centerText`            | custom center text with default value null (if it null then show the percentage value)   |
-| `centerTextStyle`       | text style for the center text                                                           |
-| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation |
+| Parameters              | Description                                                                                         |
+|-------------------------|-----------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                                             |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                             |
+| `size`                  | circular percentage size, default value: 100                                                        |
+| `duration`              | duration for the animation (duration == null or duration >= 0)                                      |
+| `percentageStrokeWidth` | stroke width                                                                                        |
+| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                               |
+| `percentageColor`       | percentage color, default value: black                                                              |
+| `backgroundColor`       | background color behind of the percentage view, default value: black26                              |
+| `centerText`            | custom center text with default value null (if it null then show the percentage value)              |
+| `centerTextStyle`       | text style for the center text                                                                      |
+| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation (optional) |
 
 ### Circle Percentage
 
-| Parameters              | Description                                                                              |
-|-------------------------|------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                  |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                  |
-| `size`                  | circular percentage size, default value: 100                                             |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                           |
-| `percentageStrokeWidth` | stroke width                                                                             |
-| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                    |
-| `percentageColor`       | percentage color, default value: black                                                   |
-| `backgroundColor`       | background color behind of the percentage view, default value: black26                   |
-| `centerText`            | custom center text with default value null (if it null then show the percentage value)   |
-| `centerTextStyle`       | text style for the center text                                                           |
-| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation |
+| Parameters              | Description                                                                                         |
+|-------------------------|-----------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                                             |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                             |
+| `size`                  | circular percentage size, default value: 100                                                        |
+| `duration`              | duration for the animation (duration == null or duration >= 0)                                      |
+| `percentageStrokeWidth` | stroke width                                                                                        |
+| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                               |
+| `percentageColor`       | percentage color, default value: black                                                              |
+| `backgroundColor`       | background color behind of the percentage view, default value: black26                              |
+| `centerText`            | custom center text with default value null (if it null then show the percentage value)              |
+| `centerTextStyle`       | text style for the center text                                                                      |
+| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation (optional) |
 
 ### Gradient Circle Percentage
 
-| Parameters              | Description                                                                              |
-|-------------------------|------------------------------------------------------------------------------------------|
-| `currentPercentage`     | current percentage - start value (>= 0)                                                  |
-| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                  |
-| `size`                  | circular percentage size, default value: 100                                             |
-| `duration`              | duration for the animation (duration == null or duration >= 0)                           |
-| `percentageStrokeWidth` | percentage stroke width                                                                  |
-| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                    |
-| `bottomColor`           | bottom color, default value: black                                                       |
-| `topColor`              | top color, default value: white                                                          |
-| `backgroundColor`       | background circle color behind of the percentage view, default value: white              |
-| `centerText`            | custom center text with default value null (if it null then show the percentage value)   |
-| `centerTextStyle`       | text style for the center text                                                           |
-| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation |
+| Parameters              | Description                                                                                         |
+|-------------------------|-----------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | current percentage - start value (>= 0)                                                             |
+| `maxPercentage`         | maximum percentage (currentPercentage <= maxPercentage)                                             |
+| `size`                  | circular percentage size, default value: 100                                                        |
+| `duration`              | duration for the animation (duration == null or duration >= 0)                                      |
+| `percentageStrokeWidth` | percentage stroke width                                                                             |
+| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                               |
+| `bottomColor`           | bottom color, default value: black                                                                  |
+| `topColor`              | top color, default value: white                                                                     |
+| `backgroundColor`       | background circle color behind of the percentage view, default value: white                         |
+| `centerText`            | custom center text with default value null (if it null then show the percentage value)              |
+| `centerTextStyle`       | text style for the center text                                                                      |
+| `onCurrentValue`        | this parameter is the call back to get the current percentage value during the animation (optional) |
 
 ```dart
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/percentages_with_animation.dart';
 
@@ -147,8 +148,9 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundHeight: 20,
               percentageHeight: 20,
               leftRightText: LeftRightText.both,
-              showLabelOnPercentage: true,
-              labelOnPercentageStyle: const TextStyle(color: Colors.white),
+              showPercentageOnPercentageView: true,
+              percentageOnPercentageViewTextStyle:
+              const TextStyle(color: Colors.white),
               backgroundDecoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.black38,
@@ -157,6 +159,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.black,
               ),
+              onCurrentValue: (currentValue) {
+                if (kDebugMode) {
+                  print("LinearPercentage currentValue: $currentValue");
+                }
+              },
             ),
           ),
           const SizedBox(
@@ -169,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-          const CircularPercentage(
+          CircularPercentage(
             currentPercentage: 50,
             maxPercentage: 100,
             size: 150,
@@ -178,10 +185,15 @@ class _MyHomePageState extends State<MyHomePage> {
             percentageColor: Colors.blue,
             backgroundColor: Colors.black,
             backgroundStrokeWidth: 2,
-            textStyle: TextStyle(
+            centerTextStyle: const TextStyle(
               color: Colors.red,
               fontSize: 21,
             ),
+            onCurrentValue: (currentValue) {
+              if (kDebugMode) {
+                print("CircularPercentage currentValue: $currentValue");
+              }
+            },
           ),
           const SizedBox(
             height: 35,
@@ -193,17 +205,22 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-          const CirclePercentage(
+          CirclePercentage(
             currentPercentage: 70,
             maxPercentage: 100,
             size: 150,
             duration: 2000,
             percentageColor: Colors.green,
             backgroundStrokeWidth: 2,
-            textStyle: TextStyle(
+            centerTextStyle: const TextStyle(
               color: Colors.red,
               fontSize: 21,
             ),
+            onCurrentValue: (currentValue) {
+              if (kDebugMode) {
+                print("CirclePercentage currentValue: $currentValue");
+              }
+            },
           ),
           const SizedBox(
             height: 35,
@@ -215,7 +232,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-          const GradientCirclePercentage(
+          GradientCirclePercentage(
             currentPercentage: 70,
             maxPercentage: 100,
             size: 150,
@@ -223,16 +240,22 @@ class _MyHomePageState extends State<MyHomePage> {
             percentageStrokeWidth: 10,
             bottomColor: Colors.green,
             backgroundStrokeWidth: 2,
-            textStyle: TextStyle(
+            centerTextStyle: const TextStyle(
               color: Colors.red,
               fontSize: 21,
             ),
+            onCurrentValue: (currentValue) {
+              if (kDebugMode) {
+                print("GradientCirclePercentage currentValue: $currentValue");
+              }
+            },
           ),
         ],
       ),
     );
   }
 }
+
 
 ```
 

@@ -53,7 +53,7 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the text style for percentage on percentage view
   final TextStyle? percentageOnPercentageViewTextStyle;
 
-  /// This parameter is the call back to get the current percentage value during the animation
+  /// This parameter is the call back to get the current percentage value during the animation (optional)
   final Function(double)? onCurrentValue;
 
   const LinearPercentage({
