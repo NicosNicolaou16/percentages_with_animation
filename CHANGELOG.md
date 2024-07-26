@@ -1,6 +1,7 @@
 ## 1.0.0
 
 What's new:
+- Added a call back listener for all percentages (Optional) and return the current percentage value (the value that return is with `value.toStringAsFixed(2)`).
 - Updated the Example project with the new Flutter SDK.
 - Updated the README file.
 
