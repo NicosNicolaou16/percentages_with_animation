@@ -9,8 +9,8 @@ and gradient circle percentages.
 Version Minimum Flutter SDK: 3.0.0
 
 Tested Versioning: <br />
-Flutter SDK version: 3.22.2 <br />
-Dart Version: 3.4.3 <br /> <br />
+Flutter SDK version: 3.22.3 <br />
+Dart Version: 3.4.4 <br /> <br />
 
 ## Usage
 
