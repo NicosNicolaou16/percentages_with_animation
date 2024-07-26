@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/percentages_with_animation.dart';
 
@@ -55,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
               percentageHeight: 20,
               leftRightText: LeftRightText.both,
               showPercentageOnPercentageView: true,
-              percentageOnPercentageViewTextStyle: const TextStyle(color: Colors.white),
+              percentageOnPercentageViewTextStyle:
+                  const TextStyle(color: Colors.white),
               backgroundDecoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.black38,
@@ -64,6 +66,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.black,
               ),
+              onCurrentValue: (currentValue) {
+                if (kDebugMode) {
+                  print("currentValue: $currentValue");
+                }
+              },
             ),
           ),
           const SizedBox(

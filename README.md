@@ -39,6 +39,7 @@ Dart Version: 3.4.4 <br /> <br />
 | `rightTextRightPadding`               | text right padding from the percentage, default value: 5                                                                                           |
 | `showPercentageOnPercentageView`      | option to show the percentage on the percentage view, default value: false                                                                         |
 | `percentageOnPercentageViewTextStyle` | text style for the percentage on the percentage view                                                                                               |
+| `onCurrentValue`                      | this parameter is the call back to get the current percentage value during the animation                                                           |
 
 ### Circular Percentage
 

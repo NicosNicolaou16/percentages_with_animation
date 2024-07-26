@@ -53,6 +53,9 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the text style for percentage on percentage view
   final TextStyle? percentageOnPercentageViewTextStyle;
 
+  /// This parameter is the call back to get the current percentage value during the animation
+  final Function(double)? onCurrentValue;
+
   const LinearPercentage({
     super.key,
     required this.currentPercentage,
@@ -71,6 +74,7 @@ class LinearPercentage extends StatefulWidget {
     this.rightTextRightPadding = 5,
     this.showPercentageOnPercentageView = false,
     this.percentageOnPercentageViewTextStyle,
+    this.onCurrentValue,
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0);
@@ -148,12 +152,17 @@ class _LinearPercentageState extends State<LinearPercentage> {
           begin: 0,
           end: widget.currentPercentage,
         ),
-        builder: (context, value, _) => Text(
-          widget.currentPercentage.isInt
-              ? value.toInt().toString()
-              : value.toStringAsFixed(2),
-          style: widget.leftTextStyle,
-        ),
+        builder: (context, value, _) {
+          if (widget.onCurrentValue != null) {
+            widget.onCurrentValue!(double.parse(value.toStringAsFixed(2)));
+          }
+          return Text(
+            widget.currentPercentage.isInt
+                ? value.toInt().toString()
+                : value.toStringAsFixed(2),
+            style: widget.leftTextStyle,
+          );
+        },
       ),
     );
   }
