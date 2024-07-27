@@ -4,10 +4,10 @@ import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
 /// The circular percentage class provide you a to draw a circular percentage with different customization
 class CircularPercentage extends StatefulWidget {
-  /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage)
+  /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0)
   final double currentPercentage;
 
-  /// This parameter is required and it's the maximum percentage value, (currentPercentage <= maxPercentage)
+  /// This parameter is required and it's the maximum percentage value, (maxPercentage >= currentPercentage)
   final double maxPercentage;
 
   /// This parameter is the circle size for the percentage with default size 100
@@ -34,6 +34,9 @@ class CircularPercentage extends StatefulWidget {
   /// This parameter is the text style of the label for the percentage text
   final TextStyle centerTextStyle;
 
+  /// This parameter is the call back to get the current percentage value during the animation (optional)
+  final Function(double)? onCurrentValue;
+
   const CircularPercentage({
     super.key,
     required this.currentPercentage,
@@ -46,6 +49,7 @@ class CircularPercentage extends StatefulWidget {
     this.backgroundColor = Colors.black12,
     this.centerText,
     this.centerTextStyle = const TextStyle(color: Colors.black),
+    this.onCurrentValue,
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0);
@@ -66,6 +70,10 @@ class _CircularPercentageState extends State<CircularPercentage> {
       ),
       builder: (context, value, _) {
         double valueToShowOnText = value * widget.maxPercentage;
+        if (widget.onCurrentValue != null) {
+          widget.onCurrentValue!(
+              double.parse(valueToShowOnText.toStringAsFixed(2)));
+        }
         return Container(
           width: widget.size,
           height: widget.size,

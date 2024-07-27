@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/percentages_with_animation.dart';
 
@@ -55,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
               percentageHeight: 20,
               leftRightText: LeftRightText.both,
               showPercentageOnPercentageView: true,
-              percentageOnPercentageViewTextStyle: const TextStyle(color: Colors.white),
+              percentageOnPercentageViewTextStyle:
+                  const TextStyle(color: Colors.white),
               backgroundDecoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.black38,
@@ -64,6 +66,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.black,
               ),
+              onCurrentValue: (currentValue) {
+                if (kDebugMode) {
+                  print("LinearPercentage currentValue: $currentValue");
+                }
+              },
             ),
           ),
           const SizedBox(
@@ -76,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-          const CircularPercentage(
+          CircularPercentage(
             currentPercentage: 50,
             maxPercentage: 100,
             size: 150,
@@ -85,10 +92,15 @@ class _MyHomePageState extends State<MyHomePage> {
             percentageColor: Colors.blue,
             backgroundColor: Colors.black,
             backgroundStrokeWidth: 2,
-            centerTextStyle: TextStyle(
+            centerTextStyle: const TextStyle(
               color: Colors.red,
               fontSize: 21,
             ),
+            onCurrentValue: (currentValue) {
+              if (kDebugMode) {
+                print("CircularPercentage currentValue: $currentValue");
+              }
+            },
           ),
           const SizedBox(
             height: 35,
@@ -100,17 +112,22 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-          const CirclePercentage(
+          CirclePercentage(
             currentPercentage: 70,
             maxPercentage: 100,
             size: 150,
             duration: 2000,
             percentageColor: Colors.green,
             backgroundStrokeWidth: 2,
-            centerTextStyle: TextStyle(
+            centerTextStyle: const TextStyle(
               color: Colors.red,
               fontSize: 21,
             ),
+            onCurrentValue: (currentValue) {
+              if (kDebugMode) {
+                print("CirclePercentage currentValue: $currentValue");
+              }
+            },
           ),
           const SizedBox(
             height: 35,
@@ -122,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-          const GradientCirclePercentage(
+          GradientCirclePercentage(
             currentPercentage: 70,
             maxPercentage: 100,
             size: 150,
@@ -130,10 +147,15 @@ class _MyHomePageState extends State<MyHomePage> {
             percentageStrokeWidth: 10,
             bottomColor: Colors.green,
             backgroundStrokeWidth: 2,
-            centerTextStyle: TextStyle(
+            centerTextStyle: const TextStyle(
               color: Colors.red,
               fontSize: 21,
             ),
+            onCurrentValue: (currentValue) {
+              if (kDebugMode) {
+                print("GradientCirclePercentage currentValue: $currentValue");
+              }
+            },
           ),
         ],
       ),
