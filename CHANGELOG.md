@@ -2,6 +2,7 @@
 
 What's new:
 - Updated the Example project with the new Flutter SDK.
+- Updated the README file and improve the documentation.
 
 ## 1.0.0
 
