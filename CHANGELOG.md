@@ -1,3 +1,8 @@
+## 1.0.1
+
+What's new:
+- Updated the Example project with the new Flutter SDK.
+
 ## 1.0.0
 
 What's new:
