@@ -1,7 +1,7 @@
 name: percentages_with_animation
 description: "This package provide you percentages with custom widgets and animation such as linear, circular, circle
 and gradient circle percentages."
-version: 1.0.0
+version: 1.0.1
 homepage: "https://github.com/NicosNicolaou16/percentages_with_animation"
 
 environment:
