@@ -4,6 +4,7 @@ What's new:
 - Updated the example project with the latest Flutter SDK and tested.
 - Updated the README file and improve the documentation.
 - Updated the Android Side, updated NDK and updated Java version.
+- Minor fixes.
 
 ## 1.0.1
 
