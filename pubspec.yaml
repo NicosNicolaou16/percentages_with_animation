@@ -1,7 +1,7 @@
 name: percentages_with_animation
 description: "This package provide you percentages with custom widgets and animation such as linear, circular, circle
 and gradient circle percentages."
-version: 1.0.1
+version: 1.0.2
 homepage: "https://github.com/NicosNicolaou16/percentages_with_animation"
 
 environment:
@@ -15,7 +15,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
