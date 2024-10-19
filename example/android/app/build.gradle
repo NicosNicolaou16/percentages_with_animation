@@ -27,11 +27,19 @@ android {
     namespace = "com.example.example"
     compileSdk 34
     buildToolsVersion '34.0.0'
-    ndkVersion = '27.0.12077973'
+    ndkVersion = '27.2.12479018'
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
 
     defaultConfig {
