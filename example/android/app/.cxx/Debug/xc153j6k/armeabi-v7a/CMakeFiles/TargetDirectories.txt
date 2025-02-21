@@ -1,0 +1,2 @@
+C:/Users/Nicos/Desktop/AndroidProjects/percentages_with_animation/example/android/app/.cxx/Debug/xc153j6k/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/Nicos/Desktop/AndroidProjects/percentages_with_animation/example/android/app/.cxx/Debug/xc153j6k/armeabi-v7a/CMakeFiles/rebuild_cache.dir
