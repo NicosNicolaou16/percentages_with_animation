@@ -1,2 +1,0 @@
-C:/Users/Nicos/Desktop/AndroidProjects/percentages_with_animation/example/android/app/.cxx/Debug/2gh336dd/x86/CMakeFiles/edit_cache.dir
-C:/Users/Nicos/Desktop/AndroidProjects/percentages_with_animation/example/android/app/.cxx/Debug/2gh336dd/x86/CMakeFiles/rebuild_cache.dir
