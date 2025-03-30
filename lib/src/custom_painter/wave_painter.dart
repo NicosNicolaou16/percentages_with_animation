@@ -10,11 +10,11 @@ class WavePainter extends CustomPainter {
   final Color waveColor;
 
   WavePainter({
-    this.fillPercentage = 0.0,
-    this.waveFrequency = 2.0,
-    this.waveAmplitude = 1.0,
-    this.wavePhase = 0.0,
-    this.waveColor = Colors.green,
+    required this.fillPercentage,
+    required this.waveFrequency,
+    required this.waveAmplitude,
+    required this.wavePhase,
+    required this.waveColor,
   });
 
   @override
@@ -28,7 +28,7 @@ class WavePainter extends CustomPainter {
     final fillHeight = size.height * (1 - fillPercentage);
     final centerX = size.width / 2;
 
-    // Starting point with phase
+    /// Starting point with phase
     wavePath.moveTo(
         0,
         fillHeight +
@@ -43,7 +43,7 @@ class WavePainter extends CustomPainter {
                 wavePhase);
 
     for (double x = 0; x <= size.width; x++) {
-      // Incorporate phase into the wave calculation
+      /// Incorporate phase into the wave calculation
       final y = fillHeight +
           waveAmplitude *
               sin(waveFrequency * (x - centerX) / size.width * 2 * pi +
@@ -63,7 +63,7 @@ class WavePainter extends CustomPainter {
       previousY = y;
     }
 
-    // Ending point with phase
+    /// Ending point with phase
     wavePath.lineTo(
         size.width,
         fillHeight +
