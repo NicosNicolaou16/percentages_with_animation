@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 35,
             ),
             const Text(
-              "Wave Circle Percentage",
+              "Wave Percentage",
               style: TextStyle(color: Colors.black, fontSize: 21),
             ),
             const SizedBox(
@@ -174,6 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
               size: 150,
               duration: 2000,
               backgroundStrokeWidth: 2,
+              backgroundColor: Colors.green,
               centerTextStyle: const TextStyle(
                 color: Colors.red,
                 fontSize: 21,

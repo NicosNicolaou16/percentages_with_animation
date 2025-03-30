@@ -12,11 +12,23 @@ class WavePercentage extends StatefulWidget {
   /// This parameter is required and it's the maximum percentage value, (maxPercentage >= currentPercentage)
   final double maxPercentage;
 
+  /// This parameter is the wave frequency for the percentage with default value 2
+  final double waveFrequency;
+
   /// This parameter is the circle size for the percentage with default size 100
   final double size;
 
   /// This parameter is the duration for the animation with default value 1000 ms
   final int duration;
+
+  /// This parameter is the wave color with default value green
+  final Color waveColor;
+
+  /// This parameter is the color animation begin with default value null (if it null then use the waveColor)
+  final Color? colorAnimationBegin;
+
+  /// This parameter is the color animation end with default value null (if it null then use the waveColor)
+  final Color? colorAnimationEnd;
 
   /// This parameter is the stroke width for the background gradient circle
   final double backgroundStrokeWidth;
@@ -37,8 +49,12 @@ class WavePercentage extends StatefulWidget {
     super.key,
     required this.currentPercentage,
     required this.maxPercentage,
+    this.waveFrequency = 2,
     this.size = 100,
     this.duration = 1000,
+    this.waveColor = Colors.green,
+    this.colorAnimationBegin,
+    this.colorAnimationEnd,
     required this.backgroundStrokeWidth,
     this.backgroundColor = Colors.white,
     this.centerText,
@@ -46,7 +62,8 @@ class WavePercentage extends StatefulWidget {
     this.onCurrentValue,
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
-        assert(duration >= 0);
+        assert(duration >= 0),
+        assert(waveFrequency > 0);
 
   @override
   State<WavePercentage> createState() => _WavePercentageState();
@@ -69,12 +86,16 @@ class _WavePercentageState extends State<WavePercentage>
     )..repeat();
     _animation = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
 
-    _colorController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 3),
-    )..repeat();
-    _colorAnimation = ColorTween(begin: Colors.blue, end: Colors.green)
-        .animate(_colorController);
+    if (widget.colorAnimationBegin == null &&
+        widget.colorAnimationEnd == null) {
+      _colorController = AnimationController(
+        vsync: this,
+        duration: const Duration(seconds: 3),
+      )..repeat();
+      _colorAnimation = ColorTween(
+              begin: widget.colorAnimationBegin, end: widget.colorAnimationEnd)
+          .animate(_colorController);
+    }
     _amplitudeController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
@@ -124,10 +145,10 @@ class _WavePercentageState extends State<WavePercentage>
                 return CustomPaint(
                   painter: WavePainter(
                     fillPercentage: value,
-                    waveFrequency: 2,
+                    waveFrequency: widget.waveFrequency,
                     waveAmplitude: _amplitudeAnimation.value,
                     wavePhase: _controller.value * 2 * pi,
-                    waveColor: _colorAnimation.value!,
+                    waveColor: _colorAnimation.value ?? widget.waveColor,
                   ),
                   child: Center(
                     child: Text(

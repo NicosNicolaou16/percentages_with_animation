@@ -14,7 +14,7 @@ class WavePainter extends CustomPainter {
     this.waveFrequency = 2.0,
     this.waveAmplitude = 1.0,
     this.wavePhase = 0.0,
-    this.waveColor = Colors.blue,
+    this.waveColor = Colors.green,
   });
 
   @override
