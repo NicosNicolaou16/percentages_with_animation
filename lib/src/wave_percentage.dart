@@ -30,6 +30,12 @@ class WavePercentage extends StatefulWidget {
   /// This parameter is the color animation end with default value null (if it null then use the waveColor)
   final Color? colorAnimationEnd;
 
+  /// This parameter is the amplitude begin with default value 10
+  final double amplitudeBegin;
+
+  /// This parameter is the amplitude end with default value 10
+  final double amplitudeEnd;
+
   /// This parameter is the stroke width for the background gradient circle
   final double backgroundStrokeWidth;
 
@@ -55,6 +61,8 @@ class WavePercentage extends StatefulWidget {
     this.waveColor = Colors.green,
     this.colorAnimationBegin,
     this.colorAnimationEnd,
+    this.amplitudeBegin = 10,
+    this.amplitudeEnd = 10,
     required this.backgroundStrokeWidth,
     this.backgroundColor = Colors.white,
     this.centerText,
@@ -71,11 +79,19 @@ class WavePercentage extends StatefulWidget {
 
 class _WavePercentageState extends State<WavePercentage>
     with TickerProviderStateMixin {
+  /// Animation Controller for the wave color
   late AnimationController _colorController;
+
+  /// Animation for the wave color
   late Animation<Color?> _colorAnimation;
+
+  /// Animation Controller for the wave amplitude
   late AnimationController _controller;
-  late Animation<double> _animation;
+
+  /// Animation for the wave amplitude
   late AnimationController _amplitudeController;
+
+  /// Animation for the wave amplitude
   late Animation<double> _amplitudeAnimation;
 
   @override
@@ -84,7 +100,6 @@ class _WavePercentageState extends State<WavePercentage>
       vsync: this,
       duration: const Duration(seconds: 4),
     )..repeat();
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeOut);
 
     if (widget.colorAnimationBegin == null &&
         widget.colorAnimationEnd == null) {
@@ -100,8 +115,9 @@ class _WavePercentageState extends State<WavePercentage>
       vsync: this,
       duration: const Duration(seconds: 4),
     )..repeat(reverse: true);
-    _amplitudeAnimation = Tween<double>(begin: 10, end: 10)
-        .animate(_amplitudeController); // Amplitude between 10 and 10
+    _amplitudeAnimation =
+        Tween<double>(begin: widget.amplitudeBegin, end: widget.amplitudeEnd)
+            .animate(_amplitudeController); // Amplitude between 10 and 10
     super.initState();
   }
 
