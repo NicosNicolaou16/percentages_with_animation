@@ -66,7 +66,7 @@ Dart Version: 3.7.0 <br /> <br />
 | `size`                  | This parameter is the circle size for the percentage with default size 100                                                        |
 | `duration`              | This parameter is the duration for the animation with default value 1000 ms                                                       |
 | `percentageStrokeWidth` | This parameter is the stroke width for the background gradient circle                                                             |
-| `backgroundStrokeWidth` | background stroke width behind of the percentage view                                                                             |
+| `backgroundStrokeWidth` | This parameter is the background stroke width behind of the percentage view                                                       |
 | `percentageColor`       | This parameter is the bottom color for the percentage                                                                             |
 | `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
 | `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
@@ -82,6 +82,28 @@ Dart Version: 3.7.0 <br /> <br />
 | `size`                  | This parameter is the circle size for the percentage with default size 100                                                        |
 | `duration`              | This parameter is the duration for the animation with default value 1000 ms                                                       |
 | `percentageStrokeWidth` | This parameter is the stroke width for the percentage gradient circle                                                             |
+| `backgroundStrokeWidth` | This parameter is the stroke width for the background gradient circle                                                             |
+| `bottomColor`           | This parameter is the bottom color for the percentage                                                                             |
+| `topColor`              | This parameter is the remaining color for the percentage circle                                                                   |
+| `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
+| `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
+| `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
+| `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
+
+### Wave Percentage
+
+| Parameters              | Description                                                                                                                       |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `currentPercentage`     | This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0) |
+| `maxPercentage`         | This parameter is required and it's the maximum percentage value, (maxPercentage >= currentPercentage)                            |
+| `waveFrequency`         | This parameter is the wave frequency for the percentage with default value 2                                                      |
+| `size`                  | This parameter is the circle size for the percentage with default size 100                                                        |
+| `duration`              | This parameter is the duration for the animation with default value 1000 ms                                                       |
+| `waveColor`             | This parameter is the wave color with default value green                                                                         |
+| `colorAnimationBegin`   | This parameter is the color animation begin with default value null (if it null then use the waveColor)                           |
+| `colorAnimationEnd`     | This parameter is the color animation end with default value null (if it null then use the waveColor)                             |
+| `amplitudeBegin`        | This parameter is the amplitude begin with default value 10                                                                       |
+| `amplitudeEnd`          | This parameter is the amplitude end with default value 10                                                                         |
 | `backgroundStrokeWidth` | This parameter is the stroke width for the background gradient circle                                                             |
 | `bottomColor`           | This parameter is the bottom color for the percentage                                                                             |
 | `topColor`              | This parameter is the remaining color for the percentage circle                                                                   |
