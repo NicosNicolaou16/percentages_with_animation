@@ -92,6 +92,6 @@ class WavePainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true; // For animation, you'll likely return true here.
+    return true;
   }
 }
