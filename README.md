@@ -106,7 +106,6 @@ Dart Version: 3.7.0 <br /> <br />
 | `amplitudeEnd`          | This parameter is the amplitude end with default value 10                                                                         |
 | `backgroundStrokeWidth` | This parameter is the stroke width for the background gradient circle                                                             |
 | `bottomColor`           | This parameter is the bottom color for the percentage                                                                             |
-| `topColor`              | This parameter is the remaining color for the percentage circle                                                                   |
 | `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
 | `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
 | `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
