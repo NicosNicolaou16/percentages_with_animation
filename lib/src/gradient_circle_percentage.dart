@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/src/custom_painter/gradient_circle_painter.dart';
 import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
-/// The Gradient percentage class provide you a to draw a circle gradient percentage with different customization
+/// The Gradient percentage class provide you a to draw a circle gradient percentage with different customizations
 class GradientCirclePercentage extends StatefulWidget {
   /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0)
   final double currentPercentage;

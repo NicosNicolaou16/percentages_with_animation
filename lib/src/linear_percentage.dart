@@ -3,7 +3,7 @@ import 'package:percentages_with_animation/percentages_with_animation.dart';
 import 'package:percentages_with_animation/src/builder/percentage_builder.dart';
 import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
-/// The Linear percentage class provide you a to draw a linear percentage with different customization
+/// The Linear percentage class provide you a to draw a linear percentage with different customizations
 class LinearPercentage extends StatefulWidget {
   /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0)
   final double currentPercentage;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/src/custom_painter/border_painter.dart';
 import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
-/// The circular percentage class provide you a to draw a circular percentage with different customization
+/// The circular percentage class provide you a to draw a circular percentage with different customizations
 class CircularPercentage extends StatefulWidget {
   /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0)
   final double currentPercentage;

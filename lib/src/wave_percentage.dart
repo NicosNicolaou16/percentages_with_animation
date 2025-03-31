@@ -5,6 +5,7 @@ import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
 import 'custom_painter/wave_painter.dart';
 
+/// The Wave percentage class provide you a to draw a wave percentage with different customizations
 class WavePercentage extends StatefulWidget {
   /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0)
   final double currentPercentage;

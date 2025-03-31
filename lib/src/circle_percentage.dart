@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:percentages_with_animation/src/custom_painter/fill_painter.dart';
 import 'package:percentages_with_animation/src/extensions/extensions.dart';
 
-/// The circle percentage class provide you a to draw a circle percentage with different customization
+/// The circle percentage class provide you a to draw a circle percentage with different customizations
 class CirclePercentage extends StatefulWidget {
   /// This parameter is required and it's the current percentage value, (currentPercentage <= maxPercentage & currentPercentage >= 0.0)
   final double currentPercentage;
