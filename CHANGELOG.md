@@ -2,12 +2,13 @@
 
 What's new:
 - New Feature:
-  - Added a new Wave percentage with animation with various customizations.
+  - Added a new Wave Percentage with animation with various customizations.
 - Updates:
-  - Updated the example project with the latest Flutter SDK 3.29.2 and tested.
+  - Updated and tested the example project with the latest Flutter SDK 3.29.2.
   - Updated the Android Side.
     - Updated Gradle to latest version.
-    - Updated NDK and CMake to latest Versions.
+    - Updated Kotlin to latest version.
+    - Updated CMake to latest version.
 
 ## 1.0.5
 
