@@ -105,11 +105,13 @@ class _WavePercentageState extends State<WavePercentage>
 
   @override
   void initState() {
+    /// Wave color animation
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
     )..repeat();
 
+    /// Wave color animation
     if (widget.colorAnimationBegin == null &&
         widget.colorAnimationEnd == null) {
       _colorController = AnimationController(
@@ -120,6 +122,8 @@ class _WavePercentageState extends State<WavePercentage>
               begin: widget.colorAnimationBegin, end: widget.colorAnimationEnd)
           .animate(_colorController);
     }
+
+    /// Amplitude animation
     _amplitudeController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 4),
@@ -128,13 +132,13 @@ class _WavePercentageState extends State<WavePercentage>
       begin: widget.amplitudeBegin,
       end: widget.amplitudeEnd,
     );
-    _amplitudeAnimation = _amplitudeTween
-        .animate(_amplitudeController); // Amplitude between 10 and 10
+    _amplitudeAnimation = _amplitudeTween.animate(_amplitudeController);
     super.initState();
   }
 
   @override
   void dispose() {
+    /// Dispose the animation controllers
     _controller.dispose();
     _amplitudeController.dispose();
     _colorController.dispose();
