@@ -31,10 +31,10 @@ class WavePercentage extends StatefulWidget {
   /// This parameter is the color animation end with default value null (if it null then use the waveColor)
   final Color? colorAnimationEnd;
 
-  /// This parameter is the amplitude begin with default value 10
+  /// This parameter is the amplitude begin with default value 10, (amplitudeBegin >= 0)
   final double amplitudeBegin;
 
-  /// This parameter is the amplitude end with default value 10
+  /// This parameter is the amplitude end with default value 10 (amplitudeEnd >= 0)
   final double amplitudeEnd;
 
   /// This parameter is the stroke width for the background gradient circle
@@ -72,7 +72,9 @@ class WavePercentage extends StatefulWidget {
   })  : assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0),
-        assert(waveFrequency > 0);
+        assert(waveFrequency > 0),
+        assert(amplitudeBegin > 0),
+        assert(amplitudeEnd > 0);
 
   @override
   State<WavePercentage> createState() => _WavePercentageState();
