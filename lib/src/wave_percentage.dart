@@ -100,6 +100,9 @@ class _WavePercentageState extends State<WavePercentage>
   /// Tween for the wave amplitude
   late Tween<double> _amplitudeTween;
 
+  /// Calculate the two pi value
+  static const double _twoPi = 2 * pi;
+
   @override
   void initState() {
     _controller = AnimationController(
@@ -138,6 +141,7 @@ class _WavePercentageState extends State<WavePercentage>
     super.dispose();
   }
 
+  /// Handle the amplitude animation when the max percentage is reached
   _handleAmplitudeAnimationWhenMaxPercentage(double valueToShowOnText) {
     if (valueToShowOnText == widget.maxPercentage) {
       _amplitudeTween = Tween<double>(
@@ -191,7 +195,7 @@ class _WavePercentageState extends State<WavePercentage>
                     fillPercentage: value,
                     waveFrequency: widget.waveFrequency,
                     waveAmplitude: _amplitudeAnimation.value,
-                    wavePhase: _controller.value * 2 * pi,
+                    wavePhase: _controller.value * _twoPi,
                     waveColor: _colorAnimation.value ?? widget.waveColor,
                   ),
                   child: Center(
