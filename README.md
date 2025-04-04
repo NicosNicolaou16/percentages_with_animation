@@ -101,8 +101,8 @@ Dart Version: 3.7.2 <br /> <br />
 | `waveColor`             | This parameter is the wave color with default value green                                                                         |
 | `colorAnimationBegin`   | This parameter is the color animation begin with default value null (if it null then use the waveColor)                           |
 | `colorAnimationEnd`     | This parameter is the color animation end with default value null (if it null then use the waveColor)                             |
-| `amplitudeBegin`        | This parameter is the amplitude begin with default value 10                                                                       |
-| `amplitudeEnd`          | This parameter is the amplitude end with default value 10                                                                         |
+| `amplitudeBegin`        | This parameter is the amplitude begin with default value 10 (amplitudeBegin >= 0)                                                 |
+| `amplitudeEnd`          | This parameter is the amplitude end with default value 10 (amplitudeEnd >= 0)                                                     |
 | `backgroundStrokeWidth` | This parameter is the stroke width for the background gradient circle                                                             |
 | `bottomColor`           | This parameter is the bottom color for the percentage                                                                             |
 | `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
