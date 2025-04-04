@@ -95,6 +95,9 @@ class _WavePercentageState extends State<WavePercentage>
   /// Animation for the wave amplitude
   late Animation<double> _amplitudeAnimation;
 
+  /// Tween for the wave amplitude
+  late Tween<double> _amplitudeTween;
+
   @override
   void initState() {
     _controller = AnimationController(
@@ -116,9 +119,12 @@ class _WavePercentageState extends State<WavePercentage>
       vsync: this,
       duration: const Duration(seconds: 4),
     )..repeat(reverse: true);
-    _amplitudeAnimation =
-        Tween<double>(begin: widget.amplitudeBegin, end: widget.amplitudeEnd)
-            .animate(_amplitudeController); // Amplitude between 10 and 10
+    _amplitudeTween = Tween<double>(
+      begin: widget.amplitudeBegin,
+      end: widget.amplitudeEnd,
+    );
+    _amplitudeAnimation = _amplitudeTween
+        .animate(_amplitudeController); // Amplitude between 10 and 10
     super.initState();
   }
 
@@ -128,6 +134,24 @@ class _WavePercentageState extends State<WavePercentage>
     _amplitudeController.dispose();
     _colorController.dispose();
     super.dispose();
+  }
+
+  _handleAmplitudeAnimationWhenMaxPercentage(double valueToShowOnText) {
+    if (valueToShowOnText == widget.maxPercentage) {
+      _amplitudeTween = Tween<double>(
+        begin: 0,
+        end: 0,
+      );
+      _amplitudeAnimation = _amplitudeTween.animate(_amplitudeController);
+    } else {
+      if (_amplitudeTween.begin == 0 && _amplitudeTween.end == 0) {
+        _amplitudeTween = Tween<double>(
+          begin: widget.amplitudeBegin,
+          end: widget.amplitudeEnd,
+        );
+        _amplitudeAnimation = _amplitudeTween.animate(_amplitudeController);
+      }
+    }
   }
 
   @override
@@ -141,6 +165,7 @@ class _WavePercentageState extends State<WavePercentage>
       ),
       builder: (context, value, _) {
         double valueToShowOnText = value * widget.maxPercentage;
+        _handleAmplitudeAnimationWhenMaxPercentage(valueToShowOnText);
         if (widget.onCurrentValue != null) {
           widget.onCurrentValue!(
               double.parse(valueToShowOnText.toStringAsFixed(2)));
