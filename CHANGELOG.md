@@ -9,7 +9,7 @@ What's new:
     - Updated Gradle to latest version.
     - Updated Kotlin to latest version.
     - Updated CMake to latest version.
-  - Updated the README file and improve the documentation.
+  - Updated/Fixed the README file and improve the documentation.
 
 ## 1.0.5
 
