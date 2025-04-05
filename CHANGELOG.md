@@ -1,3 +1,16 @@
+## 1.1.0
+
+What's new:
+- New Feature:
+  - Added a new Wave Percentage with animation with various customizations.
+- Updates:
+  - Updated and tested the example project with the latest Flutter SDK 3.29.2.
+  - Updated the Android Side.
+    - Updated Gradle to latest version.
+    - Updated Kotlin to latest version.
+    - Updated CMake to latest version.
+  - Updated/Fixed the README file and improve the documentation.
+
 ## 1.0.5
 
 What's new:
