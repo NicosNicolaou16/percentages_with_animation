@@ -146,7 +146,7 @@ class _WavePercentageState extends State<WavePercentage>
   }
 
   /// Handle the amplitude animation when the max percentage is reached
-  _handleAmplitudeAnimationWhenMaxPercentage(double valueToShowOnText) {
+  void _handleAmplitudeAnimationWhenMaxPercentage(double valueToShowOnText) {
     if (valueToShowOnText == widget.maxPercentage) {
       _amplitudeTween = Tween<double>(
         begin: 0,
