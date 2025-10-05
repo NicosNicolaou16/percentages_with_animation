@@ -1,3 +1,16 @@
+## 1.1.3
+
+What's new:
+- Updated and tested the example project with the latest Flutter SDK 3.35.5.
+- Updated the Android Side for example project.
+  - Updated Gradle to latest version.
+  - Updated Kotlin to latest version.
+  - Updated NDK to latest version.
+  - Updated CMake to latest version.
+  - Updated Target SDK to latest version.
+  - Migrated Gradle files from Groovy to KTS.
+- Updated the README file.
+
 ## 1.1.2
 
 What's new:
