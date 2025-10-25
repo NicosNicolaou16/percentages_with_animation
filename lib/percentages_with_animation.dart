@@ -1,4 +1,4 @@
-library percentages_with_animation;
+library;
 
 export 'src/linear_percentage.dart';
 export 'src/circular_percentage.dart';
