@@ -10,7 +10,7 @@ android {
     namespace = "com.example.example"
     compileSdk = 36
     buildToolsVersion = "36.0.0"
-    ndkVersion = "28.2.13676358"
+    ndkVersion = "29.0.14206865"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -50,7 +50,7 @@ android {
 
     externalNativeBuild {
         cmake {
-            version = "4.1.1"
+            version = "4.1.2"
         }
     }
 }

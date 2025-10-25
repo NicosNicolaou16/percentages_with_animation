@@ -8,7 +8,7 @@ circular, gradient circle, and wave percentages.
 Version Minimum Flutter SDK: 3.0.0
 
 Tested Versioning: <br />
-Flutter SDK version: 3.35.5 <br />
+Flutter SDK version: 3.35.7 <br />
 Dart Version: 3.9.2 <br /> <br />
 
 ## Usage
