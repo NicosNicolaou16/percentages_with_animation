@@ -1,7 +1,13 @@
 ## Features
 
-This package provides percentages with customizable widgets and animations, including linear,
-circular, gradient circle, and wave percentages.
+A collection of highly customizable percentage widgets for Flutter, designed with smooth animations and versatile styles:
+
+*   **📊 Linear Percentages** – Sleek progress bars with optional labels.
+*   **⭕ Circular & Circle Percentages** – Classic radial progress indicators.
+*   **🌈 Gradient Circles** – Beautiful transitions with custom color blends.
+*   **🌊 Wave Animations** – Dynamic, fluid-filled circular containers.
+*   **✨ Smooth Animations** – Fully controllable durations and value listeners.
+*   **🎨 Highly Customizable** – Adjust strokes, colors, decorations, and text styles.
 
 ## Getting started
 
