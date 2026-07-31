@@ -9,7 +9,7 @@ plugins {
 android {
     namespace = "com.example.example"
     compileSdk = 37
-    buildToolsVersion = "36.0.0"
+    buildToolsVersion = "37.0.0"
     ndkVersion = "29.0.14206865"
 
     compileOptions {
