@@ -37,6 +37,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // We use a state variable so we can trigger the animations dynamically!
   double _currentPercentage = 70;
+  double _currentValue = 0;
 
   void _randomizePercentage() {
     setState(() {
@@ -175,8 +176,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   duration: 2000,
                   backgroundStrokeWidth: 2,
                   backgroundColor: Colors.teal.shade400,
-                  centerTextStyle: const TextStyle(
-                    color: Colors.white,
+                  centerTextStyle: TextStyle(
+                    color: _currentValue < 50 ? Colors.black : Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
@@ -236,6 +237,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _logValue(double currentValue) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _currentValue = currentValue;
+      setState(() {});
+    });
     if (kDebugMode) {
       // You can uncomment this to see the continuous values in the console
       // print("Current Animated Value: $currentValue");
