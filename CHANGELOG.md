@@ -1,3 +1,14 @@
+## 1.1.6
+
+What's new:
+- Complete UI refresh across the example project.
+- Updated and tested the example project with the latest Flutter SDK 3.44.8.
+- Updated the Android Side for example project.
+  - Set target SDK to 37.
+  - Updated Gradle to latest version.
+  - Updated Kotlin to latest version.
+- Updated the README file.
+
 ## 1.1.5
 
 What's new:
