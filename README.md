@@ -25,7 +25,7 @@ Dart Version: 3.12.2 <br /> <br />
   <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/example2_gif.gif" height="530" width="250"></a>
 </p>
 
-### Linear Percentage
+### ✨ Linear Percentage
 
 | Parameters                            | Description                                                                                                                                                              |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -47,7 +47,7 @@ Dart Version: 3.12.2 <br /> <br />
 | `percentageOnPercentageViewTextStyle` | This parameter is the text style for percentage on percentage view                                                                                                       |
 | `onCurrentValue`                      | This parameter is the call back to get the current percentage value during the animation (optional)                                                                      |
 
-### Circular Percentage
+### 🎯 Circular Percentage
 
 | Parameters              | Description                                                                                                                       |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -79,7 +79,7 @@ Dart Version: 3.12.2 <br /> <br />
 | `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
 | `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
-### Gradient Circle Percentage
+### 🌈 Gradient Circle Percentage
 
 | Parameters              | Description                                                                                                                       |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -96,7 +96,7 @@ Dart Version: 3.12.2 <br /> <br />
 | `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
 | `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
-### Wave Percentage
+### 🌊 Wave Percentage
 
 | Parameters              | Description                                                                                                                       |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
@@ -371,7 +371,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ```
 
-## Additional information
+## ℹ️ Additional information
 
 Thank you for using **percentages_with_animation**! Your feedback helps make this package better.
 If you encounter any bugs or unexpected behavior, please open an issue on
