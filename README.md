@@ -10,7 +10,7 @@ A collection of highly customizable percentage widgets for Flutter, designed wit
 * 🎨 **Highly Customizable** – Easily customize strokes, gradients, colors, decorations, text styles, and much more to match your app's design.
 
 
-## Getting started
+## 🚀 Getting started
 
 Version Minimum Flutter SDK: 3.0.0
 
@@ -18,7 +18,7 @@ Tested Versioning: <br />
 Flutter SDK version: 3.44.8 <br />
 Dart Version: 3.12.2 <br /> <br />
 
-## Usage
+## 💡 Usage
 
 <p align="left">
   <a title="simulator_image"><img src="https://github.com/NicosNicolaou16/percentages_with_animation/raw/main/screenshots/Screenshot_20260801_013452.png" height="530" width="250"></a>
