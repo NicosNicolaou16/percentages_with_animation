@@ -100,6 +100,7 @@ class _CircularPercentageState extends State<CircularPercentage> {
             painter: BorderPainter(
               currentState: value,
               strokeWidth: widget.percentageStrokeWidth,
+              backgroundStrokeWidth: widget.backgroundStrokeWidth,
               color: widget.percentageColor,
             ),
             child: Center(
