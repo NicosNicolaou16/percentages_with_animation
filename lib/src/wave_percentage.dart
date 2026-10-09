@@ -112,15 +112,21 @@ class _WavePercentageState extends State<WavePercentage>
     )..repeat();
 
     /// Wave color animation
-    if (widget.colorAnimationBegin == null &&
-        widget.colorAnimationEnd == null) {
-      _colorController = AnimationController(
-        vsync: this,
-        duration: const Duration(seconds: 3),
-      )..repeat();
-      _colorAnimation = ColorTween(
-              begin: widget.colorAnimationBegin, end: widget.colorAnimationEnd)
-          .animate(_colorController);
+    _colorController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    );
+    // Fall back to waveColor for any color that isn't set, so the tween
+    // never produces null.
+    _colorAnimation = ColorTween(
+      begin: widget.colorAnimationBegin ?? widget.waveColor,
+      end: widget.colorAnimationEnd ?? widget.waveColor,
+    ).animate(_colorController);
+    // Only run the color animation when the user actually asked for it.
+    // Otherwise the controller stays idle (no wasted ticks).
+    if (widget.colorAnimationBegin != null ||
+        widget.colorAnimationEnd != null) {
+      _colorController.repeat(reverse: true);
     }
 
     /// Amplitude animation
