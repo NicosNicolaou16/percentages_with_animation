@@ -12,11 +12,12 @@ A collection of highly customizable percentage widgets for Flutter, designed wit
 
 ## 🚀 Getting started
 
-Version Minimum Flutter SDK: 3.0.0
+Minimum Flutter SDK: 3.10.0 <br />
+Minimum Dart SDK: 3.0.0 <br />
 
-Tested Versioning: <br />
-Flutter SDK version: 3.44.8 <br />
-Dart Version: 3.12.2 <br /> <br />
+Tested with: <br />
+Flutter SDK version: 3.47.7 <br />
+Dart Version: 3.13.5 <br /> <br />
 
 ## 💡 Usage
 
