@@ -128,8 +128,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
 
                         WidgetsBinding.instance.addPostFrameCallback((_) {
                           if (mounted) {
-                            widget.onCurrentValue?.call(
-                                double.parse(current.toStringAsFixed(2)));
+                            widget.onCurrentValue?.call(current);
                           }
                         });
                       }
