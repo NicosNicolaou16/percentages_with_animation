@@ -50,7 +50,8 @@ class CircularPercentage extends StatefulWidget {
     this.centerText,
     this.centerTextStyle = const TextStyle(color: Colors.black),
     this.onCurrentValue,
-  })  : assert(currentPercentage <= maxPercentage),
+  })  : assert(maxPercentage > 0),
+        assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0);
 
