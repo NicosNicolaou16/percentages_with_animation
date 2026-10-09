@@ -243,7 +243,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
     if (kDebugMode) {
       // You can uncomment this to see the continuous values in the console
-      // print("Current Animated Value: $currentValue");
+      print("Current Animated Value: $currentValue");
     }
   }
 }
