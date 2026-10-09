@@ -38,7 +38,7 @@ class GradientCirclePercentage extends StatefulWidget {
   final TextStyle centerTextStyle;
 
   /// This parameter is the call back to get the current percentage value during the animation (optional)
-  final Function(double)? onCurrentValue;
+  final ValueChanged<double>? onCurrentValue;
 
   const GradientCirclePercentage({
     super.key,
