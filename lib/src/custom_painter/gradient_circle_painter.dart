@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GradientCirclePainter extends CustomPainter {
-  double currentPercentage;
+  final double currentPercentage;
   final Color bottomColor;
   final Color topColor;
 
@@ -34,7 +34,9 @@ class GradientCirclePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
+  bool shouldRepaint(covariant GradientCirclePainter oldDelegate) {
+    return oldDelegate.currentPercentage != currentPercentage ||
+        oldDelegate.topColor != topColor ||
+        oldDelegate.bottomColor != bottomColor;
   }
 }
