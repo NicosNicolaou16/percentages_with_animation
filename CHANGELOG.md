@@ -11,6 +11,7 @@ What's new:
 - `WavePercentage` now applies amplitude and color changes made after the first build, and accepts an amplitude of 0.
 - The painters now repaint only when something visible changes.
 - Added an assert for `maxPercentage > 0`.
+- `onCurrentValue` is now typed as `ValueChanged<double>?` (was `Function(double)?`). Existing callbacks keep working.
 - Corrected the minimum Flutter version to 3.10.0.
 - Updated and tested the example project with the latest Flutter SDK 3.47.7.
 
