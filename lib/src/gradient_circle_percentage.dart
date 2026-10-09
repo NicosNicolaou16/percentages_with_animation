@@ -64,6 +64,8 @@ class GradientCirclePercentage extends StatefulWidget {
 }
 
 class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
+  double? _lastReported;
+
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
@@ -75,9 +77,14 @@ class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
       ),
       builder: (context, value, _) {
         double valueToShowOnText = value * widget.maxPercentage;
-        if (widget.onCurrentValue != null) {
-          widget.onCurrentValue!(
-              double.parse(valueToShowOnText.toStringAsFixed(2)));
+        final current = (valueToShowOnText * 100).roundToDouble() / 100;
+
+        if (current != _lastReported) {
+          _lastReported = current;
+
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) widget.onCurrentValue?.call(current);
+          });
         }
         return Container(
           width: widget.size,
