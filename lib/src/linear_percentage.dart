@@ -199,7 +199,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Align(
       alignment: Alignment.centerRight,
       child: Text(
-        "${widget.currentPercentage.isInt ? widget.currentPercentage.formatted : widget.currentPercentage.toStringAsFixed(2)}/${widget.maxPercentage.formatted}",
+        "${widget.currentPercentage.formatted}/${widget.maxPercentage.formatted}",
         style: widget.percentageOnPercentageViewTextStyle,
       ),
     );

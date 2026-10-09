@@ -73,6 +73,7 @@ class WavePercentage extends StatefulWidget {
         assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0),
+        assert(waveFrequency > 0),
         assert(amplitudeBegin >= 0),
         assert(amplitudeEnd >= 0);
 
@@ -261,7 +262,8 @@ class _WavePercentageState extends State<WavePercentage>
                   child: Center(
                     child: Text(
                       widget.centerText ??
-                          valueToShowOnText.formatAgainst(widget.currentPercentage),
+                          valueToShowOnText
+                              .formatAgainst(widget.currentPercentage),
                       style: widget.centerTextStyle,
                     ),
                   ),
