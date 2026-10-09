@@ -189,7 +189,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Padding(
       padding: EdgeInsets.only(left: widget.rightTextRightPadding),
       child: Text(
-        widget.maxPercentage.toInt().toString(),
+        widget.maxPercentage.formatted,
         style: widget.rightTextStyle,
       ),
     );
@@ -199,7 +199,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Align(
       alignment: Alignment.centerRight,
       child: Text(
-        "${widget.currentPercentage.isInt ? widget.currentPercentage.toInt().toString() : widget.currentPercentage.toStringAsFixed(2)}/${widget.maxPercentage.toInt().toString()}",
+        "${widget.currentPercentage.isInt ? widget.currentPercentage.formatted : widget.currentPercentage.toStringAsFixed(2)}/${widget.maxPercentage.formatted}",
         style: widget.percentageOnPercentageViewTextStyle,
       ),
     );
