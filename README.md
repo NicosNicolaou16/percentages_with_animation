@@ -42,9 +42,9 @@ Dart Version: 3.13.5 <br /> <br />
 | `leftRightText`                       | This parameter is the enum value for the left and right text (min and max value - label) - accepted value `leftOnly`, `rightOnly`, `both`, `none`, default value: `none` |
 | `leftTextStyle`                       | This parameter is the text style for the left text                                                                                                                       |
 | `rightTextStyle`                      | This parameter is the text style for the right text                                                                                                                      |
-| `leftTextRightPadding`                | This parameter is the right text padding from percentage view with default value: 5                                                                                      |
 | `leftTextRightPadding`                | This parameter is the spacing between the left text and the bar, default value: 5                                                                                        |
 | `rightTextRightPadding`               | This parameter is the spacing between the bar and the right text, default value: 5                                                                                       |
+| `showPercentageOnPercentageView`      | This parameter is the option to show the percentage value on percentage view with default value: false                                                                   |
 | `percentageOnPercentageViewTextStyle` | This parameter is the text style for percentage on percentage view                                                                                                       |
 | `onCurrentValue`                      | This parameter is the call back to get the current percentage value during the animation (optional)                                                                      |
 
