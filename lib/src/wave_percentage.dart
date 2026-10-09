@@ -86,7 +86,7 @@ class _WavePercentageState extends State<WavePercentage>
   /// Last value sent to onCurrentValue, used to skip duplicates
   double? _lastReported;
 
-  /// used a (0, 0) tween as a sentinel, which is ambiguous now that 0 is a legal amplitude.
+  /// Whether the wave is currently flattened because the fill reached 100%
   bool _isFlattened = false;
 
   /// Animation Controller for the wave color
@@ -158,11 +158,10 @@ class _WavePercentageState extends State<WavePercentage>
     super.dispose();
   }
 
-  /// Flattens the wave when the fill reaches 100% and restores it below that.
-  // CHANGED: takes the 0..1 `value`, and uses `>= 1.0` instead of an exact
-  // double comparison with maxPercentage, which floating-point rounding
-  // could miss. Only rebuilds the tween when the state actually flips,
-  // instead of on every frame.
+  /// Flattens the wave when the fill reaches 100% and restores the user's
+  /// amplitudes below that. Uses `>= 1.0` because an exact double comparison
+  /// can miss due to rounding, and only rebuilds the tween when the state
+  /// flips.
   void _handleAmplitudeAnimationWhenMaxPercentage(double value) {
     if (value >= 1.0 && !_isFlattened) {
       _isFlattened = true;
@@ -178,7 +177,7 @@ class _WavePercentageState extends State<WavePercentage>
     }
   }
 
-  /// Changing the amplitudes or colors after the first build had no effect, because they were only read in initState.
+  /// Applies amplitude and color changes made after the first build
   @override
   void didUpdateWidget(covariant WavePercentage oldWidget) {
     super.didUpdateWidget(oldWidget);

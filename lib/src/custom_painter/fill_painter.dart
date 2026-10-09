@@ -26,7 +26,7 @@ class FillPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant FillPainter  oldDelegate) {
+  bool shouldRepaint(covariant FillPainter oldDelegate) {
     return oldDelegate.currentState != currentState ||
         oldDelegate.color != color;
   }
