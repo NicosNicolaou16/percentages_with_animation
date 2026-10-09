@@ -19,7 +19,7 @@ class FillPainter extends CustomPainter {
       ..color = color
       ..style = PaintingStyle.fill;
 
-    double startAngle = -pi;
+    double startAngle = -pi / 2;
     double sweepAmount = currentState * 2 * pi;
 
     canvas.drawArc(rect, startAngle, sweepAmount, true, paint);
