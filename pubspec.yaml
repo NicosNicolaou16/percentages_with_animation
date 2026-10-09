@@ -7,7 +7,9 @@ topics:
   - gradient
   - wave
 version: 1.1.6
-homepage: "https://github.com/NicosNicolaou16/percentages_with_animation"
+homepage: https://github.com/NicosNicolaou16/percentages_with_animation
+repository: https://github.com/NicosNicolaou16/percentages_with_animation
+issue_tracker: https://github.com/NicosNicolaou16/percentages_with_animation/issues
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
