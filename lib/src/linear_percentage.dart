@@ -41,10 +41,10 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the text style for the right text
   final TextStyle? rightTextStyle;
 
-  /// This parameter is the right text padding from percentage view with default value: 5
+  /// This parameter is the spacing between the left text and the bar, default value: 5
   final double leftTextRightPadding;
 
-  /// This parameter is the left text padding from percentage view with default value: 5
+  /// This parameter is the spacing between the bar and the right text, default value: 5
   final double rightTextRightPadding;
 
   /// This parameter is the option to show the percentage value on percentage view with default value: false
