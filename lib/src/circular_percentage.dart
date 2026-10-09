@@ -59,6 +59,7 @@ class CircularPercentage extends StatefulWidget {
 }
 
 class _CircularPercentageState extends State<CircularPercentage> {
+  /// Last value sent to onCurrentValue, used to skip duplicates
   double? _lastReported;
 
   @override
@@ -78,7 +79,10 @@ class _CircularPercentageState extends State<CircularPercentage> {
           _lastReported = current;
 
           WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (mounted) widget.onCurrentValue?.call(current);
+            if (mounted) {
+              widget.onCurrentValue
+                  ?.call(double.parse(current.toStringAsFixed(2)));
+            }
           });
         }
         return Container(

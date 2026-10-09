@@ -82,6 +82,9 @@ class WavePercentage extends StatefulWidget {
 
 class _WavePercentageState extends State<WavePercentage>
     with TickerProviderStateMixin {
+  /// Last value sent to onCurrentValue, used to skip duplicates
+  double? _lastReported;
+
   /// Animation Controller for the wave color
   late AnimationController _colorController;
 
@@ -182,9 +185,17 @@ class _WavePercentageState extends State<WavePercentage>
       builder: (context, value, _) {
         double valueToShowOnText = value * widget.maxPercentage;
         _handleAmplitudeAnimationWhenMaxPercentage(valueToShowOnText);
-        if (widget.onCurrentValue != null) {
-          widget.onCurrentValue!(
-              double.parse(valueToShowOnText.toStringAsFixed(2)));
+        final current = (valueToShowOnText * 100).roundToDouble() / 100;
+
+        if (current != _lastReported) {
+          _lastReported = current;
+
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) {
+              widget.onCurrentValue
+                  ?.call(double.parse(current.toStringAsFixed(2)));
+            }
+          });
         }
         return Container(
           width: widget.size,

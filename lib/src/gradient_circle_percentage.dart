@@ -64,6 +64,7 @@ class GradientCirclePercentage extends StatefulWidget {
 }
 
 class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
+  /// Last value sent to onCurrentValue, used to skip duplicates
   double? _lastReported;
 
   @override
@@ -83,7 +84,10 @@ class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
           _lastReported = current;
 
           WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (mounted) widget.onCurrentValue?.call(current);
+            if (mounted) {
+              widget.onCurrentValue
+                  ?.call(double.parse(current.toStringAsFixed(2)));
+            }
           });
         }
         return Container(

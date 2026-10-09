@@ -84,6 +84,7 @@ class LinearPercentage extends StatefulWidget {
 }
 
 class _LinearPercentageState extends State<LinearPercentage> {
+  /// Last value sent to onCurrentValue, used to skip duplicates
   double? _lastReported;
 
   @override
@@ -120,13 +121,16 @@ class _LinearPercentageState extends State<LinearPercentage> {
                       final current = maxWidth == 0
                           ? 0.0
                           : (value / maxWidth * widget.maxPercentage * 100)
-                          .roundToDouble() /
-                          100;
+                                  .roundToDouble() /
+                              100;
                       if (current != _lastReported) {
                         _lastReported = current;
 
                         WidgetsBinding.instance.addPostFrameCallback((_) {
-                          if (mounted) widget.onCurrentValue?.call(current);
+                          if (mounted) {
+                            widget.onCurrentValue?.call(
+                                double.parse(current.toStringAsFixed(2)));
+                          }
                         });
                       }
                       return Container(
