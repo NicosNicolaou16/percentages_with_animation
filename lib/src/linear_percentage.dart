@@ -86,18 +86,18 @@ class LinearPercentage extends StatefulWidget {
 class _LinearPercentageState extends State<LinearPercentage> {
   @override
   Widget build(BuildContext context) {
-    return PercentageBuilder(
-      currentPercentage: widget.currentPercentage,
-      maxPercentage: widget.maxPercentage,
-      myLayoutBuilder: (context, percentage, maxWidth) {
-        return Row(
-          children: [
-            if (widget.leftRightText == LeftRightText.leftOnly ||
-                widget.leftRightText == LeftRightText.both) ...[
-              _leftText(),
-            ],
-            Expanded(
-              child: Stack(
+    return Row(
+      children: [
+        if (widget.leftRightText == LeftRightText.leftOnly ||
+            widget.leftRightText == LeftRightText.both) ...[
+          _leftText(),
+        ],
+        Expanded(
+          child: PercentageBuilder(
+            currentPercentage: widget.currentPercentage,
+            maxPercentage: widget.maxPercentage,
+            myLayoutBuilder: (context, percentage, maxWidth) {
+              return Stack(
                 children: [
                   Container(
                     width: maxWidth,
@@ -114,31 +114,41 @@ class _LinearPercentageState extends State<LinearPercentage> {
                       begin: 0,
                       end: percentage,
                     ),
-                    builder: (context, value, _) => Container(
-                      width: value,
-                      height: widget.percentageHeight,
-                      color: widget.percentageDecoration == null
-                          ? widget.percentageColor
-                          : null,
-                      decoration: widget.percentageDecoration,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: widget.showPercentageOnPercentageView == true
-                            ? _labelOnPercentage()
+                    builder: (context, value, _) {
+                      widget.onCurrentValue?.call(
+                        maxWidth == 0
+                            ? 0
+                            : (value / maxWidth * widget.maxPercentage * 100)
+                            .roundToDouble() /
+                            100,
+                      );
+                      return Container(
+                        key: const ValueKey('percentage-bar'),
+                        width: value,
+                        height: widget.percentageHeight,
+                        color: widget.percentageDecoration == null
+                            ? widget.percentageColor
                             : null,
-                      ),
-                    ),
+                        decoration: widget.percentageDecoration,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: widget.showPercentageOnPercentageView == true
+                              ? _labelOnPercentage()
+                              : null,
+                        ),
+                      );
+                    },
                   ),
                 ],
-              ),
-            ),
-            if (widget.leftRightText == LeftRightText.rightOnly ||
-                widget.leftRightText == LeftRightText.both) ...[
-              _rightText(),
-            ],
-          ],
-        );
-      },
+              );
+            },
+          ),
+        ),
+        if (widget.leftRightText == LeftRightText.rightOnly ||
+            widget.leftRightText == LeftRightText.both) ...[
+          _rightText(),
+        ],
+      ],
     );
   }
 
@@ -153,9 +163,6 @@ class _LinearPercentageState extends State<LinearPercentage> {
           end: widget.currentPercentage,
         ),
         builder: (context, value, _) {
-          if (widget.onCurrentValue != null) {
-            widget.onCurrentValue!(double.parse(value.toStringAsFixed(2)));
-          }
           return Text(
             widget.currentPercentage.isInt
                 ? value.toInt().toString()
