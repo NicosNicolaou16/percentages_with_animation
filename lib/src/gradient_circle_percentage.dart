@@ -110,9 +110,7 @@ class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
             child: Center(
               child: Text(
                 widget.centerText ??
-                    (widget.currentPercentage.isInt == true
-                        ? valueToShowOnText.toInt().toString()
-                        : valueToShowOnText.toStringAsFixed(2)),
+                    valueToShowOnText.formatAgainst(widget.currentPercentage),
                 style: widget.centerTextStyle,
               ),
             ),

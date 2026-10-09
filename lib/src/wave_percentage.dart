@@ -261,9 +261,7 @@ class _WavePercentageState extends State<WavePercentage>
                   child: Center(
                     child: Text(
                       widget.centerText ??
-                          (widget.currentPercentage.isInt == true
-                              ? valueToShowOnText.toInt().toString()
-                              : valueToShowOnText.toStringAsFixed(2)),
+                          valueToShowOnText.formatAgainst(widget.currentPercentage),
                       style: widget.centerTextStyle,
                     ),
                   ),

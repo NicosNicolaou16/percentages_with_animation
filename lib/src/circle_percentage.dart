@@ -101,9 +101,7 @@ class _CirclePercentageState extends State<CirclePercentage> {
             child: Center(
               child: Text(
                 widget.centerText ??
-                    (widget.currentPercentage.isInt == true
-                        ? valueToShowOnText.toInt().toString()
-                        : valueToShowOnText.toStringAsFixed(2)),
+                    valueToShowOnText.formatAgainst(widget.currentPercentage),
                 textAlign: TextAlign.center,
                 style: widget.centerTextStyle,
               ),
