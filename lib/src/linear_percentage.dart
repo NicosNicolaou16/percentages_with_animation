@@ -84,6 +84,8 @@ class LinearPercentage extends StatefulWidget {
 }
 
 class _LinearPercentageState extends State<LinearPercentage> {
+  double? _lastReported;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -115,13 +117,18 @@ class _LinearPercentageState extends State<LinearPercentage> {
                       end: percentage,
                     ),
                     builder: (context, value, _) {
-                      widget.onCurrentValue?.call(
-                        maxWidth == 0
-                            ? 0
-                            : (value / maxWidth * widget.maxPercentage * 100)
-                            .roundToDouble() /
-                            100,
-                      );
+                      final current = maxWidth == 0
+                          ? 0.0
+                          : (value / maxWidth * widget.maxPercentage * 100)
+                          .roundToDouble() /
+                          100;
+                      if (current != _lastReported) {
+                        _lastReported = current;
+
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                          if (mounted) widget.onCurrentValue?.call(current);
+                        });
+                      }
                       return Container(
                         key: const ValueKey('percentage-bar'),
                         width: value,
