@@ -237,13 +237,10 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _logValue(double currentValue) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _currentValue = currentValue;
-      setState(() {});
-    });
+    setState(() => _currentValue = currentValue);
+
     if (kDebugMode) {
-      // You can uncomment this to see the continuous values in the console
-      print("Current Animated Value: $currentValue");
+      debugPrint("Current Animated Value: $currentValue");
     }
   }
 }
