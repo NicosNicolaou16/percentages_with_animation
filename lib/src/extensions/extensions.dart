@@ -11,3 +11,10 @@ extension NumExtensions on num {
   String formatAgainst(num target) =>
       target.isInt ? toInt().toString() : toStringAsFixed(2);
 }
+
+/// String helpers used by all percentage widgets
+extension PercentageTextExtensions on String {
+  /// Appends a `%` symbol when [show] is true, otherwise returns the text
+  /// unchanged. Keeps the symbol logic in one place for all five widgets.
+  String withPercentageSymbol(bool show) => show ? '$this%' : this;
+}
