@@ -41,10 +41,10 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the text style for the right text
   final TextStyle? rightTextStyle;
 
-  /// This parameter is the right text padding from percentage view with default value: 5
+  /// This parameter is the spacing between the left text and the bar, default value: 5
   final double leftTextRightPadding;
 
-  /// This parameter is the left text padding from percentage view with default value: 5
+  /// This parameter is the spacing between the bar and the right text, default value: 5
   final double rightTextRightPadding;
 
   /// This parameter is the option to show the percentage value on percentage view with default value: false
@@ -53,8 +53,11 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the text style for percentage on percentage view
   final TextStyle? percentageOnPercentageViewTextStyle;
 
+  /// Whether to show a `%` symbol after the percentage value, default value: false
+  final bool showPercentageSymbol;
+
   /// This parameter is the call back to get the current percentage value during the animation (optional)
-  final Function(double)? onCurrentValue;
+  final ValueChanged<double>? onCurrentValue;
 
   const LinearPercentage({
     super.key,
@@ -74,8 +77,10 @@ class LinearPercentage extends StatefulWidget {
     this.rightTextRightPadding = 5,
     this.showPercentageOnPercentageView = false,
     this.percentageOnPercentageViewTextStyle,
+    this.showPercentageSymbol = false,
     this.onCurrentValue,
-  })  : assert(currentPercentage <= maxPercentage),
+  })  : assert(maxPercentage > 0),
+        assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0);
 
@@ -84,20 +89,23 @@ class LinearPercentage extends StatefulWidget {
 }
 
 class _LinearPercentageState extends State<LinearPercentage> {
+  /// Last value sent to onCurrentValue, used to skip duplicates
+  double? _lastReported;
+
   @override
   Widget build(BuildContext context) {
-    return PercentageBuilder(
-      currentPercentage: widget.currentPercentage,
-      maxPercentage: widget.maxPercentage,
-      myLayoutBuilder: (context, percentage, maxWidth) {
-        return Row(
-          children: [
-            if (widget.leftRightText == LeftRightText.leftOnly ||
-                widget.leftRightText == LeftRightText.both) ...[
-              _leftText(),
-            ],
-            Expanded(
-              child: Stack(
+    return Row(
+      children: [
+        if (widget.leftRightText == LeftRightText.leftOnly ||
+            widget.leftRightText == LeftRightText.both) ...[
+          _leftText(),
+        ],
+        Expanded(
+          child: PercentageBuilder(
+            currentPercentage: widget.currentPercentage,
+            maxPercentage: widget.maxPercentage,
+            myLayoutBuilder: (context, percentage, maxWidth) {
+              return Stack(
                 children: [
                   Container(
                     width: maxWidth,
@@ -114,31 +122,48 @@ class _LinearPercentageState extends State<LinearPercentage> {
                       begin: 0,
                       end: percentage,
                     ),
-                    builder: (context, value, _) => Container(
-                      width: value,
-                      height: widget.percentageHeight,
-                      color: widget.percentageDecoration == null
-                          ? widget.percentageColor
-                          : null,
-                      decoration: widget.percentageDecoration,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: widget.showPercentageOnPercentageView == true
-                            ? _labelOnPercentage()
+                    builder: (context, value, _) {
+                      final current = maxWidth == 0
+                          ? 0.0
+                          : (value / maxWidth * widget.maxPercentage * 100)
+                                  .roundToDouble() /
+                              100;
+                      if (current != _lastReported) {
+                        _lastReported = current;
+
+                        WidgetsBinding.instance.addPostFrameCallback((_) {
+                          if (mounted) {
+                            widget.onCurrentValue?.call(current);
+                          }
+                        });
+                      }
+                      return Container(
+                        key: const ValueKey('percentage-bar'),
+                        width: value,
+                        height: widget.percentageHeight,
+                        color: widget.percentageDecoration == null
+                            ? widget.percentageColor
                             : null,
-                      ),
-                    ),
+                        decoration: widget.percentageDecoration,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: widget.showPercentageOnPercentageView == true
+                              ? _labelOnPercentage()
+                              : null,
+                        ),
+                      );
+                    },
                   ),
                 ],
-              ),
-            ),
-            if (widget.leftRightText == LeftRightText.rightOnly ||
-                widget.leftRightText == LeftRightText.both) ...[
-              _rightText(),
-            ],
-          ],
-        );
-      },
+              );
+            },
+          ),
+        ),
+        if (widget.leftRightText == LeftRightText.rightOnly ||
+            widget.leftRightText == LeftRightText.both) ...[
+          _rightText(),
+        ],
+      ],
     );
   }
 
@@ -153,13 +178,10 @@ class _LinearPercentageState extends State<LinearPercentage> {
           end: widget.currentPercentage,
         ),
         builder: (context, value, _) {
-          if (widget.onCurrentValue != null) {
-            widget.onCurrentValue!(double.parse(value.toStringAsFixed(2)));
-          }
           return Text(
-            widget.currentPercentage.isInt
-                ? value.toInt().toString()
-                : value.toStringAsFixed(2),
+            value
+                .formatAgainst(widget.currentPercentage)
+                .withPercentageSymbol(widget.showPercentageSymbol),
             style: widget.leftTextStyle,
           );
         },
@@ -171,7 +193,8 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Padding(
       padding: EdgeInsets.only(left: widget.rightTextRightPadding),
       child: Text(
-        widget.maxPercentage.toInt().toString(),
+        widget.maxPercentage.formatted
+            .withPercentageSymbol(widget.showPercentageSymbol),
         style: widget.rightTextStyle,
       ),
     );
@@ -181,7 +204,8 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Align(
       alignment: Alignment.centerRight,
       child: Text(
-        "${widget.currentPercentage.isInt ? widget.currentPercentage.toInt().toString() : widget.currentPercentage.toStringAsFixed(2)}/${widget.maxPercentage.toInt().toString()}",
+        "${widget.currentPercentage.formatted.withPercentageSymbol(widget.showPercentageSymbol)}"
+        "/${widget.maxPercentage.formatted.withPercentageSymbol(widget.showPercentageSymbol)}",
         style: widget.percentageOnPercentageViewTextStyle,
       ),
     );

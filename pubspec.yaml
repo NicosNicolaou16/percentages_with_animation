@@ -1,18 +1,19 @@
 name: percentages_with_animation
-description: "This package provides percentages with customizable widgets and animations, including linear,
-circular, gradient circle, and wave percentages."
+description: "Animated, customizable percentage widgets: linear, circular, gradient circle and wave."
 topics:
   - linear
   - circular
   - circle
   - gradient
   - wave
-version: 1.1.6
-homepage: "https://github.com/NicosNicolaou16/percentages_with_animation"
+version: 1.1.7
+homepage: https://github.com/NicosNicolaou16/percentages_with_animation
+repository: https://github.com/NicosNicolaou16/percentages_with_animation
+issue_tracker: https://github.com/NicosNicolaou16/percentages_with_animation/issues
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
-  flutter: ">=3.0.0"
+  flutter: ">=3.10.0"
 
 dependencies:
   flutter:

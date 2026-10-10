@@ -49,8 +49,11 @@ class WavePercentage extends StatefulWidget {
   /// This parameter is the text style of the label for the percentage text
   final TextStyle centerTextStyle;
 
+  /// Whether to show a `%` symbol after the percentage value, default value: false
+  final bool showPercentageSymbol;
+
   /// This parameter is the call back to get the current percentage value during the animation (optional)
-  final Function(double)? onCurrentValue;
+  final ValueChanged<double>? onCurrentValue;
 
   const WavePercentage({
     super.key,
@@ -68,13 +71,15 @@ class WavePercentage extends StatefulWidget {
     this.backgroundColor = Colors.white,
     this.centerText,
     this.centerTextStyle = const TextStyle(color: Colors.black),
+    this.showPercentageSymbol = false,
     this.onCurrentValue,
-  })  : assert(currentPercentage <= maxPercentage),
+  })  : assert(maxPercentage > 0),
+        assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0),
         assert(waveFrequency > 0),
-        assert(amplitudeBegin > 0),
-        assert(amplitudeEnd > 0);
+        assert(amplitudeBegin >= 0),
+        assert(amplitudeEnd >= 0);
 
   @override
   State<WavePercentage> createState() => _WavePercentageState();
@@ -82,6 +87,12 @@ class WavePercentage extends StatefulWidget {
 
 class _WavePercentageState extends State<WavePercentage>
     with TickerProviderStateMixin {
+  /// Last value sent to onCurrentValue, used to skip duplicates
+  double? _lastReported;
+
+  /// Whether the wave is currently flattened because the fill reached 100%
+  bool _isFlattened = false;
+
   /// Animation Controller for the wave color
   late AnimationController _colorController;
 
@@ -112,15 +123,21 @@ class _WavePercentageState extends State<WavePercentage>
     )..repeat();
 
     /// Wave color animation
-    if (widget.colorAnimationBegin == null &&
-        widget.colorAnimationEnd == null) {
-      _colorController = AnimationController(
-        vsync: this,
-        duration: const Duration(seconds: 3),
-      )..repeat();
-      _colorAnimation = ColorTween(
-              begin: widget.colorAnimationBegin, end: widget.colorAnimationEnd)
-          .animate(_colorController);
+    _colorController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 3),
+    );
+    // Fall back to waveColor for any color that isn't set, so the tween
+    // never produces null.
+    _colorAnimation = ColorTween(
+      begin: widget.colorAnimationBegin ?? widget.waveColor,
+      end: widget.colorAnimationEnd ?? widget.waveColor,
+    ).animate(_colorController);
+    // Only run the color animation when the user actually asked for it.
+    // Otherwise the controller stays idle (no wasted ticks).
+    if (widget.colorAnimationBegin != null ||
+        widget.colorAnimationEnd != null) {
+      _colorController.repeat(reverse: true);
     }
 
     /// Amplitude animation
@@ -145,21 +162,57 @@ class _WavePercentageState extends State<WavePercentage>
     super.dispose();
   }
 
-  /// Handle the amplitude animation when the max percentage is reached
-  void _handleAmplitudeAnimationWhenMaxPercentage(double valueToShowOnText) {
-    if (valueToShowOnText == widget.maxPercentage) {
+  /// Flattens the wave when the fill reaches 100% and restores the user's
+  /// amplitudes below that. Uses `>= 1.0` because an exact double comparison
+  /// can miss due to rounding, and only rebuilds the tween when the state
+  /// flips.
+  void _handleAmplitudeAnimationWhenMaxPercentage(double value) {
+    if (value >= 1.0 && !_isFlattened) {
+      _isFlattened = true;
+      _amplitudeTween = Tween<double>(begin: 0, end: 0);
+      _amplitudeAnimation = _amplitudeTween.animate(_amplitudeController);
+    } else if (value < 1.0 && _isFlattened) {
+      _isFlattened = false;
       _amplitudeTween = Tween<double>(
-        begin: 0,
-        end: 0,
+        begin: widget.amplitudeBegin,
+        end: widget.amplitudeEnd,
       );
       _amplitudeAnimation = _amplitudeTween.animate(_amplitudeController);
-    } else {
-      if (_amplitudeTween.begin == 0 && _amplitudeTween.end == 0) {
-        _amplitudeTween = Tween<double>(
-          begin: widget.amplitudeBegin,
-          end: widget.amplitudeEnd,
-        );
-        _amplitudeAnimation = _amplitudeTween.animate(_amplitudeController);
+    }
+  }
+
+  /// Applies amplitude and color changes made after the first build
+  @override
+  void didUpdateWidget(covariant WavePercentage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    // Apply new amplitudes, unless the wave is currently flattened at 100%
+    // (un-flattening restores the user's amplitudes anyway).
+    if (!_isFlattened &&
+        (oldWidget.amplitudeBegin != widget.amplitudeBegin ||
+            oldWidget.amplitudeEnd != widget.amplitudeEnd)) {
+      _amplitudeTween = Tween<double>(
+        begin: widget.amplitudeBegin,
+        end: widget.amplitudeEnd,
+      );
+      _amplitudeAnimation = _amplitudeTween.animate(_amplitudeController);
+    }
+
+    // Rebuild the color animation if any color input changed.
+    if (oldWidget.colorAnimationBegin != widget.colorAnimationBegin ||
+        oldWidget.colorAnimationEnd != widget.colorAnimationEnd ||
+        oldWidget.waveColor != widget.waveColor) {
+      _colorAnimation = ColorTween(
+        begin: widget.colorAnimationBegin ?? widget.waveColor,
+        end: widget.colorAnimationEnd ?? widget.waveColor,
+      ).animate(_colorController);
+
+      // Start or stop the color controller to match the new settings.
+      if (widget.colorAnimationBegin != null ||
+          widget.colorAnimationEnd != null) {
+        _colorController.repeat(reverse: true);
+      } else {
+        _colorController.stop();
       }
     }
   }
@@ -175,10 +228,17 @@ class _WavePercentageState extends State<WavePercentage>
       ),
       builder: (context, value, _) {
         double valueToShowOnText = value * widget.maxPercentage;
-        _handleAmplitudeAnimationWhenMaxPercentage(valueToShowOnText);
-        if (widget.onCurrentValue != null) {
-          widget.onCurrentValue!(
-              double.parse(valueToShowOnText.toStringAsFixed(2)));
+        _handleAmplitudeAnimationWhenMaxPercentage(value);
+        final current = (valueToShowOnText * 100).roundToDouble() / 100;
+
+        if (current != _lastReported) {
+          _lastReported = current;
+
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) {
+              widget.onCurrentValue?.call(current);
+            }
+          });
         }
         return Container(
           width: widget.size,
@@ -205,9 +265,10 @@ class _WavePercentageState extends State<WavePercentage>
                   child: Center(
                     child: Text(
                       widget.centerText ??
-                          (widget.currentPercentage.isInt == true
-                              ? valueToShowOnText.toInt().toString()
-                              : valueToShowOnText.toStringAsFixed(2)),
+                          valueToShowOnText
+                              .formatAgainst(widget.currentPercentage)
+                              .withPercentageSymbol(
+                                  widget.showPercentageSymbol),
                       style: widget.centerTextStyle,
                     ),
                   ),

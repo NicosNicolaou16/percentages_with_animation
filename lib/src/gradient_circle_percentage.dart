@@ -37,8 +37,11 @@ class GradientCirclePercentage extends StatefulWidget {
   /// This parameter is the text style of the label for the percentage text
   final TextStyle centerTextStyle;
 
+  /// Whether to show a `%` symbol after the percentage value, default value: false
+  final bool showPercentageSymbol;
+
   /// This parameter is the call back to get the current percentage value during the animation (optional)
-  final Function(double)? onCurrentValue;
+  final ValueChanged<double>? onCurrentValue;
 
   const GradientCirclePercentage({
     super.key,
@@ -53,8 +56,10 @@ class GradientCirclePercentage extends StatefulWidget {
     this.backgroundColor = Colors.white,
     this.centerText,
     this.centerTextStyle = const TextStyle(color: Colors.black),
+    this.showPercentageSymbol = false,
     this.onCurrentValue,
-  })  : assert(currentPercentage <= maxPercentage),
+  })  : assert(maxPercentage > 0),
+        assert(currentPercentage <= maxPercentage),
         assert(currentPercentage >= 0),
         assert(duration >= 0);
 
@@ -64,6 +69,9 @@ class GradientCirclePercentage extends StatefulWidget {
 }
 
 class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
+  /// Last value sent to onCurrentValue, used to skip duplicates
+  double? _lastReported;
+
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
@@ -75,9 +83,16 @@ class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
       ),
       builder: (context, value, _) {
         double valueToShowOnText = value * widget.maxPercentage;
-        if (widget.onCurrentValue != null) {
-          widget.onCurrentValue!(
-              double.parse(valueToShowOnText.toStringAsFixed(2)));
+        final current = (valueToShowOnText * 100).roundToDouble() / 100;
+
+        if (current != _lastReported) {
+          _lastReported = current;
+
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) {
+              widget.onCurrentValue?.call(current);
+            }
+          });
         }
         return Container(
           width: widget.size,
@@ -99,9 +114,9 @@ class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
             child: Center(
               child: Text(
                 widget.centerText ??
-                    (widget.currentPercentage.isInt == true
-                        ? valueToShowOnText.toInt().toString()
-                        : valueToShowOnText.toStringAsFixed(2)),
+                    valueToShowOnText
+                        .formatAgainst(widget.currentPercentage)
+                        .withPercentageSymbol(widget.showPercentageSymbol),
                 style: widget.centerTextStyle,
               ),
             ),

@@ -1,3 +1,21 @@
+## 1.1.7
+
+What's new:
+- Added `showPercentageSymbol` to all percentage widgets, to show a `%` symbol after the percentage value (optional, off by default).
+- Fixed a crash in `WavePercentage` when `colorAnimationBegin` / `colorAnimationEnd` were set.
+- Fixed `LinearPercentage` progress being overstated when the left/right labels are shown.
+- Fixed `onCurrentValue` on `LinearPercentage` not firing unless the left label was shown.
+- Fixed `onCurrentValue` firing endlessly after the animation finished, in all percentage widgets. It is now called after the frame and only when the value changes, so calling `setState` inside it is safe.
+- Fixed the `CircularPercentage` arc not being centered on its background ring.
+- Fixed decimal max values being truncated in the `LinearPercentage` labels (e.g. 99.5 showed as 99).
+- `CirclePercentage` now fills from 12 o'clock, like `CircularPercentage`.
+- `WavePercentage` now applies amplitude and color changes made after the first build, and accepts an amplitude of 0.
+- The painters now repaint only when something visible changes.
+- Added an assert for `maxPercentage > 0`.
+- `onCurrentValue` is now typed as `ValueChanged<double>?` (was `Function(double)?`). Existing callbacks keep working.
+- Corrected the minimum Flutter version to 3.10.0.
+- Updated and tested the example project with the latest Flutter SDK 3.47.7.
+
 ## 1.1.6
 
 What's new:

@@ -19,14 +19,15 @@ class FillPainter extends CustomPainter {
       ..color = color
       ..style = PaintingStyle.fill;
 
-    double startAngle = -pi;
+    double startAngle = -pi / 2;
     double sweepAmount = currentState * 2 * pi;
 
     canvas.drawArc(rect, startAngle, sweepAmount, true, paint);
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
+  bool shouldRepaint(covariant FillPainter oldDelegate) {
+    return oldDelegate.currentState != currentState ||
+        oldDelegate.color != color;
   }
 }

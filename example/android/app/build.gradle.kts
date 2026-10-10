@@ -2,7 +2,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     id("com.android.application")
-    id("kotlin-android")
     id("dev.flutter.flutter-gradle-plugin")
 }
 
@@ -10,7 +9,7 @@ android {
     namespace = "com.example.example"
     compileSdk = 37
     buildToolsVersion = "37.0.0"
-    ndkVersion = "29.0.14206865"
+    ndkVersion = "30.0.16248370"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
