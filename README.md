@@ -47,7 +47,7 @@ Dart Version: 3.13.5 <br /> <br />
 | `showPercentageOnPercentageView`      | This parameter is the option to show the percentage value on percentage view with default value: false                                                                   |
 | `percentageOnPercentageViewTextStyle` | This parameter is the text style for percentage on percentage view                                                                                                       |
 | `showPercentageSymbol`                | This parameter shows a `%` symbol after the percentage value, default value: false                                                                                       | 
-|  `onCurrentValue`                     | This parameter is the call back to get the current percentage value during the animation (optional)                                                                      |
+| `onCurrentValue`                      | This parameter is the call back to get the current percentage value during the animation (optional)                                                                      |
 
 ### 🎯 Circular Percentage
 

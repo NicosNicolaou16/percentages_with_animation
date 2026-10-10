@@ -77,7 +77,7 @@ class LinearPercentage extends StatefulWidget {
     this.rightTextRightPadding = 5,
     this.showPercentageOnPercentageView = false,
     this.percentageOnPercentageViewTextStyle,
-    this.showPercentageSymbol = false,
+    this.showPercentageSymbol = true,
     this.onCurrentValue,
   })  : assert(maxPercentage > 0),
         assert(currentPercentage <= maxPercentage),
@@ -179,9 +179,9 @@ class _LinearPercentageState extends State<LinearPercentage> {
         ),
         builder: (context, value, _) {
           return Text(
-            widget.currentPercentage.isInt
-                ? value.toInt().toString()
-                : value.toStringAsFixed(2),
+            value
+                .formatAgainst(widget.currentPercentage)
+                .withPercentageSymbol(widget.showPercentageSymbol),
             style: widget.leftTextStyle,
           );
         },
@@ -193,7 +193,8 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Padding(
       padding: EdgeInsets.only(left: widget.rightTextRightPadding),
       child: Text(
-        widget.maxPercentage.formatted,
+        widget.maxPercentage.formatted
+            .withPercentageSymbol(widget.showPercentageSymbol),
         style: widget.rightTextStyle,
       ),
     );
@@ -203,7 +204,8 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Align(
       alignment: Alignment.centerRight,
       child: Text(
-        "${widget.currentPercentage.formatted.withPercentageSymbol(widget.showPercentageSymbol)}/${widget.maxPercentage.formatted.withPercentageSymbol(widget.showPercentageSymbol)}",
+        "${widget.currentPercentage.formatted.withPercentageSymbol(widget.showPercentageSymbol)}"
+        "/${widget.maxPercentage.formatted.withPercentageSymbol(widget.showPercentageSymbol)}",
         style: widget.percentageOnPercentageViewTextStyle,
       ),
     );
