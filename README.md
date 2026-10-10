@@ -66,7 +66,7 @@ Dart Version: 3.13.5 <br /> <br />
 | `showPercentageSymbol`  | This parameter shows a `%` symbol after the percentage value, default value: false                                                |
 | `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
-### Circle Percentage
+### 🔵  Circle Percentage
 
 | Parameters              | Description                                                                                                                       |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
