@@ -37,6 +37,9 @@ class GradientCirclePercentage extends StatefulWidget {
   /// This parameter is the text style of the label for the percentage text
   final TextStyle centerTextStyle;
 
+  /// Whether to show a `%` symbol after the percentage value, default value: false
+  final bool showPercentageSymbol;
+
   /// This parameter is the call back to get the current percentage value during the animation (optional)
   final ValueChanged<double>? onCurrentValue;
 
@@ -53,6 +56,7 @@ class GradientCirclePercentage extends StatefulWidget {
     this.backgroundColor = Colors.white,
     this.centerText,
     this.centerTextStyle = const TextStyle(color: Colors.black),
+    this.showPercentageSymbol = false,
     this.onCurrentValue,
   })  : assert(maxPercentage > 0),
         assert(currentPercentage <= maxPercentage),
@@ -110,7 +114,9 @@ class _GradientCirclePercentageState extends State<GradientCirclePercentage> {
             child: Center(
               child: Text(
                 widget.centerText ??
-                    valueToShowOnText.formatAgainst(widget.currentPercentage),
+                    valueToShowOnText
+                        .formatAgainst(widget.currentPercentage)
+                        .withPercentageSymbol(widget.showPercentageSymbol),
                 style: widget.centerTextStyle,
               ),
             ),
