@@ -53,6 +53,9 @@ class LinearPercentage extends StatefulWidget {
   /// This parameter is the text style for percentage on percentage view
   final TextStyle? percentageOnPercentageViewTextStyle;
 
+  /// Whether to show a `%` symbol after the percentage value, default value: false
+  final bool showPercentageSymbol;
+
   /// This parameter is the call back to get the current percentage value during the animation (optional)
   final ValueChanged<double>? onCurrentValue;
 
@@ -74,6 +77,7 @@ class LinearPercentage extends StatefulWidget {
     this.rightTextRightPadding = 5,
     this.showPercentageOnPercentageView = false,
     this.percentageOnPercentageViewTextStyle,
+    this.showPercentageSymbol = false,
     this.onCurrentValue,
   })  : assert(maxPercentage > 0),
         assert(currentPercentage <= maxPercentage),
@@ -199,7 +203,7 @@ class _LinearPercentageState extends State<LinearPercentage> {
     return Align(
       alignment: Alignment.centerRight,
       child: Text(
-        "${widget.currentPercentage.formatted}/${widget.maxPercentage.formatted}",
+        "${widget.currentPercentage.formatted.withPercentageSymbol(widget.showPercentageSymbol)}/${widget.maxPercentage.formatted.withPercentageSymbol(widget.showPercentageSymbol)}",
         style: widget.percentageOnPercentageViewTextStyle,
       ),
     );
