@@ -1,6 +1,7 @@
 ## 1.1.7
 
 What's new:
+- Added `showPercentageSymbol` to all percentage widgets, to show a `%` symbol after the percentage value (optional, off by default).
 - Fixed a crash in `WavePercentage` when `colorAnimationBegin` / `colorAnimationEnd` were set.
 - Fixed `LinearPercentage` progress being overstated when the left/right labels are shown.
 - Fixed `onCurrentValue` on `LinearPercentage` not firing unless the left label was shown.
