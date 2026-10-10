@@ -46,7 +46,8 @@ Dart Version: 3.13.5 <br /> <br />
 | `rightTextRightPadding`               | This parameter is the spacing between the bar and the right text, default value: 5                                                                                       |
 | `showPercentageOnPercentageView`      | This parameter is the option to show the percentage value on percentage view with default value: false                                                                   |
 | `percentageOnPercentageViewTextStyle` | This parameter is the text style for percentage on percentage view                                                                                                       |
-| `onCurrentValue`                      | This parameter is the call back to get the current percentage value during the animation (optional)                                                                      |
+| `showPercentageSymbol`                | This parameter shows a `%` symbol after the percentage value, default value: false                                                                                       | 
+|  `onCurrentValue`                     | This parameter is the call back to get the current percentage value during the animation (optional)                                                                      |
 
 ### 🎯 Circular Percentage
 
@@ -62,6 +63,7 @@ Dart Version: 3.13.5 <br /> <br />
 | `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
 | `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
 | `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
+| `showPercentageSymbol`  | This parameter shows a `%` symbol after the percentage value, default value: false                                                |
 | `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
 ### Circle Percentage
@@ -78,6 +80,7 @@ Dart Version: 3.13.5 <br /> <br />
 | `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
 | `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
 | `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
+| `showPercentageSymbol`  | This parameter shows a `%` symbol after the percentage value, default value: false                                                |
 | `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
 ### 🌈 Gradient Circle Percentage
@@ -95,6 +98,7 @@ Dart Version: 3.13.5 <br /> <br />
 | `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
 | `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
 | `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
+| `showPercentageSymbol`  | This parameter shows a `%` symbol after the percentage value, default value: false                                                |
 | `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
 ### 🌊 Wave Percentage
@@ -116,6 +120,7 @@ Dart Version: 3.13.5 <br /> <br />
 | `backgroundColor`       | This parameter is the circle color behind of the percentage                                                                       |
 | `centerText`            | This parameter is a custom center text with default value null (if it null then show the percentage value)                        |
 | `centerTextStyle`       | This parameter is the text style of the label for the percentage text                                                             |
+| `showPercentageSymbol`  | This parameter shows a `%` symbol after the percentage value, default value: false                                                |
 | `onCurrentValue`        | This parameter is the call back to get the current percentage value during the animation (optional)                               |
 
 ```dart
