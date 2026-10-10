@@ -77,7 +77,7 @@ class LinearPercentage extends StatefulWidget {
     this.rightTextRightPadding = 5,
     this.showPercentageOnPercentageView = false,
     this.percentageOnPercentageViewTextStyle,
-    this.showPercentageSymbol = true,
+    this.showPercentageSymbol = false,
     this.onCurrentValue,
   })  : assert(maxPercentage > 0),
         assert(currentPercentage <= maxPercentage),
